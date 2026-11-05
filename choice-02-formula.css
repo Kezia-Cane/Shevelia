@@ -1,0 +1,66 @@
+.formula-page{background:var(--cream);overflow-x:hidden}
+.formula-page .sitehead{position:sticky;top:0;z-index:30;width:100%;max-width:none;padding-inline:max(24px,calc((100vw - 1260px)/2));background:rgba(252,249,244,.96);border-bottom:1px solid rgba(45,37,65,.09);backdrop-filter:blur(12px)}
+.formula-page .button{background:var(--midnight);border-color:var(--midnight);color:#fff;border-radius:2px;box-shadow:0 8px 19px rgba(45,37,65,.12)}
+.formula-page .button:hover{background:#5d4e79;border-color:#5d4e79;box-shadow:0 13px 25px rgba(45,37,65,.18)}
+.formula-page .button.outline{background:transparent;color:var(--midnight);box-shadow:none}
+.formula-page .button.outline:hover{background:var(--midnight);color:white}
+.formula-page a:focus-visible{outline:3px solid var(--honey);outline-offset:4px}
+.formula-hero{padding:84px 0 95px;background:linear-gradient(180deg,var(--cream) 0%,#f5eef8 100%)}
+.formula-heading{text-align:center;position:relative;z-index:2}
+.formula-heading h1{font-size:clamp(4.4rem,8.8vw,9rem);line-height:.89;letter-spacing:-.065em;margin:24px auto 27px;max-width:900px}
+.formula-heading h1 span{color:var(--lavender)}
+.formula-heading p{margin-inline:auto;max-width:49ch;color:#655b70;font-size:1.04rem}
+.product-stage{display:grid;grid-template-columns:.78fr 1.3fr .72fr;gap:18px;align-items:stretch;margin-top:60px;min-height:550px}
+.stage-note{display:flex;flex-direction:column;justify-content:flex-end;padding:35px 10px 22px}
+.stage-note-left h2{font-size:clamp(2.1rem,3.3vw,3.8rem);margin:18px 0 15px}
+.stage-note-left p{font-size:.92rem;color:#62586e;margin-bottom:25px}
+.stage-note-left .button{align-self:flex-start;white-space:nowrap}
+.stage-index{font-size:.67rem;font-weight:700;letter-spacing:.2em;color:#6f5e91;text-transform:uppercase}
+.stage-note-right{justify-content:center;padding:35px}
+.stage-note-right>p:not(.stage-small){font-family:'Inter Tight',Inter,sans-serif;font-size:clamp(1.55rem,2.3vw,2.35rem);font-weight:600;line-height:1.18;letter-spacing:-.025em;margin:25px 0}
+.stage-note-right .stage-small{font-size:.72rem;color:#72677b;margin-top:15px}
+.stage-rule{height:2px;width:52px;background:var(--honey)}
+.stage-image{margin:0;overflow:hidden;background:#eee7e6;position:relative;min-height:550px}
+.stage-image img{height:100%;width:100%;object-fit:cover;object-position:center 53%;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.stage-image:hover img{transform:scale(1.025)}
+.formula-ticker{background:var(--midnight);color:var(--cream)}
+.formula-ticker .container{display:flex;align-items:center;justify-content:space-around;gap:25px;min-height:66px;text-transform:uppercase;letter-spacing:.14em;font-size:.65rem;font-weight:700}
+.formula-ticker i{width:5px;height:5px;border-radius:50%;background:var(--honey);flex:none}
+.formula-section{padding-block:120px}
+.section-intro{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:50px}
+.section-intro h2{margin:17px 0 0;max-width:13ch}
+.section-intro p{color:#675e71;font-size:1.04rem;max-width:42ch;justify-self:end;margin-bottom:5px}
+.ingredient-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ingredient-cards figure{margin:0;background:#f1ebf4;overflow:hidden}
+.ingredient-cards img{width:100%;aspect-ratio:1/1.03;object-fit:cover;transition:transform .65s ease}
+.ingredient-cards figure:hover img{transform:scale(1.04)}
+.ingredient-cards figcaption{display:flex;align-items:center;gap:18px;padding:19px 22px;background:#f1ebf4}
+.ingredient-cards figcaption span{color:#705e92;font-size:.71rem;font-weight:700}
+.ingredient-cards figcaption strong{font-family:'Inter Tight';font-size:1.35rem;letter-spacing:-.02em}
+.ingredient-footnote{font-size:.75rem;color:#736a7d;max-width:70ch;margin:25px 0 0}
+.label-section{background:#e6dcec;padding-block:100px}
+.label-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px;align-items:center}
+.label-copy h2{margin:18px 0 25px;max-width:11ch}
+.label-copy>p{max-width:46ch}
+.label-detail{border-top:1px solid #bbaaCA;border-bottom:1px solid #bbaaca;padding:22px 0;display:flex;flex-direction:column;gap:7px;margin:38px 0 20px}
+.label-detail span{font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;color:#735d94;font-weight:700}
+.label-detail strong{font-size:.92rem;font-weight:600}
+.label-photo{margin:0;background:#f5eee8;padding:16px;box-shadow:0 15px 38px rgba(45,37,65,.09)}
+.label-photo img{width:100%;max-height:675px;object-fit:contain}
+.ritual-section{display:grid;grid-template-columns:1.05fr .95fr;gap:85px;align-items:center;padding-block:125px}
+.ritual-photo{height:570px;overflow:hidden;background:var(--lilac)}
+.ritual-photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%;transition:transform .8s ease}
+.ritual-photo:hover img{transform:scale(1.025)}
+.ritual-copy h2{margin:20px 0 25px;max-width:10ch}
+.ritual-copy p{max-width:45ch;color:#62586e;margin-bottom:27px}
+.formula-close{text-align:center;background:#f2ebf6;padding-block:110px}
+.formula-close h2{margin:18px auto 20px;max-width:850px}
+.formula-close p{margin:0 auto 30px}
+.motion-ready [data-reveal]{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.motion-ready [data-reveal].is-visible{opacity:1;transform:none}
+.motion-ready .ingredient-cards figure:nth-child(2){transition-delay:.08s}
+.motion-ready .ingredient-cards figure:nth-child(3){transition-delay:.16s}
+@media(max-width:1000px){.product-stage{grid-template-columns:1fr 1.25fr}.stage-note-right{grid-column:1/-1;padding:20px;display:block}.stage-note-right>p:not(.stage-small){max-width:27ch}.label-layout{gap:35px}.ritual-section{gap:35px}}
+@media(max-width:760px){.formula-page .sitehead{padding-inline:24px}.formula-hero{padding:68px 0 75px}.formula-heading h1{font-size:clamp(4.1rem,12vw,6.4rem)}.product-stage{grid-template-columns:1fr 1fr;min-height:0}.stage-image{grid-column:2;grid-row:1;min-height:420px}.stage-note-left{grid-column:1;grid-row:1;padding:18px 0;align-self:end}.stage-note-left .button{white-space:normal}.stage-note-right{display:none}.section-intro,.label-layout,.ritual-section{grid-template-columns:1fr;gap:35px}.section-intro p{justify-self:start}.formula-section,.label-section,.ritual-section{padding-block:80px}.ritual-photo{height:470px}.label-photo img{max-height:560px}}
+@media(max-width:560px){.formula-page .sitehead{padding-inline:16px}.formula-heading h1{font-size:clamp(3.8rem,14vw,5.2rem)}.formula-heading p{font-size:.95rem}.product-stage{display:flex;flex-direction:column;margin-top:38px}.stage-image{order:1;height:400px;min-height:0}.stage-note-left{order:2;padding:25px 2px 0}.stage-note-left h2{font-size:2.8rem}.formula-ticker .container{gap:10px;justify-content:center;text-align:center;font-size:.55rem;letter-spacing:.06em}.formula-ticker span:last-child,.formula-ticker i:last-of-type{display:none}.ingredient-cards{grid-template-columns:1fr;gap:15px}.ingredient-cards img{aspect-ratio:1.35/1}.section-intro{margin-bottom:30px}.ritual-photo{height:370px}.formula-close{padding-block:80px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.formula-page *{animation:none!important;transition-duration:0s!important;scroll-behavior:auto!important}.motion-ready [data-reveal]{opacity:1;transform:none}}

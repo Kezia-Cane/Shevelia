@@ -1,0 +1,91 @@
+/* Final presentation treatment for choices 01 and 03. */
+.page1,.page3{overflow-x:hidden}
+.page1 .sitehead,.page3 .sitehead{position:sticky;top:0;z-index:20;width:100%;max-width:none;padding-inline:max(24px,calc((100vw - 1260px)/2));background:rgba(252,249,244,.96);border-bottom:1px solid rgba(45,37,65,.09);backdrop-filter:blur(12px)}
+.page1 .hero,.page3 .hero{isolation:isolate}
+.page1 .hero{min-height:min(710px,calc(100svh - 118px));grid-template-columns:51% 49%}
+.page1 .hero-copy{max-width:750px;justify-self:end;width:100%}
+.page1 .hero-copy h1{font-size:clamp(3.8rem,6.7vw,7.2rem);line-height:.98}
+.page1 .hero-copy>p{max-width:42ch;line-height:1.65}
+.page1 .hero-image{height:100%;min-height:660px}
+.page1 .hero-image .photo{object-position:61% center}
+.page1 .intro-line{letter-spacing:.015em;padding:23px 20px}
+.page1 #why .center{max-width:800px;margin-inline:auto}
+.page1 #why .center h2{max-width:760px;margin:16px auto 20px}
+.page1 #why .center p{font-size:1.06rem}
+.page1 .benefit-card{padding:26px 22px 12px 0;border-color:#bfb2ce}
+.page1 .benefit-card .eyebrow{display:block;margin-bottom:20px}
+.page1 .benefit-card b{margin-bottom:12px}
+.page1 .benefit-card p{color:#625a6b;font-size:.92rem}
+.page1 .feature-band{background:#e8dfee}
+.page1 .feature-band .grid2{gap:clamp(35px,6vw,100px)}
+.page1 .feature-band .photo-frame{height:540px}
+.page1 .feature-band h2{margin:18px 0 22px}
+.page1 .feature-band p{max-width:53ch}
+.page1 .statement{padding-block:124px}
+.page1 .statement:before{content:'';display:block;width:62px;height:3px;background:var(--honey);margin:0 auto 35px}
+.page1 .statement h2{font-size:clamp(2.6rem,5.1vw,5.5rem);line-height:1.07}
+.page1 .statement p{max-width:48ch}
+.page1 #questions{padding-block:110px 120px}
+.page1 #questions h2{max-width:10ch}
+.page1 #questions h3{font-size:1.24rem;letter-spacing:-.02em;margin-bottom:10px}
+.page1 #questions p{color:#655c70;font-size:.94rem}
+.page1 #questions hr{margin:27px 0}
+.page3 .hero{min-height:min(730px,calc(100svh - 118px))}
+.page3 .hero-content{max-width:650px}
+.page3 .hero-content h1{font-size:clamp(4rem,7vw,7.4rem);line-height:.98}
+.page3 .hero-content p{max-width:41ch;line-height:1.7;margin-bottom:30px}
+.page3 .hero:after{background:linear-gradient(90deg,rgba(45,37,65,.8) 0%,rgba(45,37,65,.59) 37%,rgba(45,37,65,.1) 70%,transparent 100%)}
+.page3 .concerns{padding-block:112px 120px}
+.page3 .concerns .center{max-width:820px;margin-inline:auto}
+.page3 .concerns h2{margin:17px 0 20px}
+.page3 .concern{min-height:265px;padding:36px 32px;border:1px solid rgba(45,37,65,.07);transition:transform .35s ease,box-shadow .35s ease}
+.page3 .concern:hover{transform:translateY(-5px);box-shadow:0 18px 35px rgba(45,37,65,.09)}
+.page3 .concern h3{max-width:13ch;font-size:1.75rem;line-height:1.1;margin:42px 0 14px}
+.page3 .concern p{font-size:.9rem;color:#675e71}
+.page3 #ritual{padding-block:120px}
+.page3 #ritual .grid2{gap:clamp(40px,6vw,100px)}
+.page3 #ritual h2{margin:18px 0 25px}
+.page3 .infographic{margin-top:40px;border-left:3px solid var(--lavender)}
+.page3 .ritual-card{position:relative;padding:30px 34px;background:#fffdfb;border-color:#d8ccdf;transition:background .3s ease,transform .3s ease}
+.page3 .ritual-card:hover{background:#f5eff9;transform:translateX(5px)}
+.page3 .ritual-card h3{margin:16px 0 8px;font-size:2rem}
+.page3 .ritual-card p{margin-bottom:0;color:#675e71}
+.page3 .collection-window{padding-block:110px;background:#f4eef7}
+.page3 .collection-window h2{margin:18px 0 22px}
+.page3 .collection-window figure{background:var(--cream);padding:25px}
+.page3 .collection-window img{background:transparent;max-height:500px}
+.page3 #story{padding-block:115px}
+.page3 #story .grid2{gap:clamp(40px,6vw,100px)}
+.page3 #story h2{margin:18px 0 24px}
+.page3 #story .photo-frame{height:520px!important}
+.page3 #story .photo{object-position:65% center}
+.page1 .button,.page3 .button{background:var(--midnight);border-color:var(--midnight);color:#fff;border-radius:2px;box-shadow:0 7px 18px rgba(45,37,65,.1)}
+.page1 .button:hover,.page3 .button:hover{background:#5d4e79;border-color:#5d4e79;box-shadow:0 12px 22px rgba(45,37,65,.18)}
+.page1 .button.outline{background:transparent;color:var(--midnight);box-shadow:none}
+.page1 .button.outline:hover{background:var(--midnight);color:#fff}
+.page3 .hero-content .button{background:var(--cream);border-color:var(--cream);color:var(--midnight)}
+.page3 .hero-content .button:hover{background:#e0d6ec;border-color:#e0d6ec}
+.page3 #story .button{background:var(--cream);border-color:var(--cream);color:var(--midnight)}
+.page1 a:focus-visible,.page3 a:focus-visible{outline:3px solid var(--honey);outline-offset:4px}
+.page1 .photo-frame img,.page3 .photo-frame img,.page1 .lifestyle-photo img,.page3 .lifestyle-photo img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.page1 .photo-frame:hover img,.page3 .photo-frame:hover img,.page1 .lifestyle-photo:hover img,.page3 .lifestyle-photo:hover img{transform:scale(1.025)}
+.page1 .image-note,.page3 .image-note{border-left:3px solid var(--honey)}
+.page1 .image-note h3,.page3 .image-note h3{margin:14px 0 18px;line-height:1.08}
+.page1 .image-note .micro,.page3 .image-note .micro,.page1 .ingredient-copy .micro{margin-top:18px;border-top:1px solid rgba(45,37,65,.13);padding-top:12px}
+.page1 .ingredient-window .ingredient-grid{grid-template-columns:1fr 1fr 1.2fr}
+.page1 .ingredient-window figure{overflow:hidden;min-height:330px}
+.page1 .ingredient-window img{transition:transform .7s ease}
+.page1 .ingredient-window figure:hover img{transform:scale(1.04)}
+.page1 .ingredient-copy{padding:30px 40px}
+.page1 .ingredient-copy h3{margin:12px 0 18px;font-size:clamp(1.8rem,2.7vw,3rem)}
+.page3 .image-interlude{padding-block:95px}
+.page3 .image-interlude .lifestyle-photo{height:500px}
+.page3 .image-interlude .lifestyle-photo img{object-position:center 31%}
+.page3 .image-interlude .image-note{padding:clamp(32px,4vw,65px)}
+.motion-ready [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.motion-ready [data-reveal].is-visible{opacity:1;transform:none}
+.motion-ready .benefit-card:nth-child(2),.motion-ready .concern:nth-child(2),.motion-ready .ritual-card:nth-child(2){transition-delay:.08s}
+.motion-ready .benefit-card:nth-child(3),.motion-ready .concern:nth-child(3),.motion-ready .ritual-card:nth-child(3){transition-delay:.16s}
+@media(max-width:850px){.page1 .sitehead,.page3 .sitehead{padding-inline:24px}.page1 .hero{min-height:auto;grid-template-columns:1fr}.page1 .hero-copy{max-width:none;justify-self:stretch;padding:75px 24px 65px}.page1 .hero-image{height:410px;min-height:0;max-height:none}.page1 .hero-copy h1,.page3 .hero-content h1{font-size:clamp(3.5rem,10vw,5rem)}.page3 .hero{min-height:620px}.page3 .hero:after{background:linear-gradient(90deg,rgba(45,37,65,.8),rgba(45,37,65,.48) 75%)}.page1 .feature-band .photo-frame,.page3 #story .photo-frame{height:390px!important}.page1 .ingredient-window .ingredient-grid{grid-template-columns:1fr 1fr}.page1 .ingredient-copy{grid-column:1/-1}.page3 #ritual,.page3 .concerns,.page3 .collection-window,.page3 #story{padding-block:80px}.page3 .ritual-card:hover{transform:none}}
+@media(max-width:560px){.page1 .sitehead,.page3 .sitehead{padding-inline:16px}.page1 .hero-copy{padding-inline:20px}.page1 .hero-image{height:350px}.page1 .hero-image .photo{object-position:66% center}.page3 .hero{min-height:620px}.page3 .hero img{object-position:64% center}.page3 .hero-content{padding-block:80px}.page1 .statement{padding-block:90px}.page1 #questions{padding-block:75px}.page1 .ingredient-window .ingredient-grid{grid-template-columns:1fr}.page1 .ingredient-copy{grid-column:auto}.page1 .ingredient-window figure{height:250px;min-height:0}.page3 .image-interlude .lifestyle-photo{height:360px}.page3 .concern{min-height:220px}.page3 .concern h3{margin-top:25px}.page3 #story .photo-frame{height:350px!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.page1 *, .page3 *{animation:none!important;transition-duration:0s!important;scroll-behavior:auto!important}.motion-ready [data-reveal]{opacity:1;transform:none}}
