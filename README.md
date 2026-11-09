@@ -1,13 +1,11 @@
-# Shevelia landing page concepts
+# Shevelia launch landing pages
 
-Three responsive, research-led landing page directions for client review:
+Three responsive customer-facing landing pages prepared for Shopify integration:
 
-1. **Nightform first** — the primary acquisition direction, built around interrupted midlife sleep.
-2. **The formula edit** — a Menopause Balance evidence, label, and transparency direction.
-3. **Find your starting point** — a problem-led brand discovery and ritual direction.
+1. **Nightform** — an evening-focused page built around interrupted midlife sleep.
+2. **Menopause Balance** — a complete ingredient, dose, label, and product page.
+3. **Meet Shevelia** — a problem-led brand and ritual page.
 
-Open `index.html` to compare the concepts. The pages use Shevelia brand colors, supplied product photography, and original lifestyle images created for this project.
+Open `index.html` to enter the customer-facing shop experience. The pages use Shevelia brand colors, supplied product photography, official Menopause Balance ingredient photography, and original lifestyle media created for this project.
 
-The Higgsfield videos and portraits are labeled as illustrative campaign scenarios and composite research profiles. They are not customer testimonials, identities, or endorsements.
-
-These are design previews. Product details and purchase controls are not connected to Shopify. Check final product names, labels, claims, prices, evidence, safety guidance, and purchase terms against the live store before launch.
+All purchase buttons use in-page shop anchors so Shopify product and cart actions can replace them during integration.
