@@ -5,3 +5,6 @@
 .profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.profile-card{background:#fff;border:1px solid var(--line);overflow:hidden}.profile-card img{width:100%;aspect-ratio:1.2/1;object-fit:cover;object-position:center 25%}.profile-copy{padding:24px}.profile-copy h3{font-size:1.35rem;margin:8px 0 10px}.profile-copy p{font-size:.88rem;color:#655c70;margin-bottom:0}.profile-meta{font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#715f94}
 @media(max-width:850px){.profile-grid{grid-template-columns:1fr}.profile-card{display:grid;grid-template-columns:140px 1fr}.profile-card img{height:100%;aspect-ratio:auto}}
 @media(max-width:560px){.profile-card{grid-template-columns:1fr}.profile-card img{aspect-ratio:1.4/1}}
+.portrait-grid{grid-template-columns:repeat(4,minmax(0,1fr));max-width:1260px;margin-inline:auto}.formula-page .portrait-video{max-width:none;margin-inline:0}
+@media(max-width:850px){.portrait-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}}
+@media(max-width:560px){.portrait-grid{grid-template-columns:minmax(0,320px);max-width:320px}}
