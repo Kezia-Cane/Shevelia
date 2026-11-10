@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "shevelia-product",
+      "settings": {
+        "formula": "menopause-balance",
+        "show_brand_films": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

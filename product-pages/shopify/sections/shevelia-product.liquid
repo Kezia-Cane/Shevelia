@@ -1,0 +1,80 @@
+{{ 'shevelia-product.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'shevelia-product.js' | asset_url }}" defer></script>
+{% if section.settings.formula == 'menopause-balance' %}{% render 'shevelia-menopause-balance', product: product, section: section %}{% else %}{% render 'shevelia-daily-slim', product: product, section: section %}{% endif %}
+{% schema %}
+{
+  "name": "Shevelia product page",
+  "tag": "section",
+  "class": "shevelia-product-section",
+  "limit": 1,
+  "enabled_on": {
+    "templates": [
+      "product"
+    ]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "formula",
+      "label": "Product page",
+      "options": [
+        {
+          "value": "daily-slim",
+          "label": "Daily Slim"
+        },
+        {
+          "value": "menopause-balance",
+          "label": "Menopause Balance"
+        }
+      ],
+      "default": "daily-slim"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_brand_films",
+      "label": "Show illustrative brand films",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "Prices and availability come from this product. Assign 1 Bottle, 3 Bottles and 5 Bottles variants. Upload supplied MP4 files under Content > Files, keeping their filenames."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "testimonial",
+      "name": "Customer video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Approved customer video"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer name"
+        },
+        {
+          "type": "text",
+          "id": "disclosure",
+          "label": "Disclosure (e.g. gifted product)"
+        },
+        {
+          "type": "textarea",
+          "id": "transcript",
+          "label": "Accessible transcript"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shevelia product page"
+    }
+  ]
+}
+{% endschema %}

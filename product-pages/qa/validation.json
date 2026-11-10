@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-10",
+  "checks": [
+    "daily-slim: normal Liquid render, JSON, prices, availability passed",
+    "daily-slim: sold-out Liquid render, JSON, prices, availability passed",
+    "daily-slim: no-discount Liquid render, JSON, prices, availability passed",
+    "daily-slim: explicit variant, film toggle, assets, internal links passed",
+    "menopause-balance: normal Liquid render, JSON, prices, availability passed",
+    "menopause-balance: sold-out Liquid render, JSON, prices, availability passed",
+    "menopause-balance: no-discount Liquid render, JSON, prices, availability passed",
+    "menopause-balance: explicit variant, film toggle, assets, internal links passed"
+  ]
+}
