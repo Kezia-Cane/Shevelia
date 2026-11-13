@@ -1,0 +1,153 @@
+/* Quiet Shevelia brand marks for cream and paper sections. */
+:where(
+  .manifesto,
+  .discovery,
+  .visual-world,
+  .questions,
+  .values-strip,
+  .story,
+  .principles,
+  .woman-section,
+  .collection-section,
+  .prep-strip,
+  .routes,
+  .quick-answers,
+  .closing
+) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+:where(
+  .manifesto,
+  .discovery,
+  .visual-world,
+  .questions,
+  .values-strip,
+  .story,
+  .principles,
+  .woman-section,
+  .collection-section,
+  .prep-strip,
+  .routes,
+  .quick-answers,
+  .closing
+)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: clamp(-190px, -10vw, -105px);
+  right: clamp(-195px, -10vw, -110px);
+  width: clamp(230px, 23vw, 390px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(143, 120, 177, .18);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 28px rgba(224, 214, 236, .13),
+    0 0 0 56px rgba(143, 120, 177, .07);
+  pointer-events: none;
+}
+
+:where(
+  .manifesto,
+  .discovery,
+  .visual-world,
+  .questions,
+  .values-strip,
+  .story,
+  .principles,
+  .woman-section,
+  .collection-section,
+  .prep-strip,
+  .routes,
+  .quick-answers,
+  .closing
+)::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: clamp(22px, 3vw, 46px);
+  right: max(24px, calc((100vw - 1400px) / 2));
+  width: clamp(82px, 9vw, 144px);
+  height: 3px;
+  background:
+    linear-gradient(90deg,
+      rgba(143, 120, 177, .52) 0 70%,
+      transparent 70% 76%,
+      #f2c94c 76% 80%,
+      transparent 80% 86%,
+      rgba(143, 120, 177, .28) 86% 100%);
+  pointer-events: none;
+}
+
+/* Alternate the motif so successive pale sections feel composed, not repeated. */
+:where(.discovery, .principles, .quick-answers)::before {
+  right: auto;
+  left: clamp(-195px, -10vw, -110px);
+}
+
+:where(.discovery, .principles, .quick-answers)::after {
+  right: auto;
+  left: max(24px, calc((100vw - 1400px) / 2));
+  transform: scaleX(-1);
+}
+
+/* Narrow information strips use the line mark without the large orbit. */
+:where(.values-strip, .prep-strip)::before {
+  display: none;
+}
+
+@media (max-width: 820px) {
+  :where(
+    .manifesto,
+    .discovery,
+    .visual-world,
+    .questions,
+    .values-strip,
+    .story,
+    .principles,
+    .woman-section,
+    .collection-section,
+    .prep-strip,
+    .routes,
+    .quick-answers,
+    .closing
+  )::before {
+    top: -92px;
+    right: -108px;
+    width: 210px;
+    opacity: .72;
+  }
+
+  :where(.discovery, .principles, .quick-answers)::before {
+    right: auto;
+    left: -108px;
+  }
+
+  :where(
+    .manifesto,
+    .discovery,
+    .visual-world,
+    .questions,
+    .values-strip,
+    .story,
+    .principles,
+    .woman-section,
+    .collection-section,
+    .prep-strip,
+    .routes,
+    .quick-answers,
+    .closing
+  )::after {
+    top: 20px;
+    right: 18px;
+    width: 76px;
+  }
+
+  :where(.discovery, .principles, .quick-answers)::after {
+    right: auto;
+    left: 18px;
+  }
+}
+

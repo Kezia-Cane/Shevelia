@@ -36,7 +36,6 @@
   });
 
   const form = qs('[data-contact-form]');
-  const success = qs('[data-form-success]');
   const messages = {
     topic: 'Please choose the topic closest to your question.',
     'first-name': 'Please add your first name.',
@@ -56,15 +55,18 @@
     field.addEventListener('change', () => { if (field.getAttribute('aria-invalid') === 'true') validate(field); });
   });
   form?.addEventListener('submit', event => {
-    event.preventDefault();
     const fields = qsa('[required]', form);
     const valid = fields.map(validate).every(Boolean);
-    success.hidden = !valid;
     if (!valid) {
+      event.preventDefault();
       fields.find(field => !field.checkValidity())?.focus();
       return;
     }
-    success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const submitButton = qs('button[type="submit"]', form);
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending…';
+    }
   });
 
   const reveals = qsa('.reveal');

@@ -6,26 +6,33 @@
   <meta name="description" content="Shevelia brings thoughtful formulas and clear information to women navigating the second half—and beyond.">
   <meta name="theme-color" content="#2D2541">
   <title>Shevelia — The second half, entirely yours</title>
+  <link rel="icon" type="image/png" href="../shared/favicon.png">
+  <link rel="stylesheet" href="../shared/brand-intro.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../shared/black-friday.css">
+  <link rel="stylesheet" href="../shared/readability.css">
+  <link rel="stylesheet" href="../shared/brand-details.css">
+  <script src="../shared/brand-intro.js"></script>
   <script src="script.js" defer></script>
+  <script src="../shared/black-friday.js" defer></script>
 </head>
 <body>
+  <div class="brand-intro" data-brand-intro aria-hidden="true"><img class="brand-intro__logo" src="../shared/logo-complete.png" alt=""></div>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="announcement">
-    <span>For the second half — and beyond</span>
-    <a href="#discover">Explore Shevelia <span aria-hidden="true">↓</span></a>
+  <div class="announcement bf-announcement">
+    <span class="bf-announcement__label">Black Friday event</span>
+    <span class="bf-announcement__message">A limited seasonal edit by Shevelia</span>
+    <button class="bf-announcement__action" type="button" data-bf-open>Discover <span aria-hidden="true">→</span></button>
   </div>
 
-  <header class="site-header" data-header>
-    <a class="wordmark" href="https://shevelia.co/" aria-label="Shevelia home">SHEVELIA</a>
+  <header class="site-header site-header--overlay" data-header>
+    <a class="wordmark brand-wordmark" href="https://shevelia.co/" aria-label="Shevelia home"><img class="brand-logo-light" src="../shared/logo-cream.svg" alt="Shevelia"><img class="brand-logo-dark" src="../shared/logo-midnight.svg" alt=""></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle><span>Menu</span><i aria-hidden="true"></i></button>
     <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-menu>
-      <a href="#discover">Discover</a>
-      <a href="#philosophy">Our approach</a>
-      <a href="https://shevelia.co/pages/meet-shevelia">Our story</a>
-      <a href="#films">Films</a>
-      <a href="https://shevelia.co/pages/contact">Contact</a>
+      <a class="is-active" href="../homepage/" aria-current="page">Home</a>
+      <a href="../about-us/">About</a>
+      <a href="../contact/">Contact</a>
     </nav>
     <nav class="utility-nav" aria-label="Store links">
       <a href="https://shevelia.co/account" aria-label="Account"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.6-4 3-6 7-6s6.4 2 7 6"/></svg></a>
@@ -34,7 +41,7 @@
   </header>
 
   <main id="main">
-    <section class="cover" data-review-section="01 — Signature cover">
+    <section class="cover">
       <img class="cover-image" src="assets/shevelia-morning.png" alt="A woman enjoying a quiet morning in warm natural light" fetchpriority="high">
       <div class="cover-shade" aria-hidden="true"></div>
       <div class="cover-copy">
@@ -52,13 +59,13 @@
       <p class="cover-caption">BRAND CREATIVE / A DAILY RITUAL</p>
     </section>
 
-    <section class="manifesto" data-review-section="02 — Brand manifesto">
+    <section class="manifesto">
       <p class="manifesto-index">02 / A DIFFERENT WAY FORWARD</p>
       <h2>Midlife is not a problem to solve.<br>It is a chapter to <em>understand.</em></h2>
       <div class="manifesto-notes"><p>We start with respect for the whole experience—not a promise to make it disappear.</p><a class="text-link" href="https://shevelia.co/pages/meet-shevelia">Meet Shevelia <span aria-hidden="true">→</span></a></div>
     </section>
 
-    <section class="discovery" id="discover" data-review-section="03 — Editorial discovery">
+    <section class="discovery" id="discover">
       <header class="discovery-head reveal">
         <p class="eyebrow">Begin where you are</p>
         <h2>Three ways into the world of Shevelia.</h2>
@@ -72,7 +79,7 @@
       </div>
     </section>
 
-    <section class="visual-world" data-review-section="04 — The visual world">
+    <section class="visual-world">
       <div class="visual-intro reveal"><p class="eyebrow">The Shevelia visual world</p><h2>Small rituals.<br>Real life around them.</h2><p>Warm light, familiar rooms, and moments that belong to you. The brand lives in the everyday—not apart from it.</p></div>
       <div class="visual-rail" aria-label="Shevelia lifestyle gallery">
         <figure class="visual-card visual-card-a reveal"><img src="assets/life-morning.webp" alt="A woman holding a warm drink in a sunlit kitchen" loading="lazy"><figcaption><span>01 / Morning</span><b>Begin softly</b></figcaption></figure>
@@ -83,7 +90,7 @@
       <p class="visual-disclosure">Lifestyle imagery is presented as brand creative, not customer testimony.</p>
     </section>
 
-    <section class="philosophy" id="philosophy" data-review-section="05 — Philosophy">
+    <section class="philosophy" id="philosophy">
       <div class="philosophy-lead reveal"><p class="eyebrow eyebrow-light">Our philosophy</p><h2>Clarity is part of the formula.</h2><p>Good information should make it easier to understand what you are considering—not overwhelm you with promises.</p></div>
       <div class="philosophy-spread">
         <figure class="philosophy-image reveal"><img src="assets/mb-detail.webp" alt="Close-up of a Shevelia product label" loading="lazy"><figcaption>THE LABEL / IN PLAIN VIEW</figcaption></figure>
@@ -96,7 +103,7 @@
       <a class="philosophy-link" href="https://shevelia.co/pages/menopause-balance#ingredients">Explore ingredient information <span aria-hidden="true">↗</span></a>
     </section>
 
-    <section class="films" id="films" data-review-section="06 — Brand films">
+    <section class="films" id="films">
       <header class="films-head reveal"><div><p class="eyebrow">Brand films</p><h2>Stories in motion.</h2></div><p>Short creative studies of the routines, questions, and everyday moments that shape this chapter.</p></header>
       <div class="film-grid">
         <figure class="film film-primary reveal"><div class="film-frame"><video preload="auto" playsinline muted aria-label="Supplied film: A daily ritual"><source src="content-files/ritual-story.mp4" type="video/mp4"></video><button type="button" data-play><span aria-hidden="true">▶</span><b>Play film</b></button></div><figcaption><span>01 / A daily ritual</span><small>Supplied film · Product story</small></figcaption></figure>
@@ -106,7 +113,7 @@
       <p class="film-disclosure">These supplied media assets are presented as product stories; no verified customer claim is made.</p>
     </section>
 
-    <section class="questions" id="questions" data-review-section="07 — FAQ">
+    <section class="questions" id="questions">
       <div class="questions-intro reveal"><p class="eyebrow">Questions, clearly answered</p><h2>Know before you choose.</h2><p>Start with the essentials, then visit each product page for its current complete label and directions.</p><a class="text-link" href="https://shevelia.co/pages/contact">Ask Shevelia <span aria-hidden="true">↗</span></a></div>
       <div class="accordion" data-accordion>
         <article class="faq-item reveal"><h3><button type="button" aria-expanded="true"><span>What is Shevelia?</span><i aria-hidden="true"></i></button></h3><div class="faq-answer"><p>Shevelia is a wellness brand created for women navigating midlife, pairing thoughtful formulas with clear, respectful product information.</p></div></article>
@@ -116,31 +123,18 @@
       </div>
     </section>
 
-    <section class="finale" data-review-section="08 — Signature closing">
-      <img src="assets/life-kitchen.webp" alt="A woman standing confidently in a warm, sunlit kitchen" loading="lazy"><div class="finale-shade" aria-hidden="true"></div>
+    <section class="finale">
+      <img src="assets/finale-story-v2.png" alt="A confident midlife woman looking ahead in a warm, sunlit home" loading="lazy"><div class="finale-shade" aria-hidden="true"></div>
       <div class="finale-copy reveal"><p class="eyebrow eyebrow-light">For the woman still becoming</p><h2>Your story<br>keeps moving.</h2><p>Not smaller. Not quieter. Still entirely yours.</p><a class="button button-cream" href="https://shevelia.co/pages/meet-shevelia">Meet Shevelia <span aria-hidden="true">↗</span></a></div>
       <p class="finale-caption">08 / THE NEXT CHAPTER</p>
     </section>
   </main>
 
-  <footer class="site-footer" data-review-section="09 — Footer">
-    <div class="footer-statement"><a class="wordmark wordmark-footer" href="https://shevelia.co/">SHEVELIA</a><h2>For the second half<br>— and beyond.</h2></div>
+  <footer class="site-footer">
+    <div class="footer-statement"><a class="wordmark wordmark-footer brand-wordmark brand-wordmark--footer" href="https://shevelia.co/" aria-label="Shevelia home"><img src="../shared/logo-cream.svg" alt="Shevelia"></a><h2>For the second half<br>— and beyond.</h2></div>
     <div class="footer-links"><div><h3>Explore</h3><a href="#discover">Discover</a><a href="https://shevelia.co/pages/meet-shevelia">Our story</a><a href="#philosophy">Our approach</a><a href="#films">Films</a></div><div><h3>Help</h3><a href="https://shevelia.co/pages/contact">Contact</a><a href="https://shevelia.co/policies/shipping-policy">Shipping</a><a href="https://shevelia.co/policies/refund-policy">Returns</a></div><div><h3>Legal</h3><a href="https://shevelia.co/policies/privacy-policy">Privacy</a><a href="https://shevelia.co/policies/terms-of-service">Terms</a></div></div>
-    <div class="newsletter"><p class="eyebrow eyebrow-light">Notes for the next chapter</p><p>Brand news and thoughtful reading, sent occasionally.</p><form action="#" data-demo-form><label class="sr-only" for="email">Email address</label><input id="email" type="email" placeholder="Email address" required><button type="submit" aria-label="Join newsletter">→</button></form><small>This prototype does not submit or store email addresses.</small></div>
-    <div class="footer-bottom"><span>© <span data-year></span> SHEVELIA</span><span>Wellness information is not medical advice.</span><span>Flagship homepage concept / v3.0</span></div>
+    <div class="newsletter"><p class="eyebrow eyebrow-light">Notes for the next chapter</p><p>Brand news and thoughtful reading, sent occasionally.</p><form method="post" action="https://shevelia.co/contact#newsletter" id="newsletter" accept-charset="UTF-8"><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="contact[tags]" value="newsletter"><label class="sr-only" for="newsletter-email">Email address</label><input id="newsletter-email" name="contact[email]" type="email" autocomplete="email" placeholder="Email address" required><button type="submit" aria-label="Join newsletter">→</button></form><small>Occasional notes from Shevelia. Unsubscribe at any time.</small></div>
+    <div class="footer-bottom"><span>© <span data-year></span> SHEVELIA</span><span>Wellness information is not medical advice.</span><span>For the second half — and beyond.</span></div>
   </footer>
-
-  <button class="review-launcher" type="button" aria-label="Review design" data-review-open><span>Review design</span><b aria-hidden="true">+</b></button>
-  <aside class="review-panel" aria-label="Design review notes" aria-hidden="true" data-review-panel>
-    <div class="review-head"><div><span>CLIENT REVIEW</span><h2>Annotate this concept</h2></div><button type="button" aria-label="Close review panel" data-review-close>×</button></div>
-    <p class="review-help">Choose a section, add your requested change, then copy all notes to send back.</p>
-    <label for="review-section">Section</label><select id="review-section" data-review-select></select>
-    <label for="review-note">Requested change</label><textarea id="review-note" rows="5" placeholder="Example: Adjust the crop in the opening image."></textarea>
-    <button class="button button-midnight review-add" type="button" data-review-add>Add note</button>
-    <div class="review-list" data-review-list><p class="empty-notes">No notes added yet.</p></div>
-    <div class="review-actions"><button type="button" data-review-copy>Copy all notes</button><button type="button" data-review-clear>Clear</button></div>
-    <p class="review-status" role="status" data-review-status></p>
-  </aside>
-  <div class="review-scrim" data-review-scrim></div>
 </body>
 </html>

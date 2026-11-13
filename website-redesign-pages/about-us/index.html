@@ -6,26 +6,33 @@
   <meta name="description" content="Meet Shevelia: thoughtful formulas and clear information for women navigating the second half and beyond.">
   <meta name="theme-color" content="#E0D6EC">
   <title>About Shevelia — For the second half and beyond</title>
+  <link rel="icon" type="image/png" href="../shared/favicon.png">
+  <link rel="stylesheet" href="../shared/brand-intro.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../shared/black-friday.css">
+  <link rel="stylesheet" href="../shared/readability.css">
+  <link rel="stylesheet" href="../shared/brand-details.css">
+  <script src="../shared/brand-intro.js"></script>
   <script src="script.js" defer></script>
+  <script src="../shared/black-friday.js" defer></script>
 </head>
 <body>
+  <div class="brand-intro" data-brand-intro aria-hidden="true"><img class="brand-intro__logo" src="../shared/logo-complete.png" alt=""></div>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="announcement">
-    <span>For the second half — and beyond</span>
-    <a href="#story">Our story <span aria-hidden="true">↓</span></a>
+  <div class="announcement bf-announcement">
+    <span class="bf-announcement__label">Black Friday event</span>
+    <span class="bf-announcement__message">A limited seasonal edit by Shevelia</span>
+    <button class="bf-announcement__action" type="button" data-bf-open>Discover <span aria-hidden="true">→</span></button>
   </div>
 
   <header class="site-header">
-    <a class="wordmark" href="https://shevelia.co/" aria-label="Shevelia home">SHEVELIA</a>
+    <a class="wordmark brand-wordmark" href="https://shevelia.co/" aria-label="Shevelia home"><img src="../shared/logo-midnight.svg" alt="Shevelia"></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle><span>Menu</span><i aria-hidden="true"></i></button>
     <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-menu>
-      <a href="https://shevelia.co/">Shop</a>
-      <a href="https://shevelia.co/pages/meet-shevelia">Our approach</a>
-      <a class="is-active" href="#main" aria-current="page">Our story</a>
-      <a href="https://shevelia.co/blogs/news">Journal</a>
-      <a href="https://shevelia.co/pages/contact">Contact</a>
+      <a href="../homepage/">Home</a>
+      <a class="is-active" href="../about-us/" aria-current="page">About</a>
+      <a href="../contact/">Contact</a>
     </nav>
     <nav class="utility-nav" aria-label="Store links">
       <a href="https://shevelia.co/account" aria-label="Account"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.6-4 3-6 7-6s6.4 2 7 6"/></svg></a>
@@ -131,10 +138,10 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-brand"><a class="wordmark wordmark-footer" href="https://shevelia.co/">SHEVELIA</a><p>For the second half — and beyond.</p></div>
+    <div class="footer-brand"><a class="wordmark wordmark-footer brand-wordmark brand-wordmark--footer" href="https://shevelia.co/" aria-label="Shevelia home"><img src="../shared/logo-cream.svg" alt="Shevelia"></a><p>For the second half — and beyond.</p></div>
     <div class="footer-links"><div><h2>Explore</h2><a href="https://shevelia.co/">Shop</a><a href="#story">Our story</a><a href="#approach">Our approach</a></div><div><h2>Help</h2><a href="https://shevelia.co/pages/contact">Contact</a><a href="https://shevelia.co/policies/shipping-policy">Shipping</a><a href="https://shevelia.co/policies/refund-policy">Returns</a></div><div><h2>Legal</h2><a href="https://shevelia.co/policies/privacy-policy">Privacy</a><a href="https://shevelia.co/policies/terms-of-service">Terms</a></div></div>
     <div class="footer-quote"><p>“We do not believe in pushing through. We believe in moving with intention.”</p><span>SHEVELIA / BRAND BELIEF</span></div>
-    <div class="footer-bottom"><span>© <span data-year></span> SHEVELIA</span><span>Wellness information is not medical advice.</span><span>About page concept / v1.0</span></div>
+    <div class="footer-bottom"><span>© <span data-year></span> SHEVELIA</span><span>Wellness information is not medical advice.</span><span>For the second half — and beyond.</span></div>
   </footer>
 </body>
 </html>

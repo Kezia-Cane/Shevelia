@@ -1,9 +1,12 @@
-# Shevelia website redesign pages
+# Shevelia production website pages
 
-Standalone page concepts, grouped separately from the existing repository site.
+Final responsive page builds prepared for Shopify import and client presentation.
 
-- `homepage/index.html` — flagship homepage redesign
-- `about-us/index.html` — About Us page
-- `contact/index.html` — Contact page
+- `homepage/index.html` — flagship homepage
+- `about-us/index.html` — About Shevelia
+- `contact/index.html` — customer contact and support
+- `shared/` — Black Friday campaign styles, behavior, and artwork used by all pages
 
-Each folder keeps its own assets and can be previewed independently. These files are design prototypes and do not modify or deploy the live Shopify theme.
+Each page keeps its page-specific assets inside its own folder. Shared campaign files must remain one directory above the page folders so the existing relative links resolve correctly.
+
+The newsletter and contact forms use Shopify-compatible field names and submit to the current Shevelia store. Product, policy, account, and cart links also point to the live store.

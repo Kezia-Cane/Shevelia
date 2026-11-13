@@ -1,16 +1,7 @@
-# Shevelia homepage — brand bible redesign
+# Shevelia homepage
 
-Open `index.html` in a browser to review the complete responsive concept.
+Production-responsive homepage prepared for Shopify import.
 
-## Review workflow
+The page uses the supplied Shevelia brand bible and product assets, including the confirmed cream, soft lilac, honey, lavender, and midnight palette; Inter and Inter Tight typography; editorial composition; pill CTAs; and supplied Daily Slim and Menopause Balance photography.
 
-1. Select **Review design** in the lower-right corner.
-2. Choose the section you want changed.
-3. Add a note. Notes remain saved in that browser.
-4. Select **Copy all notes** and send the copied list back for revision.
-
-## Design source
-
-This concept uses the supplied Shevelia brand bible and product asset folder. It keeps the established homepage architecture while applying the confirmed cream, soft lilac, honey, lavender, and midnight palette; Inter / Inter Tight typography; flat editorial composition; 12px media radii; pill CTAs; and supplied Daily Slim and Menopause Balance photography.
-
-Portrait imagery is labeled as brand creative and is not presented as customer testimony. Policy, certification, discount, shipping, subscription, and guarantee claims are intentionally excluded until confirmed against the current Shopify store configuration.
+Portrait imagery is presented as brand creative rather than customer testimony. Product and policy links point to the current Shevelia store so operational information remains centralized.

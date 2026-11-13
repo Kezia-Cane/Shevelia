@@ -6,31 +6,35 @@
   <meta name="description" content="Contact Shevelia for help with an order, product information, or a general question.">
   <meta name="theme-color" content="#FCF9F4">
   <title>Contact Shevelia — Clear help, thoughtfully given</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../shared/favicon.png">
+  <link rel="stylesheet" href="../shared/brand-intro.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../shared/black-friday.css">
+  <link rel="stylesheet" href="../shared/readability.css">
+  <link rel="stylesheet" href="../shared/brand-details.css">
+  <script src="../shared/brand-intro.js"></script>
   <script src="script.js" defer></script>
+  <script src="../shared/black-friday.js" defer></script>
 </head>
 <body>
+  <div class="brand-intro" data-brand-intro aria-hidden="true"><img class="brand-intro__logo" src="../shared/logo-complete.png" alt=""></div>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="announcement">
-    <span>For the second half — and beyond</span>
-    <a href="#contact-form">Start a conversation <span aria-hidden="true">↓</span></a>
+  <div class="announcement bf-announcement">
+    <span class="bf-announcement__label">Black Friday event</span>
+    <span class="bf-announcement__message">A limited seasonal edit by Shevelia</span>
+    <button class="bf-announcement__action" type="button" data-bf-open>Discover <span aria-hidden="true">→</span></button>
   </div>
 
   <header class="site-header" data-header>
-    <a class="wordmark" href="https://shevelia.co/" aria-label="Shevelia home">SHEVELIA</a>
+    <a class="wordmark brand-wordmark" href="https://shevelia.co/" aria-label="Shevelia home"><img src="../shared/logo-midnight.svg" alt="Shevelia"></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle>
       <span>Menu</span><i aria-hidden="true"></i>
     </button>
     <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-menu>
-      <a href="https://shevelia.co/">Shop</a>
-      <a href="https://shevelia.co/pages/meet-shevelia">Our approach</a>
-      <a href="https://shevelia.co/pages/meet-shevelia">Our story</a>
-      <a href="https://shevelia.co/blogs/news">Journal</a>
-      <a class="is-active" href="#main" aria-current="page">Contact</a>
+      <a href="../homepage/">Home</a>
+      <a href="../about-us/">About</a>
+      <a class="is-active" href="../contact/" aria-current="page">Contact</a>
     </nav>
     <nav class="utility-nav" aria-label="Store links">
       <a href="https://shevelia.co/account" aria-label="Account">
@@ -56,7 +60,6 @@
       </div>
       <div class="hero-media reveal">
         <img src="assets/daily-ritual.webp" alt="A woman taking a quiet moment with a glass of water" fetchpriority="high">
-        <div class="media-caption"><span>01</span><p>A clear place<br>to begin.</p></div>
       </div>
     </section>
 
@@ -104,10 +107,12 @@
         <div class="privacy-note"><span aria-hidden="true">✦</span><p>Only include information needed to answer your question. Please do not send passwords, payment-card details, or sensitive medical information.</p></div>
       </div>
 
-      <form class="contact-form reveal" data-contact-form novalidate>
+      <form class="contact-form reveal" method="post" action="https://shevelia.co/contact#contact_form" id="contact_form" accept-charset="UTF-8" data-contact-form novalidate>
+        <input type="hidden" name="form_type" value="contact">
+        <input type="hidden" name="utf8" value="✓">
         <div class="field field-full">
           <label for="topic">How can we help? <span aria-hidden="true">*</span></label>
-          <select id="topic" name="topic" required data-topic>
+          <select id="topic" name="contact[Topic]" required data-topic>
             <option value="">Choose a topic</option>
             <option value="Order support">Order support</option>
             <option value="Product information">Product information</option>
@@ -119,30 +124,27 @@
         </div>
         <div class="field">
           <label for="first-name">First name <span aria-hidden="true">*</span></label>
-          <input id="first-name" name="firstName" type="text" autocomplete="given-name" required placeholder="Your first name">
+          <input id="first-name" name="contact[first_name]" type="text" autocomplete="given-name" required placeholder="Your first name">
           <small class="field-error" data-error-for="first-name"></small>
         </div>
         <div class="field">
           <label for="email">Email address <span aria-hidden="true">*</span></label>
-          <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          <input id="email" name="contact[email]" type="email" autocomplete="email" required placeholder="you@example.com">
           <small class="field-error" data-error-for="email"></small>
         </div>
         <div class="field field-full">
           <label for="order-number">Order number <em>Optional</em></label>
-          <input id="order-number" name="orderNumber" type="text" inputmode="text" placeholder="Add this if your question is about an order">
+          <input id="order-number" name="contact[Order number]" type="text" inputmode="text" placeholder="Add this if your question is about an order">
         </div>
         <div class="field field-full">
           <label for="message">Your message <span aria-hidden="true">*</span></label>
-          <textarea id="message" name="message" rows="5" required placeholder="How can we help?"></textarea>
+          <textarea id="message" name="contact[body]" rows="5" required placeholder="How can we help?"></textarea>
           <small class="field-help">Please avoid sensitive health or payment information.</small>
           <small class="field-error" data-error-for="message"></small>
         </div>
         <div class="form-footer field-full">
-          <p>This concept form prepares your message but does not transmit or store it.</p>
-          <button class="button button-midnight" type="submit">Review message <span aria-hidden="true">→</span></button>
-        </div>
-        <div class="form-success field-full" role="status" aria-live="polite" hidden data-form-success>
-          <span aria-hidden="true">✓</span><div><strong>Your message is ready to review.</strong><p>This prototype has not sent or stored your information.</p></div>
+          <p>We use your details only to respond to your request.</p>
+          <button class="button button-midnight" type="submit">Send message <span aria-hidden="true">→</span></button>
         </div>
       </form>
     </section>
@@ -151,7 +153,7 @@
       <div class="answer-intro reveal">
         <p class="eyebrow">Quick answers</p>
         <h2 id="answers-title">You may not need to wait.</h2>
-        <p>These links take you to the current store information, where policies and product details stay up to date.</p>
+        <p>Find current policies, product directions, and complete ingredient information.</p>
         <div class="policy-links">
           <a href="https://shevelia.co/policies/shipping-policy">Shipping policy <span aria-hidden="true">↗</span></a>
           <a href="https://shevelia.co/policies/refund-policy">Returns policy <span aria-hidden="true">↗</span></a>
@@ -186,10 +188,10 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-brand"><a class="wordmark wordmark-footer" href="https://shevelia.co/">SHEVELIA</a><p>For the second half — and beyond.</p></div>
+    <div class="footer-brand"><a class="wordmark wordmark-footer brand-wordmark brand-wordmark--footer" href="https://shevelia.co/" aria-label="Shevelia home"><img src="../shared/logo-cream.svg" alt="Shevelia"></a><p>For the second half — and beyond.</p></div>
     <div class="footer-links"><div><h2>Explore</h2><a href="https://shevelia.co/">Shop</a><a href="https://shevelia.co/pages/meet-shevelia">Our story</a><a href="https://shevelia.co/blogs/news">Journal</a></div><div><h2>Help</h2><a href="#contact-form">Contact</a><a href="https://shevelia.co/policies/shipping-policy">Shipping</a><a href="https://shevelia.co/policies/refund-policy">Returns</a></div><div><h2>Legal</h2><a href="https://shevelia.co/policies/privacy-policy">Privacy</a><a href="https://shevelia.co/policies/terms-of-service">Terms</a></div></div>
     <div class="footer-note"><p class="eyebrow">Here when you need us</p><h2>Clear information.<br>Thoughtful support.</h2><a class="text-link" href="#contact-form">Write to Shevelia <span aria-hidden="true">↑</span></a></div>
-    <div class="footer-bottom"><span>© <span data-year></span> SHEVELIA</span><span>Wellness information is not medical advice.</span><span>Contact page concept / v1.0</span></div>
+    <div class="footer-bottom"><span>© <span data-year></span> SHEVELIA</span><span>Wellness information is not medical advice.</span><span>Thoughtful support, clearly given.</span></div>
   </footer>
 </body>
 </html>

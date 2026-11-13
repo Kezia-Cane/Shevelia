@@ -1,0 +1,225 @@
+/* Shared legibility pass for a midlife audience. Loaded last on every page. */
+body {
+  font-size: 17px;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+p,
+li,
+label,
+input,
+textarea,
+select,
+button {
+  line-height: 1.55;
+}
+
+.eyebrow {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+}
+
+.utility-nav span,
+.cover-caption,
+.manifesto-index,
+.feature-kicker,
+.hero-index,
+.chapter-number,
+.route-number,
+.prep-strip b,
+.film button b {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+}
+
+.menu-toggle span,
+.visual-card figcaption span,
+.principle-list li > span {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+}
+
+.hero-card > span,
+.story-label > span,
+.prep-title > span {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+}
+
+.principle-card > span,
+.approach-copy li > span {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+}
+
+small {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+.button,
+.text-link,
+.cover-link,
+.philosophy-link,
+.policy-links a {
+  font-size: 14px !important;
+}
+
+.button {
+  min-height: 52px;
+  padding-inline: 25px;
+}
+
+@media (min-width: 821px) {
+  .primary-nav {
+    font-size: 15px !important;
+  }
+}
+
+/* Homepage narrative and supporting copy */
+.manifesto-notes p,
+.discovery-head > p,
+.visual-intro > p,
+.philosophy-lead > p,
+.films-head > p,
+.questions-intro > p,
+.feature-question p {
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
+
+.cover-meta,
+.feature-line,
+.visual-card figcaption,
+.film figcaption,
+.finale-caption {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+}
+
+.visual-disclosure,
+.film-disclosure {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.philosophy-image figcaption,
+.film figcaption small {
+  font-size: 12px !important;
+}
+
+/* About page body copy */
+.story-copy p,
+.name-copy p,
+.section-head > p,
+.principle-card p,
+.approach-copy > p,
+.approach-copy li p,
+.woman-copy p,
+.collection-copy p {
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
+
+.values-strip,
+.story-image figcaption,
+.pronunciation span,
+.principle-card small,
+.chapter-note,
+.gallery-note span,
+.woman-image span {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+
+.approach-copy li h3,
+.pronunciation b {
+  font-size: 15px !important;
+}
+
+/* Contact page instructions, form copy and reassurance */
+.hero-note p,
+.prep-strip li span,
+.prep-strip li small,
+.route-card p,
+.privacy-note p,
+.field label,
+.field-help,
+.field-error,
+.form-footer p,
+.form-success p {
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+}
+
+.route-card p,
+.privacy-note p {
+  font-size: 16px !important;
+}
+
+input,
+textarea,
+select {
+  font-size: 16px !important;
+}
+
+/* Footer copy remains secondary, but never tiny. */
+.footer-brand p,
+.footer-links a,
+.newsletter > p:not(.eyebrow),
+.footer-note p {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.footer-links h2,
+.footer-links h3,
+.footer-quote span,
+.newsletter small,
+.footer-bottom {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+
+/* Black Friday promotion */
+.bf-announcement__label,
+.bf-announcement__message,
+.bf-announcement__action,
+.bf-modal__eyebrow,
+.bf-modal__note {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+}
+
+.bf-announcement__label,
+.bf-announcement__message,
+.bf-announcement__action {
+  font-size: 12px !important;
+}
+
+.bf-modal__body {
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 520px) {
+  body {
+    font-size: 16px;
+  }
+
+  .announcement {
+    font-size: 10px !important;
+  }
+
+  .cover-meta {
+    font-size: 12px !important;
+  }
+
+  .footer-links a,
+  .footer-brand p,
+  .newsletter > p:not(.eyebrow),
+  .footer-note p {
+    font-size: 15px !important;
+  }
+}
