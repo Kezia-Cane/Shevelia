@@ -16,3 +16,16 @@ body .site-header .primary-nav a{color:var(--midnight)}
 .product-choice--balance li:nth-child(1):before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b7ab8' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z'/%3E%3C/svg%3E")}
 .product-choice--balance li:nth-child(3):before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b7ab8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l1.7 5.3L19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7L12 3Z'/%3E%3C/svg%3E")}
 @media(max-width:820px){body .site-header{top:0}body .primary-nav{top:68px;height:calc(100svh - 68px)}body .site-header .menu-toggle{color:var(--midnight)}.product-image{aspect-ratio:1/1;padding:22px}.product-image img{max-width:88%;max-height:88%}}
+
+/* Polished first-load motion. Content remains visible when animation is unavailable. */
+@keyframes products-rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes product-image-reveal{from{opacity:0;transform:scale(.965)}to{opacity:1;transform:scale(1)}}
+.products-intro .eyebrow,.products-intro h1,.products-intro>p:last-child{opacity:0;animation:products-rise .72s cubic-bezier(.22,1,.36,1) forwards}
+.products-intro h1{animation-delay:.1s}
+.products-intro>p:last-child{animation-delay:.18s}
+.product-choice{opacity:0;animation:products-rise .78s cubic-bezier(.22,1,.36,1) .26s forwards}
+.product-choice--balance{animation-delay:.36s}
+.product-image img{opacity:0;animation:product-image-reveal .9s cubic-bezier(.22,1,.36,1) .46s forwards;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.product-choice--balance .product-image img{animation-delay:.56s}
+@media(hover:hover){.product-image:hover img{transform:scale(1.025)}}
+@media(prefers-reduced-motion:reduce){.products-intro .eyebrow,.products-intro h1,.products-intro>p:last-child,.product-choice,.product-image img{opacity:1;animation:none!important;transform:none!important;transition:none!important}}
