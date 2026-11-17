@@ -24,6 +24,10 @@
 
   const initialize = () => {
     document.body.insertAdjacentHTML("beforeend", markup);
+    document.querySelectorAll(".policy-page .footer-legal").forEach((legal) => {
+      if (legal.querySelector(".payment-methods")) return;
+      legal.insertAdjacentHTML("beforeend", '<div class="payment-methods" aria-label="Accepted payment methods"><span class="payment-badge payment-badge-visa" aria-label="Visa">VISA</span><span class="payment-badge payment-badge-mastercard" aria-label="Mastercard"><i></i><i></i></span><span class="payment-badge payment-badge-amex" aria-label="American Express">AMEX</span><span class="payment-badge payment-badge-apple" aria-label="Apple Pay">●Pay</span><span class="payment-badge payment-badge-google" aria-label="Google Pay">G Pay</span><span class="payment-badge payment-badge-shop" aria-label="Shop Pay">shop</span><span class="payment-badge payment-badge-discover" aria-label="Discover">DISCOVER</span></div>');
+    });
     const modal = document.querySelector("[data-bf-modal]");
     const closeButton = modal.querySelector(".bf-modal__close");
     const openers = document.querySelectorAll("[data-bf-open]");
