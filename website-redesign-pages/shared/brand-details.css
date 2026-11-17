@@ -195,3 +195,31 @@
   .site-footer .footer-links { grid-template-columns: .8fr 1.2fr; gap: 22px; }
 }
 
+/* Brand yellow for purchase and campaign calls to action. */
+:where(
+  .bf-announcement__action,
+  a.button[href*="/products/"],
+  a.bf-modal__cta[href*="/products/"],
+  .hero-product-actions a[href*="/products/"],
+  .finale-actions a[href*="/products/"],
+  .product-copy a[href*="/products/"]
+) {
+  background: #f5c95a !important;
+  border-color: #f5c95a !important;
+  color: #2d2541 !important;
+  box-shadow: 0 8px 24px rgba(245, 201, 90, .2);
+}
+
+:where(
+  .bf-announcement__action,
+  a.button[href*="/products/"],
+  a.bf-modal__cta[href*="/products/"],
+  .hero-product-actions a[href*="/products/"],
+  .finale-actions a[href*="/products/"],
+  .product-copy a[href*="/products/"]
+):hover {
+  background: #e7b940 !important;
+  border-color: #e7b940 !important;
+  color: #2d2541 !important;
+}
+
