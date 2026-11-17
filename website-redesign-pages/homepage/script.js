@@ -134,6 +134,50 @@
     });
   });
 
+  qsa('[data-carousel-controls]').forEach(controls => {
+    const rail = document.getElementById(controls.dataset.carouselTarget);
+    if (!rail) return;
+
+    const items = [...rail.children];
+    const dots = qsa('[data-carousel-dot]', controls);
+    const previous = qs('[data-carousel-prev]', controls);
+    const next = qs('[data-carousel-next]', controls);
+    let activeIndex = 0;
+    let scrollFrame;
+
+    const itemLeft = item => item.offsetLeft - rail.offsetLeft;
+    const setActive = index => {
+      activeIndex = Math.max(0, Math.min(index, items.length - 1));
+      dots.forEach((dot, dotIndex) => {
+        if (dotIndex === activeIndex) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+      if (previous) previous.disabled = activeIndex === 0;
+      if (next) next.disabled = activeIndex === items.length - 1;
+    };
+    const goTo = index => {
+      const targetIndex = Math.max(0, Math.min(index, items.length - 1));
+      rail.scrollTo({ left: itemLeft(items[targetIndex]), behavior: 'smooth' });
+      setActive(targetIndex);
+    };
+
+    previous?.addEventListener('click', () => goTo(activeIndex - 1));
+    next?.addEventListener('click', () => goTo(activeIndex + 1));
+    dots.forEach((dot, index) => dot.addEventListener('click', () => goTo(index)));
+    rail.addEventListener('scroll', () => {
+      window.cancelAnimationFrame(scrollFrame);
+      scrollFrame = window.requestAnimationFrame(() => {
+        const nearest = items.reduce((best, item, index) => {
+          const distance = Math.abs(itemLeft(item) - rail.scrollLeft);
+          return distance < best.distance ? { index, distance } : best;
+        }, { index: 0, distance: Infinity });
+        setActive(nearest.index);
+      });
+    }, { passive: true });
+
+    setActive(0);
+  });
+
   const revealItems = qsa('.reveal');
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const observer = new IntersectionObserver(entries => {
@@ -152,3 +196,5 @@
   const year = qs('[data-year]');
   if (year) year.textContent = new Date().getFullYear();
 })();
+
+
