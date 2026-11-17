@@ -151,3 +151,47 @@
   }
 }
 
+/* Keep the contact footer consistent wherever it appears. */
+.site-footer {
+  grid-template-columns: 1.05fr 1.3fr 1fr !important;
+  gap: 65px !important;
+  padding: 58px max(24px, calc((100vw - 1400px) / 2)) 22px !important;
+  background: #2d2541;
+  color: #fcf9f4;
+}
+.site-footer .footer-brand p { margin: 17px 0; font-size: 12px; letter-spacing: .08em; }
+.site-footer .footer-links { grid-template-columns: .8fr 1.2fr; gap: 38px; }
+.site-footer .footer-links h2 { margin: 0 0 16px; font-family: Inter, sans-serif; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+.site-footer .footer-links a { width: fit-content; display: block; margin: 7px 0; color: rgba(252,249,244,.72); font-size: 12px; }
+.site-footer .footer-note h2 { font-size: 27px; }
+.site-footer .footer-note .text-link { margin-top: 20px; display: inline-block; }
+.site-footer .footer-legal { grid-column: 1 / -1; margin-top: 28px; padding: 22px 0 2px; border-top: 1px solid rgba(252,249,244,.16); }
+.site-footer .footer-disclaimer { max-width: 70ch; margin: 0 auto 18px; color: rgba(252,249,244,.68); font-size: 11px; line-height: 1.5; text-align: center; }
+.payment-methods { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; }
+.payment-badge { min-width: 38px; height: 24px; padding: 3px 7px; display: inline-flex; align-items: center; justify-content: center; border-radius: 3px; background: #fff; color: #201a34; font-family: Arial, sans-serif; font-size: 8px; font-weight: 700; line-height: 1; letter-spacing: -.02em; }
+.payment-badge-mastercard { gap: 0; }
+.payment-badge-mastercard i { width: 12px; height: 12px; display: block; border-radius: 50%; background: #eb001b; }
+.payment-badge-mastercard i + i { margin-left: -4px; background: #f79e1b; }
+.payment-badge-amex { background: #2477b5; color: #fff; }
+.payment-badge-shop { background: #5a31f4; color: #fff; }
+.payment-badge-discover { font-size: 6px; }
+
+/* The product cards read as a single, calm decision point. */
+.product-path-cards article,
+.feature-question { text-align: center; }
+.feature-formula { text-align: left; }
+.product-path-cards article ul,
+.feature-formula .feature-benefits { margin-inline: 0; text-align: left; }
+
+@media (max-width: 820px) {
+  .site-footer { grid-template-columns: 1fr 1fr !important; gap: 35px !important; }
+  .site-footer .footer-brand,
+  .site-footer .footer-legal { grid-column: 1 / -1; }
+}
+@media (max-width: 520px) {
+  .site-footer { grid-template-columns: 1fr !important; padding-inline: 20px !important; }
+  .site-footer .footer-brand,
+  .site-footer .footer-legal { grid-column: 1; }
+  .site-footer .footer-links { grid-template-columns: .8fr 1.2fr; gap: 22px; }
+}
+

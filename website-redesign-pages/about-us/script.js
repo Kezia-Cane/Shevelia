@@ -34,7 +34,7 @@
     if (note) note.textContent = 'Black Friday availability is limited.';
     const actions = document.createElement('div');
     actions.className = 'bf-modal__actions';
-    actions.innerHTML = '<a class="bf-modal__cta" href="https://shevelia.co/pages/daily-slim">Explore Daily Slim <span aria-hidden="true">→</span></a><a class="bf-modal__cta" href="https://shevelia.co/pages/menopause-balance">Explore Menopause Balance <span aria-hidden="true">→</span></a>';
+    actions.innerHTML = '<a class="bf-modal__cta" href="https://shevelia.co/products/daily-slim">Explore Daily Slim <span aria-hidden="true">→</span></a><a class="bf-modal__cta" href="https://shevelia.co/products/shevelia-menopause-balance">Explore Menopause Balance <span aria-hidden="true">→</span></a>';
     existingCta.replaceWith(actions);
     return true;
   };

@@ -50,7 +50,11 @@
   });
 
   qsa('[data-link-pending]').forEach(button => {
-    button.setAttribute('aria-describedby', 'pending-link-note');
+    const destination = /menopause/i.test(button.textContent)
+      ? 'https://shevelia.co/products/shevelia-menopause-balance'
+      : 'https://shevelia.co/products/daily-slim';
+    button.removeAttribute('aria-describedby');
+    button.addEventListener('click', () => { window.location.href = destination; });
   });
 
   const ingredientDialog = qs('[data-ingredient-dialog]');
@@ -83,7 +87,7 @@
     if (note) note.textContent = 'Black Friday availability is limited.';
     const actions = document.createElement('div');
     actions.className = 'bf-modal__actions';
-    actions.innerHTML = '<button class="bf-modal__cta" type="button" data-link-pending aria-describedby="pending-link-note">Explore Daily Slim <span aria-hidden="true">→</span></button><button class="bf-modal__cta" type="button" data-link-pending aria-describedby="pending-link-note">Explore Menopause Balance <span aria-hidden="true">→</span></button>';
+    actions.innerHTML = '<a class="bf-modal__cta" href="https://shevelia.co/products/daily-slim">Explore Daily Slim <span aria-hidden="true">→</span></a><a class="bf-modal__cta" href="https://shevelia.co/products/shevelia-menopause-balance">Explore Menopause Balance <span aria-hidden="true">→</span></a>';
     existingCta.replaceWith(actions);
     return true;
   };

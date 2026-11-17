@@ -224,8 +224,15 @@
 
 body.bf-modal-open { overflow: hidden; }
 
+@media (max-width: 1280px) {
+  .bf-announcement { padding-inline: 16px; gap: 12px; }
+  .bf-announcement__message { display: none; }
+  .bf-announcement__label,
+  .bf-announcement__action { font-size: 8px !important; letter-spacing: .1em; }
+}
+
 @media (max-width: 760px) {
-  .bf-announcement { padding-inline: 14px; gap: 10px; }
+  .bf-announcement { height: 31px; min-height: 31px; padding-inline: 10px; gap: 8px; justify-content: space-between; flex-wrap: nowrap; white-space: nowrap; }
   .bf-announcement__message { display: none; }
   .bf-announcement__label { font-size: 7px; }
   .bf-announcement__action { font-size: 7px; }

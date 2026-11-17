@@ -13,11 +13,11 @@
           <img src="${campaignImage}" alt="Shevelia Menopause Balance and Daily Slim on a lavender campaign set">
         </div>
         <div class="bf-modal__content">
-          <p class="bf-modal__eyebrow">The Shevelia Black Friday edit</p>
-          <h2 id="bf-modal-title">Black Friday, <span>thoughtfully.</span></h2>
-          <p class="bf-modal__body" id="bf-modal-description">A limited seasonal edit of Shevelia essentials—created for the second half, and everything still ahead.</p>
-          <a class="bf-modal__cta" href="https://shevelia.co/">Explore Shevelia <span aria-hidden="true">→</span></a>
-          <p class="bf-modal__note">Limited seasonal availability.</p>
+          <p class="bf-modal__eyebrow">Black Friday · Find your formula</p>
+          <h2 id="bf-modal-title">Support for<br><span>the way you feel.</span></h2>
+          <p class="bf-modal__body" id="bf-modal-description">Choose Daily Slim for digestive comfort, appetite, and metabolic support, or Menopause Balance for sleep, mood, and daily balance.</p>
+          <div class="bf-modal__actions"><a class="bf-modal__cta" href="https://shevelia.co/products/daily-slim">Explore Daily Slim <span aria-hidden="true">→</span></a><a class="bf-modal__cta" href="https://shevelia.co/products/shevelia-menopause-balance">Explore Menopause Balance <span aria-hidden="true">→</span></a></div>
+          <p class="bf-modal__note">Choose the support that fits your routine.</p>
         </div>
       </section>
     </div>`;

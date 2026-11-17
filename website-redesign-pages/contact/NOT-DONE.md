@@ -7,7 +7,7 @@ The local Contact page copy, layout, FAQ, policy links, and Shopify-compatible f
 - The form now posts to Shevelia's Shopify contact endpoint and includes Shopify contact fields and tags. The destination inbox and notification recipients must still be confirmed in Shopify admin.
 - An end-to-end live submission was not sent to the Shevelia inbox. A real delivery test should be completed after this page is integrated into the live theme.
 - Shopify spam protection, CAPTCHA behavior, and any automated customer acknowledgement are controlled by the live store and were not configured in this static page.
-- The assumed Daily Slim destination, `https://shevelia.co/pages/daily-slim`, should be checked against the final live Shopify page handle.
+- Product links now use the supplied live product URLs. Confirm both URLs again after Shopify theme integration.
 - The footer's `Track Your Order` and `Intellectual Property Rights` links use provisional Shopify page handles. Confirm or replace both destinations with the live store URLs before launch.
 
 ## Requires review before launch

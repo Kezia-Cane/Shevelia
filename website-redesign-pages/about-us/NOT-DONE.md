@@ -4,7 +4,7 @@ All seven items in the supplied About-page checklist were implemented in the loc
 
 ## Requires confirmation or supplied information
 
-- The Daily Slim destination uses `https://shevelia.co/pages/daily-slim`. Its final live Shopify handle should be confirmed before publishing.
+- Product buttons now use the supplied live product URLs. Confirm both URLs again after Shopify theme integration.
 - The revised benefit and product-support language still needs final legal and regulatory review.
 - The copy was not reconciled against the Meta Ads creative-strategy and line-sheet spreadsheets discussed in the transcript because those files were not supplied with this task.
 - The original hero images were restored at the user's request. Final approval and usage rights for all lifestyle and customer images should be confirmed before launch.

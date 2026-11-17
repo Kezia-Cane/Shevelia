@@ -90,7 +90,7 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 .feature-story h3{position:absolute;left:24px;right:60px;bottom:78px;max-width:12ch;font-size:clamp(37px,4.4vw,68px)}
 .feature-formula{grid-column:2/4;padding:25px;background:var(--lilac)}
 .feature-formula>.feature-kicker,.feature-formula>h3,.feature-formula>p{position:relative;z-index:2}
-.feature-formula h3{max-width:8ch;margin:20px 0 11px;font-size:clamp(38px,4.6vw,68px)}
+.feature-formula h3{max-width:11ch;margin:20px 0 11px;font-size:clamp(38px,4.6vw,68px)}
 .feature-formula>p{max-width:46%;margin:0;color:var(--soft)}
 .feature-benefits{position:relative;z-index:2;max-width:46%;margin:14px 0 0;padding:0;display:grid;gap:4px;list-style:none;color:var(--soft);font-size:11px}
 .feature-benefits li::before{content:'✓';margin-right:7px;color:var(--lavender);font-weight:700}
@@ -239,6 +239,23 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 .ingredient-dialog__grid ul{margin:0 0 28px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;list-style:none}
 .ingredient-dialog__grid li{min-height:66px;padding:8px;display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:600}
 .ingredient-dialog__grid li img{width:48px;height:48px;flex:0 0 48px;border-radius:6px;object-fit:cover}
+.ingredient-facts-image{display:block;width:100%;height:auto;max-height:560px;object-fit:contain;object-position:top center;margin:0 0 28px;border:1px solid var(--line);border-radius:8px;background:#fff}
+
+@media(max-width:520px){
+  .ingredient-dialog{width:calc(100vw - 16px);max-height:calc(100svh - 16px);border-radius:12px}
+  .ingredient-dialog__grid{grid-template-columns:1fr;gap:34px;padding:24px 18px 34px}
+  .ingredient-dialog__grid h3{margin:9px 0 16px;font-size:clamp(25px,8vw,34px);line-height:1.02}
+  .ingredient-facts-image{width:100%;max-width:none;max-height:none;height:auto;margin-bottom:20px}
+  .ingredient-dialog__grid .button{width:100%;justify-content:center}
+}
+
+@media(max-width:900px){
+  .ingredient-dialog__grid{grid-template-columns:1fr;gap:24px;padding:20px 16px 28px}
+  .ingredient-dialog__grid article>span,
+  .ingredient-dialog__grid h3,
+  .ingredient-dialog__grid .button{display:none}
+  .ingredient-facts-image{width:100%;max-width:none;height:auto;max-height:none;margin:0;border:0;border-radius:6px}
+}
 
 /* Product links are intentionally pending. */
 [data-link-pending]{position:relative}
