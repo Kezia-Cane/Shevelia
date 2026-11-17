@@ -223,3 +223,33 @@
   color: #2d2541 !important;
 }
 
+.bf-announcement .bf-announcement__action {
+  min-height: 24px;
+  padding: 5px 12px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #f5c95a !important;
+  border-radius: 999px;
+  box-shadow: none;
+  font-size: 9px !important;
+  line-height: 1 !important;
+  letter-spacing: .1em;
+  white-space: nowrap;
+}
+
+.bf-announcement .bf-announcement__action:hover,
+.bf-announcement .bf-announcement__action:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 201, 90, .24);
+}
+
+@media (max-width: 520px) {
+  .bf-announcement .bf-announcement__action {
+    min-height: 22px;
+    padding: 4px 9px !important;
+    font-size: 8px !important;
+  }
+}
+
