@@ -19,6 +19,8 @@
   }
 
   const daily = document.querySelector('.product-choice--daily .product-copy');
+  const dailyImage = document.querySelector('.product-choice--daily .product-image img');
+  if (dailyImage) dailyImage.src = 'assets/daily-slim.png';
   if (daily) {
     daily.querySelector('h2').textContent = 'Feel lighter and more in control of your day.';
     daily.querySelector('p:not(.eyebrow)').textContent = 'Support your digestion, metabolism, and daily rhythm so you can move through your day with more ease.';
