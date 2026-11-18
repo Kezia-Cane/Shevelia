@@ -85,7 +85,7 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 .feature i{position:absolute;right:22px;bottom:22px;width:38px;height:38px;display:grid;place-items:center;border:1px solid currentColor;border-radius:50%;font-style:normal;transition:transform .25s,background .25s,color .25s}
 .feature:hover i{transform:rotate(45deg);background:var(--midnight);color:white}
 .feature-story{grid-row:1/3;color:white}
-.feature-story img{object-position:50% 28%}
+.feature-story img{object-position:54% 30%}
 .feature-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(27,19,40,.78),rgba(27,19,40,.03) 65%)}
 .feature-story .feature-kicker{position:absolute;left:24px;top:24px}
 .feature-story h3{position:absolute;left:24px;right:60px;bottom:78px;max-width:12ch;font-size:clamp(37px,4.4vw,68px)}
@@ -99,8 +99,8 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 .feature-formula .feature-action{position:relative;left:auto;bottom:auto;display:inline-flex;margin-top:14px;align-items:center;gap:8px}
 .feature-action-light{color:white}
 .formula-object{position:absolute;right:0;bottom:0;width:48%;height:100%;overflow:hidden;border-left:1px solid rgba(45,37,65,.1)}
-.formula-object::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--lilac),transparent 42%)}
-.formula-object img{height:100%;object-fit:cover;object-position:26% 50%}
+.formula-object::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--lilac) 0%,rgba(223,212,236,.92) 12%,rgba(223,212,236,.42) 34%,transparent 58%)}
+.formula-object img{height:100%;object-fit:cover;object-position:58% 38%}
 .feature-night{grid-column:2;color:white}
 .feature-night img{object-position:50% 25%}
 .feature-night::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,21,35,.72),transparent 70%)}
@@ -362,8 +362,8 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
   .feature-benefits{max-width:none;margin-top:13px;display:grid;grid-template-columns:1fr 1fr;gap:7px 13px;font-size:10px;line-height:1.35}
   .feature-formula .feature-action{position:relative;z-index:3;margin-top:14px;font-size:10px}
   .feature-formula .formula-object{position:relative;inset:auto;width:calc(100% + 48px);height:280px;flex:0 0 280px;margin:18px -24px -24px;border-left:0;border-top:1px solid rgba(45,37,65,.12)}
-  .feature-formula .formula-object::after{background:linear-gradient(180deg,rgba(224,214,236,.5),transparent 32%)}
-  .feature-formula .formula-object img{object-position:50% 53%}
+  .feature-formula .formula-object::after{background:linear-gradient(180deg,rgba(224,214,236,.68),transparent 34%)}
+  .feature-formula .formula-object img{object-position:56% 28%}
 
   /* A lighter editorial selection area replaces the heavy solid-purple block. */
   .product-path{position:relative;overflow:hidden;padding:66px 16px;background:linear-gradient(155deg,#f8f4fb 0%,#e7def1 52%,#fdf9f4 100%);color:var(--midnight)}
