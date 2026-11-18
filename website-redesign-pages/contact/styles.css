@@ -247,8 +247,9 @@ h3 { font-size: clamp(24px, 2.4vw, 36px); line-height: 1.03; letter-spacing: -.0
   .route-card { min-height: 240px; }
   .product-spotlight__intro { grid-template-columns: 1fr; gap: 22px; }
   .product-spotlight__grid { grid-template-columns: 1fr; }
-  .product-spotlight__card { grid-template-columns: minmax(0,1.05fr) minmax(260px,.95fr); }
-  .product-spotlight__image { min-height: 420px; }
+  .product-spotlight__card { grid-template-columns: 1fr; }
+  .product-spotlight__image { height: clamp(360px, 78vw, 500px); min-height: 0; aspect-ratio: auto; }
+  .product-spotlight__image img { object-position: center top; }
   .contact-section { grid-template-columns: 1fr; }
   .contact-intro, .answer-intro { position: static; }
   .quick-answers { grid-template-columns: 1fr; }
@@ -279,7 +280,7 @@ h3 { font-size: clamp(24px, 2.4vw, 36px); line-height: 1.03; letter-spacing: -.0
   .product-spotlight__intro h2 { font-size: 46px; }
   .product-spotlight__intro > p { font-size: 16px; }
   .product-spotlight__card { grid-template-columns: 1fr; }
-  .product-spotlight__image { min-height: 0; aspect-ratio: 4 / 3; }
+  .product-spotlight__image { height: clamp(320px, 92vw, 440px); min-height: 0; aspect-ratio: auto; }
   .product-spotlight__copy { padding: 27px 22px 30px; }
   .product-spotlight__copy h3 { font-size: 39px; }
   .product-spotlight__cta { width: 100%; justify-content: space-between; }
