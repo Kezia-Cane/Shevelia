@@ -21,19 +21,17 @@
             <section class="bf-product-benefits" aria-labelledby="daily-slim-benefits">
               <a class="bf-product-benefits__title" id="daily-slim-benefits" href="https://shevelia.co/products/daily-slim">Daily Slim <span aria-hidden="true">↗</span></a>
               <ul>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4c0 2 1 3 4 3s4-1 4-3M8 7c-2 2-3 4-3 7 0 4 3 7 7 7s7-3 7-7c0-3-1-5-3-7M9 11c1 1 2 1 3 1s2 0 3-1"/></svg><span>A flatter belly, less bloat</span></li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-2.8 3.4-5 5.8-5 8.5a5 5 0 0 0 10 0C17 8.8 14.8 6.4 12 3Z"/><path d="M10 13c.4 1.2 1.1 1.8 2.3 2"/></svg><span>Fewer sugar cravings</span></li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 12h6l-1 8 9-13h-6l1-7Z"/></svg><span>Lighter, less puffy, more energy</span></li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l2 18-6-4-6 4L8 3Z"/><path d="M8.5 8H12m3.5 0H12m0 0v9"/></svg><span>Clothes that fit like before</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4c0 2 1 3 4 3s4-1 4-3M8 7c-2 2-3 4-3 7 0 4 3 7 7 7s7-3 7-7c0-3-1-5-3-7M9 11c1 1 2 1 3 1s2 0 3-1"/></svg><span>Digestive comfort</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-2.8 3.4-5 5.8-5 8.5a5 5 0 0 0 10 0C17 8.8 14.8 6.4 12 3Z"/><path d="M10 13c.4 1.2 1.1 1.8 2.3 2"/></svg><span>Appetite support</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 12h6l-1 8 9-13h-6l1-7Z"/></svg><span>Metabolic support</span></li>
               </ul>
             </section>
             <section class="bf-product-benefits" aria-labelledby="menopause-balance-benefits">
               <a class="bf-product-benefits__title" id="menopause-balance-benefits" href="https://shevelia.co/products/shevelia-menopause-balance">Menopause Balance <span aria-hidden="true">↗</span></a>
               <ul>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 15.5A8 8 0 0 1 8.5 5 8 8 0 1 0 19 15.5Z"/><path d="m16 4 .6 1.4L18 6l-1.4.6L16 8l-.6-1.4L14 6l1.4-.6L16 4Z"/></svg><span>Calmer, more restful nights</span></li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/><path d="M9 12h6"/></svg><span>Feel like yourself again</span></li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 0-4 12.7c.7.5 1 1 1 1.8h6c0-.8.3-1.3 1-1.8A7 7 0 0 0 12 3Z"/><path d="M9 21h6m-5-3v3m4-3v3"/></svg><span>A clearer head</span></li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 12h6l-1 8 9-13h-6l1-7Z"/></svg><span>Energy that lasts the afternoon</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 15.5A8 8 0 0 1 8.5 5 8 8 0 1 0 19 15.5Z"/><path d="m16 4 .6 1.4L18 6l-1.4.6L16 8l-.6-1.4L14 6l1.4-.6L16 4Z"/></svg><span>Restful sleep</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/><path d="M9 12h6"/></svg><span>Mood support</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 0-4 12.7c.7.5 1 1 1 1.8h6c0-.8.3-1.3 1-1.8A7 7 0 0 0 12 3Z"/><path d="M9 21h6m-5-3v3m4-3v3"/></svg><span>Daily balance</span></li>
               </ul>
             </section>
           </div>
@@ -43,11 +41,11 @@
 
   const reviewMarkup = `
     <section class="films site-reviews" id="films">
-      <header class="films-head site-reviews__head"><div><p class="eyebrow">REAL CUSTOMER, REAL PHOTOS</p><h2>Forget the scale. Look at the jeans.</h2></div><p>Less evening bloat. Calmer nights. A clearer head. More energy left for the life you want.</p></header>
+      <header class="films-head site-reviews__head"><div><p class="eyebrow">REAL CUSTOMER, REAL PHOTOS</p><h2>Support for the changes you feel.</h2></div><p>Daily Slim supports digestive comfort, appetite and metabolism. Menopause Balance supports restful sleep, mood and daily balance.</p></header>
       <div class="film-grid site-reviews__grid">
-        <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("video-01-thumbnail.jpg")}" playsinline muted aria-label="A daily ritual"><source data-src="${reviewVideo("ritual-story.mp4")}" type="video/mp4"></video><button type="button" data-review-play><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>01 / A daily ritual</span></figcaption></figure>
-        <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("video-02-thumbnail.jpg")}" playsinline muted aria-label="An evening reset"><source data-src="${reviewVideo("night-story-01.mp4")}" type="video/mp4"></video><button type="button" data-review-play><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>02 / An evening reset</span></figcaption></figure>
-        <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("video-03-thumbnail.jpg")}" playsinline muted aria-label="Inside the formula"><source data-src="${reviewVideo("formula-story.mp4")}" type="video/mp4"></video><button type="button" data-review-play><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>03 / Inside the formula</span></figcaption></figure>
+        <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("video-01-thumbnail.jpg")}" playsinline muted aria-label="Daily Slim customer story"><source data-src="${reviewVideo("ritual-story.mp4")}" type="video/mp4"></video><button type="button" data-review-play aria-label="Play Daily Slim customer story"><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>Digestive comfort, in her words</span></figcaption></figure>
+        <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("video-02-thumbnail.jpg")}" playsinline muted aria-label="Menopause Balance customer story"><source data-src="${reviewVideo("night-story-01.mp4")}" type="video/mp4"></video><button type="button" data-review-play aria-label="Play Menopause Balance customer story"><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>Support for restful sleep</span></figcaption></figure>
+        <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("video-03-thumbnail.jpg")}" playsinline muted aria-label="A closer look at Shevelia ingredients"><source data-src="${reviewVideo("formula-story.mp4")}" type="video/mp4"></video><button type="button" data-review-play aria-label="Play a closer look at Shevelia ingredients"><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>Know what’s in the formula</span></figcaption></figure>
       </div>
       <div class="film-actions site-reviews__actions"><a class="button button-midnight" href="https://shevelia.co/products/daily-slim">Explore Daily Slim</a><a class="button button-midnight-outline" href="https://shevelia.co/products/shevelia-menopause-balance">Explore Menopause Balance</a></div>
     </section>`;

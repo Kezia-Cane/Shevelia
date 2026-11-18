@@ -8,6 +8,9 @@ body .site-header .brand-logo-light{display:none!important}
 body .site-header .brand-logo-dark{display:block!important}
 body .site-header .primary-nav a{color:var(--midnight)}
 .product-choice{min-width:0}
+.product-copy .bf-product-benefits--cta li{min-height:0;padding:0;border:0;color:var(--midnight)}
+.product-copy .bf-product-benefits--cta li:before{display:none;content:none}
+.product-copy .bf-product-benefits--cta li svg{stroke:var(--lavender)}
 .product-image{height:auto;aspect-ratio:4/3;overflow:hidden;padding:0;background:#24172f}
 .product-image img{display:block;width:100%;max-width:none;height:100%;max-height:none;margin:0;object-fit:cover;object-position:center}
 .product-copy li{position:relative;min-height:48px;padding:12px 0 12px 42px;display:flex;align-items:center}
