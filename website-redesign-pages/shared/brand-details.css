@@ -253,3 +253,69 @@
   }
 }
 
+/* One compact, consistent mobile header across every page. */
+@media (max-width: 820px) {
+  .site-header {
+    grid-template-columns: auto auto minmax(0, 1fr) !important;
+    column-gap: 12px;
+  }
+  .site-header .wordmark {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+  }
+  .site-header .menu-toggle {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+  }
+  .site-header .utility-nav {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+    justify-self: end !important;
+    display: flex !important;
+    gap: 0 !important;
+  }
+  .site-header .utility-nav a:first-child { display: none !important; }
+  .site-header .primary-nav { grid-column: 1 / -1 !important; }
+}
+
+/* Low contrast linework adds a little brand texture without competing with copy. */
+@media (max-width: 820px) {
+  body,
+  body.policy-page {
+    background-color: #fcf9f4;
+    background-image:
+      radial-gradient(ellipse at 100% 0%, rgba(224, 214, 236, .28), transparent 24rem),
+      repeating-linear-gradient(135deg, rgba(139, 122, 184, .025) 0 1px, transparent 1px 34px);
+    background-attachment: fixed;
+  }
+}
+
+/* Whole-card links stay keyboard reachable while visible CTAs keep their own links. */
+.product-path-cards article,
+.product-choice { position: relative; }
+.product-path-cards .card-hit-area,
+.product-choice .product-choice__hit-area {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+.product-path-cards .card-hit-area:focus-visible,
+.product-choice .product-choice__hit-area:focus-visible {
+  outline: 3px solid #8b7ab8;
+  outline-offset: 4px;
+}
+.product-path-cards article > :not(.card-hit-area),
+.product-choice > :not(.product-choice__hit-area) { pointer-events: none; }
+.product-path-cards article > .button,
+.product-choice > .product-copy,
+.product-choice .product-copy .button { position: relative; z-index: 2; }
+.product-path-cards article > .button,
+.product-choice .product-copy .button { pointer-events: auto; }
+.product-choice .product-image { pointer-events: none; }
+
+.visual-card__link { display: block; color: inherit; text-decoration: none; }
+.visual-card__link:focus-visible { outline: 3px solid #f5c95a; outline-offset: 4px; border-radius: inherit; }
+
