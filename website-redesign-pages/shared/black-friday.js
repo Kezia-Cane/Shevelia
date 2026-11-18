@@ -1,7 +1,8 @@
 (() => {
   const scriptUrl = document.currentScript?.src || window.location.href;
-  const campaignImage = new URL("black-friday-campaign.png", scriptUrl).href;
+  const campaignImage = new URL("black-friday-campaign.optimized.jpg", scriptUrl).href;
   const reviewVideo = (filename) => new URL(`../homepage/content-files/${filename}`, scriptUrl).href;
+  const reviewPoster = (filename) => new URL(`../homepage/assets/${filename}`, scriptUrl).href;
   const storageKey = "shevelia-black-friday-dismissed";
   let lastFocused = null;
 
@@ -44,9 +45,9 @@
     <section class="films site-reviews" id="films">
       <header class="films-head site-reviews__head"><div><p class="eyebrow">REAL CUSTOMER, REAL PHOTOS</p><h2>Forget the scale. Look at the jeans.</h2></div><p>Less evening bloat. Calmer nights. A clearer head. More energy left for the life you want.</p></header>
       <div class="film-grid site-reviews__grid">
-        <figure class="film"><div class="film-frame"><video preload="metadata" playsinline muted aria-label="A daily ritual"><source src="${reviewVideo("ritual-story.mp4")}" type="video/mp4"></video><button type="button" data-review-play><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>01 / A daily ritual</span></figcaption></figure>
-        <figure class="film"><div class="film-frame"><video preload="metadata" playsinline muted aria-label="An evening reset"><source src="${reviewVideo("night-story-01.mp4")}" type="video/mp4"></video><button type="button" data-review-play><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>02 / An evening reset</span></figcaption></figure>
-        <figure class="film"><div class="film-frame"><video preload="metadata" playsinline muted aria-label="Inside the formula"><source src="${reviewVideo("formula-story.mp4")}" type="video/mp4"></video><button type="button" data-review-play><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>03 / Inside the formula</span></figcaption></figure>
+        <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("brand-story-4.jpg")}" playsinline muted aria-label="A daily ritual"><source data-src="${reviewVideo("ritual-story.mp4")}" type="video/mp4"></video><button type="button" data-review-play><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>01 / A daily ritual</span></figcaption></figure>
+        <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("brand-story-3.jpg")}" playsinline muted aria-label="An evening reset"><source data-src="${reviewVideo("night-story-01.mp4")}" type="video/mp4"></video><button type="button" data-review-play><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>02 / An evening reset</span></figcaption></figure>
+        <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("ds-story-3.jpg")}" playsinline muted aria-label="Inside the formula"><source data-src="${reviewVideo("formula-story.mp4")}" type="video/mp4"></video><button type="button" data-review-play><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>03 / Inside the formula</span></figcaption></figure>
       </div>
       <div class="film-actions site-reviews__actions"><a class="button button-midnight" href="https://shevelia.co/products/daily-slim">Explore Daily Slim</a><a class="button button-midnight-outline" href="https://shevelia.co/products/shevelia-menopause-balance">Explore Menopause Balance</a></div>
     </section>`;
@@ -64,6 +65,13 @@
       if (!video) return;
       button.addEventListener("click", async () => {
         reviewVideos.forEach((other) => { if (other !== video) other.pause(); });
+        const source = video.querySelector("source[data-src]");
+        if (source) {
+          source.src = source.dataset.src;
+          source.removeAttribute("data-src");
+          video.preload = "auto";
+          video.load();
+        }
         video.controls = true;
         video.muted = false;
         try { await video.play(); frame.classList.add("is-playing"); }

@@ -73,42 +73,6 @@
     });
   }
 
-  const filmVideos = qsa('.film-frame video');
-  filmVideos.forEach(video => {
-    const setVideoPreview = () => {
-      if (video.dataset.previewReady || !Number.isFinite(video.duration)) return;
-      window.setTimeout(() => {
-        video.currentTime = Math.min(.5, video.duration * .08);
-        video.pause();
-        video.dataset.previewReady = 'true';
-      }, 120);
-    };
-    if (video.readyState >= 2) setVideoPreview();
-    else video.addEventListener('loadeddata', setVideoPreview, { once: true });
-  });
-  qsa('[data-play]').forEach(button => {
-    const frame = button.closest('.film-frame');
-    const video = qs('video', frame);
-    if (!video) return;
-    button.addEventListener('click', async () => {
-      filmVideos.forEach(other => {
-        if (other !== video) other.pause();
-      });
-      video.controls = true;
-      video.muted = false;
-      try {
-        await video.play();
-        frame.classList.add('is-playing');
-      } catch (_) {
-        frame.classList.remove('is-playing');
-      }
-    });
-    video.addEventListener('ended', () => {
-      video.controls = false;
-      frame.classList.remove('is-playing');
-    });
-  });
-
   qsa('[data-carousel-controls]').forEach(controls => {
     const rail = document.getElementById(controls.dataset.carouselTarget);
     if (!rail) return;
