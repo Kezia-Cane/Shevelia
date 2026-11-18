@@ -117,6 +117,40 @@
     setActive(0);
   });
 
+  const homepageBenefits = {
+    daily: [
+      { label: 'A flatter belly, less bloat', icon: '<path d="M8 4c0 2 1 3 4 3s4-1 4-3M8 7c-2 2-3 4-3 7 0 4 3 7 7 7s7-3 7-7c0-3-1-5-3-7M9 11c1 1 2 1 3 1s2 0 3-1"/>' },
+      { label: 'Fewer sugar cravings', icon: '<path d="M12 3c-2.8 3.4-5 5.8-5 8.5a5 5 0 0 0 10 0C17 8.8 14.8 6.4 12 3Z"/><path d="M10 13c.4 1.2 1.1 1.8 2.3 2"/>' },
+      { label: 'Lighter, less puffy, more energy', icon: '<path d="m13 2-8 12h6l-1 8 9-13h-6l1-7Z"/>' },
+      { label: 'Clothes that fit like before', icon: '<path d="m8 4-5 3 2 4 3-1v10h8V10l3 1 2-4-5-3c-.7 1.3-2 2-4 2S8.7 5.3 8 4Z"/>' }
+    ],
+    menopause: [
+      { label: 'Calmer, more restful nights', icon: '<path d="M19 15.5A8 8 0 0 1 8.5 5 8 8 0 1 0 19 15.5Z"/><path d="m16 4 .6 1.4L18 6l-1.4.6L16 8l-.6-1.4L14 6l1.4-.6L16 4Z"/>' },
+      { label: 'Feel like yourself again', icon: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/><path d="M9 12h6"/>' },
+      { label: 'A clearer head', icon: '<path d="M12 3a7 7 0 0 0-4 12.7c.7.5 1 1 1 1.8h6c0-.8.3-1.3 1-1.8A7 7 0 0 0 12 3Z"/><path d="M9 21h6m-5-3v3m4-3v3"/>' },
+      { label: 'Energy that lasts the afternoon', icon: '<path d="m13 2-8 12h6l-1 8 9-13h-6l1-7Z"/>' }
+    ]
+  };
+  const benefitRotation = { daily: 0, menopause: 0 };
+  const applyHomepageBenefits = () => {
+    qsa('.bf-product-cta-stack:not([data-home-benefits])').forEach(stack => {
+      const cta = qs('a[href*="/products/"]', stack);
+      const list = qs('.bf-product-benefits--cta ul', stack);
+      if (!cta || !list) return;
+      const product = cta.href.includes('daily-slim') ? 'daily' : 'menopause';
+      const benefits = homepageBenefits[product];
+      const start = benefitRotation[product] % benefits.length;
+      const selection = [0, 1, 2].map(offset => benefits[(start + offset) % benefits.length]);
+      list.innerHTML = selection.map(benefit => `<li><svg viewBox="0 0 24 24" aria-hidden="true">${benefit.icon}</svg><span>${benefit.label}</span></li>`).join('');
+      stack.dataset.homeBenefits = String(start + 1);
+      benefitRotation[product] += 1;
+    });
+  };
+  const benefitObserver = new MutationObserver(applyHomepageBenefits);
+  benefitObserver.observe(document.body, { childList: true, subtree: true });
+  window.addEventListener('DOMContentLoaded', applyHomepageBenefits, { once: true });
+  applyHomepageBenefits();
+
   const revealItems = qsa('.reveal');
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const observer = new IntersectionObserver(entries => {
