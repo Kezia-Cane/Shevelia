@@ -84,6 +84,40 @@
       legal.insertAdjacentHTML("beforeend", '<div class="payment-methods" aria-label="Accepted payment methods"><span class="payment-badge payment-badge-visa" aria-label="Visa">VISA</span><span class="payment-badge payment-badge-mastercard" aria-label="Mastercard"><i></i><i></i></span><span class="payment-badge payment-badge-amex" aria-label="American Express">AMEX</span><span class="payment-badge payment-badge-apple" aria-label="Apple Pay">●Pay</span><span class="payment-badge payment-badge-google" aria-label="Google Pay">G Pay</span><span class="payment-badge payment-badge-shop" aria-label="Shop Pay">shop</span><span class="payment-badge payment-badge-discover" aria-label="Discover">DISCOVER</span></div>');
     });
     const modal = document.querySelector("[data-bf-modal]");
+    const productCtas = document.querySelectorAll([
+      'a.button[href*="/products/daily-slim"]',
+      'a.button[href*="/products/shevelia-menopause-balance"]',
+      'a.product-spotlight__cta[href*="/products/daily-slim"]',
+      'a.product-spotlight__cta[href*="/products/shevelia-menopause-balance"]'
+    ].join(","));
+
+    productCtas.forEach((cta) => {
+      if (cta.closest(".bf-product-cta-stack")) return;
+      const isDailySlim = cta.href.includes("/products/daily-slim");
+      const source = modal.querySelector(isDailySlim
+        ? '[aria-labelledby="daily-slim-benefits"]'
+        : '[aria-labelledby="menopause-balance-benefits"]');
+      if (!source) return;
+
+      // Product cards already list these benefits above the button; keep one copy below it.
+      if (cta.previousElementSibling?.tagName === "UL") cta.previousElementSibling.remove();
+
+      const stack = document.createElement("div");
+      stack.className = "bf-product-cta-stack";
+      const benefits = source.cloneNode(true);
+      benefits.classList.add("bf-product-benefits--cta");
+      benefits.removeAttribute("aria-labelledby");
+      benefits.setAttribute("aria-label", `${isDailySlim ? "Daily Slim" : "Menopause Balance"} benefits`);
+      benefits.querySelector(".bf-product-benefits__title")?.removeAttribute("id");
+
+      const row = cta.parentElement;
+      if (row?.classList.contains("button-row") || row?.classList.contains("film-actions")) {
+        row.classList.add("bf-product-cta-row");
+      }
+      cta.before(stack);
+      stack.append(cta, benefits);
+    });
+
     const closeButton = modal.querySelector(".bf-modal__close");
     const openers = document.querySelectorAll("[data-bf-open]");
 
