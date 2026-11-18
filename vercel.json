@@ -1,0 +1,86 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/website-redesign-pages/homepage",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/website-redesign-pages/about-us",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/website-redesign-pages/products",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/website-redesign-pages/contact",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/website-redesign-pages/shipping-policy",
+      "destination": "/shipping-policy",
+      "permanent": true
+    },
+    {
+      "source": "/website-redesign-pages/refund-policy",
+      "destination": "/refund-policy",
+      "permanent": true
+    },
+    {
+      "source": "/website-redesign-pages/privacy-policy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/website-redesign-pages/terms-of-service",
+      "destination": "/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/website-redesign-pages/intellectual-property-rights",
+      "destination": "/intellectual-property-rights",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/about-us",
+      "destination": "/website-redesign-pages/about-us"
+    },
+    {
+      "source": "/products",
+      "destination": "/website-redesign-pages/products"
+    },
+    {
+      "source": "/contact",
+      "destination": "/website-redesign-pages/contact"
+    },
+    {
+      "source": "/shipping-policy",
+      "destination": "/website-redesign-pages/shipping-policy"
+    },
+    {
+      "source": "/refund-policy",
+      "destination": "/website-redesign-pages/refund-policy"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/website-redesign-pages/privacy-policy"
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/website-redesign-pages/terms-of-service"
+    },
+    {
+      "source": "/intellectual-property-rights",
+      "destination": "/website-redesign-pages/intellectual-property-rights"
+    }
+  ]
+}
