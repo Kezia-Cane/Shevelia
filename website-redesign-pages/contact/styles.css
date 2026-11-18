@@ -88,6 +88,23 @@ h3 { font-size: clamp(24px, 2.4vw, 36px); line-height: 1.03; letter-spacing: -.0
 .route-card i { width: 34px; height: 34px; margin: 20px 0 0 auto; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-style: normal; transition: transform .25s ease; }
 .route-card:hover i { transform: rotate(45deg); }
 
+.product-spotlight { padding: var(--section) max(24px, calc((100vw - 1400px) / 2)); background: var(--midnight); color: var(--cream); }
+.product-spotlight__intro { margin-bottom: clamp(36px, 4vw, 56px); display: grid; grid-template-columns: minmax(0,1.15fr) minmax(300px,.55fr); align-items: end; gap: 60px; }
+.product-spotlight__intro h2 { max-width: 12ch; }
+.product-spotlight__intro > p { max-width: 42ch; margin: 0 0 4px; color: rgba(252,249,244,.76); font-size: 17px; }
+.eyebrow-light { color: var(--honey); }
+.product-spotlight__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.product-spotlight__card { min-width: 0; overflow: hidden; display: grid; grid-template-columns: minmax(0,1.08fr) minmax(260px,.92fr); border-radius: var(--radius); background: var(--cream); color: var(--midnight); }
+.product-spotlight__image { min-height: 430px; overflow: hidden; }
+.product-spotlight__image img { height: 100%; object-fit: cover; object-position: center 32%; transition: transform .55s cubic-bezier(.22,1,.36,1); }
+.product-spotlight__image:hover img { transform: scale(1.025); }
+.product-spotlight__copy { padding: clamp(28px,3.2vw,48px); display: flex; flex-direction: column; justify-content: center; }
+.product-spotlight__copy .eyebrow { color: var(--lavender); }
+.product-spotlight__copy h3 { max-width: 10ch; font-size: clamp(36px,3.4vw,54px); }
+.product-spotlight__copy > p:not(.eyebrow) { max-width: 31ch; margin: 19px 0 27px; color: var(--ink-soft); }
+.product-spotlight__cta { width: fit-content; min-height: 48px; padding: 13px 20px; display: inline-flex; align-items: center; gap: 18px; border-radius: 999px; background: var(--honey); color: var(--midnight); font-size: 12px; font-weight: 700; transition: transform .2s ease, filter .2s ease; }
+.product-spotlight__cta:hover { transform: translateY(-2px); filter: brightness(1.04); }
+
 .contact-section { padding: clamp(58px, 5.5vw, 84px) max(24px, calc((100vw - 1400px) / 2)); display: grid; grid-template-columns: minmax(0,.7fr) minmax(560px,1.3fr); gap: clamp(60px, 9vw, 140px); background: var(--lilac); }
 .contact-intro { align-self: start; position: sticky; top: 120px; }
 .contact-intro h2 { max-width: 10ch; }
@@ -192,6 +209,8 @@ h3 { font-size: clamp(24px, 2.4vw, 36px); line-height: 1.03; letter-spacing: -.0
   .primary-nav { gap: 19px; }
   .hero-copy { padding-inline: 42px; }
   .prep-strip { grid-template-columns: 1fr; gap: 18px; }
+  .product-spotlight__card { grid-template-columns: 1fr; }
+  .product-spotlight__image { min-height: 390px; }
   .contact-section { grid-template-columns: .72fr 1.28fr; gap: 48px; }
   .site-footer { gap: 35px; }
 }
@@ -226,6 +245,10 @@ h3 { font-size: clamp(24px, 2.4vw, 36px); line-height: 1.03; letter-spacing: -.0
   .section-head { grid-template-columns: 1fr; gap: 22px; }
   .route-grid { grid-template-columns: 1fr; }
   .route-card { min-height: 240px; }
+  .product-spotlight__intro { grid-template-columns: 1fr; gap: 22px; }
+  .product-spotlight__grid { grid-template-columns: 1fr; }
+  .product-spotlight__card { grid-template-columns: minmax(0,1.05fr) minmax(260px,.95fr); }
+  .product-spotlight__image { min-height: 420px; }
   .contact-section { grid-template-columns: 1fr; }
   .contact-intro, .answer-intro { position: static; }
   .quick-answers { grid-template-columns: 1fr; }
@@ -252,6 +275,14 @@ h3 { font-size: clamp(24px, 2.4vw, 36px); line-height: 1.03; letter-spacing: -.0
   .prep-strip li { padding: 12px 0; border-left: 0; border-top: 1px solid var(--line); }
   .section-head h2 { font-size: 43px; }
   .route-card { min-height: 225px; padding: 22px; }
+  .product-spotlight { padding-inline: 16px; }
+  .product-spotlight__intro h2 { font-size: 46px; }
+  .product-spotlight__intro > p { font-size: 16px; }
+  .product-spotlight__card { grid-template-columns: 1fr; }
+  .product-spotlight__image { min-height: 0; aspect-ratio: 4 / 3; }
+  .product-spotlight__copy { padding: 27px 22px 30px; }
+  .product-spotlight__copy h3 { font-size: 39px; }
+  .product-spotlight__cta { width: 100%; justify-content: space-between; }
   .contact-section { padding-inline: 16px; }
   .contact-intro h2, .answer-intro h2 { font-size: 46px; }
   .contact-form { padding: 21px; grid-template-columns: 1fr; }
