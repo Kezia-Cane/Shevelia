@@ -983,11 +983,12 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
   .feature-question .feature-line{
     width:fit-content;
     min-height:0;
-    margin-top:auto;
+    margin:18px auto 0;
     padding:0 0 7px;
-    align-self:flex-start;
+    align-self:center;
     display:inline-flex;
-    justify-content:flex-start;
+    justify-content:center;
+    text-align:center;
     gap:4px;
     border:0;
     border-bottom:1px solid rgba(255,255,255,.9);
