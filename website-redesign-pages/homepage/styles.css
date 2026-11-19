@@ -421,6 +421,7 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 
 
 @media(min-width:821px){
+  .finale{min-height:740px}
   .finale-copy{top:auto;bottom:clamp(76px,9vh,104px);max-width:min(760px,52vw);padding-bottom:0;transform:none}
   .finale-copy h2{font-size:clamp(64px,7vw,108px)}
   .finale-copy .button{margin-bottom:0}
