@@ -490,15 +490,18 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 
 /* Keep the two hero product choices visually connected on desktop. */
 @media(min-width:821px){
-  .hero-product-actions.bf-product-cta-row{grid-template-columns:max-content max-content;column-gap:12px;row-gap:14px;justify-content:start}
-  .hero-product-actions .bf-product-cta-stack{width:max-content}
+  .hero-product-actions.bf-product-cta-row{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(20px,2vw,32px);row-gap:16px;justify-content:start}
+  .hero-product-actions .bf-product-cta-stack{width:100%}
   .hero-product-actions .cover-link{grid-column:1/-1}
 }
 
-/* Present each product's three benefits as one compact mobile row. */
+.hero-product-actions .bf-product-benefits--cta ul{gap:7px}
+.hero-product-actions .bf-product-benefits--cta li{font-size:12px;line-height:1.4}
+
+/* Keep all four product benefits readable beneath each mobile hero CTA. */
 @media(max-width:520px){
-  .hero-product-actions .bf-product-benefits--cta ul{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:3px}
-  .hero-product-actions .bf-product-benefits--cta li{gap:4px;font-size:9px;line-height:1.25}
+  .hero-product-actions .bf-product-benefits--cta ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;margin-top:4px}
+  .hero-product-actions .bf-product-benefits--cta li{gap:5px;font-size:10.5px;line-height:1.35}
   .hero-product-actions .bf-product-benefits--cta li svg{width:13px;height:13px;flex-basis:13px}
 }
 
@@ -572,8 +575,8 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 .philosophy{padding-block:clamp(52px,5vw,76px)}
 .philosophy-spread{margin-top:clamp(30px,3.5vw,48px);grid-template-columns:minmax(260px,.62fr) minmax(0,1.38fr);gap:clamp(30px,5vw,72px);align-items:stretch}
 .philosophy-image{aspect-ratio:1.08}
-.principle-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;border-top:0}
-.principle-list li{min-width:0;padding:24px;display:block;border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);background:rgba(255,255,255,.055)}
+.principle-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;border-top:0}
+.principle-list li{min-width:0;min-height:220px;padding:clamp(26px,3vw,38px);display:flex;align-items:center;border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);background:rgba(255,255,255,.055)}
 .principle-list h3{font-size:clamp(30px,3.2vw,46px);line-height:.98}
 .principle-list p{max-width:none;margin-top:14px;font-size:15px;line-height:1.55}
 .philosophy-link{position:static;display:inline-block;margin-top:22px}
@@ -585,7 +588,8 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 
 @media(max-width:820px){
   .philosophy-spread{grid-template-columns:1fr;gap:24px}
-  .principle-list{grid-template-columns:1fr 1fr;gap:12px}
+  .principle-list{grid-template-columns:1fr 1fr;gap:16px}
+  .principle-list li{min-height:200px}
   .philosophy-image{max-width:none;aspect-ratio:1.25}
 }
 
@@ -596,7 +600,7 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
   .philosophy-lead h2{font-size:43px}
   .philosophy-spread{margin-top:26px;gap:18px}
   .principle-list{grid-template-columns:1fr;gap:10px}
-  .principle-list li{padding:19px}
+  .principle-list li{min-height:170px;padding:19px}
   .principle-list h3{font-size:34px}
   .principle-list p{margin-top:10px;font-size:14px}
   .philosophy-link{margin-top:18px}
