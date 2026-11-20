@@ -1015,4 +1015,737 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
   }
 }
 
+/* Daily Slim gets an equal, outcome-led campaign moment beneath Menopause Balance. */
+.daily-spotlight{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:clamp(44px,5vw,76px) max(24px,calc((100vw - 1400px)/2));
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);
+  gap:clamp(34px,5vw,76px);
+  align-items:stretch;
+  background:linear-gradient(135deg,#302642 0%,#49385f 58%,#705a91 100%);
+  color:white;
+}
+.daily-spotlight::before{
+  content:'';
+  position:absolute;
+  z-index:-1;
+  width:410px;
+  height:410px;
+  left:-220px;
+  bottom:-265px;
+  border:58px solid rgba(255,255,255,.055);
+  border-radius:50%;
+}
+.daily-spotlight__copy{
+  max-width:760px;
+  padding-block:clamp(18px,2vw,32px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+}
+.daily-spotlight__copy h2{
+  max-width:12ch;
+  margin:18px 0;
+  color:white;
+  font-size:clamp(48px,5vw,76px);
+  line-height:.94;
+}
+.daily-spotlight__lead{
+  max-width:54ch;
+  margin:0;
+  color:rgba(255,255,255,.78);
+  font-size:clamp(15px,1.3vw,18px);
+  line-height:1.55;
+}
+.daily-spotlight__benefits{
+  width:100%;
+  margin:28px 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  list-style:none;
+}
+.daily-spotlight__benefits li{
+  min-height:68px;
+  padding:13px;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:12px;
+  background:rgba(255,255,255,.075);
+  font-size:13px;
+  font-weight:650;
+  line-height:1.3;
+}
+.daily-spotlight__benefits li span{
+  width:23px;
+  height:23px;
+  flex:0 0 23px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--honey);
+  color:var(--midnight);
+  font-size:12px;
+  font-weight:800;
+}
+.daily-spotlight__cta{
+  min-height:52px;
+  padding:14px 24px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  border-radius:999px;
+  background:var(--honey);
+  color:var(--midnight);
+  font-size:13px;
+  font-weight:750;
+  text-decoration:none;
+  transition:transform .2s,background .2s;
+}
+.daily-spotlight__cta:hover{transform:translateY(-2px);background:#ffd96f}
+.daily-spotlight__visual{
+  min-height:430px;
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--radius);
+  background:#d9cdea;
+  box-shadow:0 28px 70px rgba(16,10,28,.28);
+}
+.daily-spotlight__visual::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(35,25,51,.55),transparent 42%);
+  pointer-events:none;
+}
+.daily-spotlight__visual img{
+  width:100%;
+  height:100%;
+  position:absolute;
+  inset:0;
+  object-fit:cover;
+  object-position:50% 22%;
+  transition:transform .65s cubic-bezier(.22,.61,.36,1);
+}
+.daily-spotlight__visual:hover img{transform:scale(1.025)}
+.daily-spotlight__visual>span{
+  position:absolute;
+  z-index:1;
+  left:24px;
+  right:24px;
+  bottom:22px;
+  color:white;
+  font:650 clamp(18px,1.8vw,25px)/1.08 'Inter Tight',sans-serif;
+}
+
+/* Simplify the comparison card and let the two product choices fill the panel. */
+.feature-question .feature-compare{
+  flex:1;
+  width:100%;
+  margin:6px 0 0;
+  display:grid;
+  grid-template-rows:repeat(2,minmax(54px,1fr));
+  gap:10px;
+  align-content:center;
+}
+.feature-question .feature-compare>span{
+  min-height:0;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:12px;
+  background:rgba(255,255,255,.09);
+  text-align:center;
+}
+.feature-question .feature-compare b{
+  font-size:clamp(16px,1.35vw,20px);
+  line-height:1.1;
+}
+.feature-question .feature-compare small{display:none}
+.feature-question .feature-line{flex:0 0 auto}
+
+/* Keep product-card headlines supportive and give the outcome bullets priority. */
+.product-path-cards h3{
+  max-width:19ch;
+  margin:12px auto 18px;
+  font-size:clamp(24px,2.15vw,34px);
+  line-height:1.02;
+}
+.product-path-cards .bf-product-cta-stack{gap:16px}
+.product-path-cards .bf-product-benefits--cta li{
+  gap:6px;
+  font-size:12px;
+  font-weight:650;
+  line-height:1.3;
+}
+.product-path-cards .bf-product-benefits--cta li svg{
+  width:16px;
+  height:16px;
+  flex-basis:16px;
+}
+
+@media(max-width:820px){
+  .daily-spotlight{
+    padding:56px 20px;
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .daily-spotlight__copy{max-width:none;padding:0}
+  .daily-spotlight__copy h2{max-width:11ch;font-size:clamp(46px,9vw,64px)}
+  .daily-spotlight__benefits li{font-size:12.5px}
+  .daily-spotlight__visual{min-height:430px}
+  .daily-spotlight__visual img{object-position:50% 18%}
+
+  .feature-question{min-height:330px}
+  .feature-question h3{margin:16px auto 10px}
+  .feature-question .feature-compare{margin-top:4px;gap:9px}
+  .feature-question .feature-compare b{font-size:17px}
+  .feature-question .feature-line{margin-top:14px}
+
+  .product-path-cards h3{font-size:28px}
+  .product-path-cards .bf-product-benefits--cta li{font-size:11.5px;line-height:1.3}
+}
+
+@media(max-width:520px){
+  .daily-spotlight{padding:48px 16px;gap:24px}
+  .manifesto h2,.manifesto h2 em{max-width:100%;overflow-wrap:break-word}
+  .manifesto h2 em{display:block}
+  .daily-spotlight__copy h2{max-width:100%;margin:15px 0;font-size:40px;overflow-wrap:break-word;text-wrap:wrap}
+  .daily-spotlight__lead{max-width:100%;font-size:15px;overflow-wrap:break-word}
+  .daily-spotlight__benefits{margin:22px 0;grid-template-columns:1fr;gap:8px}
+  .daily-spotlight__benefits li{min-height:50px;padding:11px 13px;font-size:13px}
+  .daily-spotlight__cta{width:100%}
+  .daily-spotlight__visual{min-height:350px}
+  .daily-spotlight__visual>span{left:18px;right:18px;bottom:17px;max-width:17ch;font-size:18px;overflow-wrap:break-word}
+
+  .feature-question{min-height:310px;padding:22px}
+  .feature-question h3{width:min(100%,11ch);margin:14px auto 10px;font-size:30px}
+  .feature-question .feature-compare{grid-template-rows:repeat(2,minmax(52px,1fr));gap:8px}
+  .feature-question .feature-compare>span{padding:10px}
+  .feature-question .feature-compare b{font-size:17px}
+  .feature-question .feature-line{margin-top:12px}
+
+  .product-path-cards h3{margin-bottom:16px;font-size:26px}
+  .product-path-cards .bf-product-benefits--cta ul{gap:8px}
+  .product-path-cards .bf-product-benefits--cta li{font-size:11.5px;line-height:1.28}
+  .product-path-cards .bf-product-benefits--cta li svg{width:15px;height:15px;flex-basis:15px}
+}
+
+/* Compact Daily Slim introduction: mirrors the concise statement above. */
+.daily-spotlight{
+  min-height:0;
+  padding:clamp(62px,7vw,104px) max(24px,calc((100vw - 1400px)/2));
+  grid-template-columns:120px minmax(0,1fr) minmax(250px,.45fr);
+  gap:clamp(35px,5vw,80px);
+  align-items:start;
+  background:linear-gradient(135deg,#302642 0%,#49385f 64%,#675083 100%);
+}
+.daily-spotlight::before{
+  width:330px;
+  height:330px;
+  left:auto;
+  right:-170px;
+  top:-205px;
+  bottom:auto;
+  border-width:46px;
+}
+.daily-spotlight::after{
+  content:'';
+  position:absolute;
+  z-index:-1;
+  left:max(24px,calc((100vw - 1400px)/2));
+  bottom:30px;
+  width:88px;
+  height:2px;
+  background:linear-gradient(90deg,var(--honey) 0 12%,rgba(255,255,255,.45) 12% 100%);
+}
+.daily-spotlight__index{
+  margin:9px 0 0;
+  color:var(--honey);
+  font:600 9px/1.5 Consolas,monospace;
+  letter-spacing:.14em;
+}
+.daily-spotlight>h2{
+  max-width:11ch;
+  color:white;
+  font-size:clamp(46px,6vw,90px);
+}
+.daily-spotlight>h2 em{
+  color:#cfc0ea;
+  font-style:normal;
+}
+.daily-spotlight__notes{
+  align-self:end;
+  padding-bottom:7px;
+}
+.daily-spotlight__notes p{
+  max-width:34ch;
+  margin:0 0 23px;
+  color:rgba(255,255,255,.76);
+}
+.daily-spotlight__notes .text-link{
+  color:white;
+  border-color:rgba(255,255,255,.7);
+}
+
+@media(max-width:1100px){
+  .daily-spotlight{grid-template-columns:90px minmax(0,1fr) minmax(220px,.45fr)}
+}
+
+@media(max-width:820px){
+  .daily-spotlight{
+    padding:58px 20px;
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+  .daily-spotlight>h2{max-width:10ch;font-size:clamp(47px,9vw,64px)}
+  .daily-spotlight__notes{display:flex;justify-content:space-between;gap:28px;align-items:end}
+  .daily-spotlight__notes p{margin:0}
+}
+
+@media(max-width:520px){
+  .daily-spotlight{padding:50px 16px;gap:18px}
+  .daily-spotlight::after{left:16px;bottom:22px}
+  .daily-spotlight>h2{max-width:100%;font-size:46px;overflow-wrap:break-word}
+  .daily-spotlight>h2 em{display:block}
+  .daily-spotlight__notes{display:block}
+  .daily-spotlight__notes p{max-width:31ch;margin:0 0 20px;font-size:15px;line-height:1.55}
+}
+
+/* Customer recognition stories: one clear situation-led section per formula. */
+.fit-check{
+  padding:clamp(64px,7vw,108px) max(24px,calc((100vw - 1400px)/2));
+  display:grid;
+  grid-template-columns:minmax(340px,.72fr) minmax(0,1.28fr);
+  gap:clamp(42px,6vw,96px);
+  align-items:stretch;
+  background:
+    radial-gradient(circle at 94% 9%,rgba(146,122,190,.16) 0 110px,transparent 111px),
+    linear-gradient(135deg,#fcf9f4 0%,#f6f0f8 100%);
+  color:var(--midnight);
+}
+.fit-check--menopause{
+  background:
+    radial-gradient(circle at 5% 92%,rgba(255,204,82,.18) 0 105px,transparent 106px),
+    linear-gradient(135deg,#e9def4 0%,#f8f3fa 55%,#fcf9f4 100%);
+}
+.fit-check--menopause .fit-check__visual{order:2}
+.fit-check--menopause .fit-check__copy{order:1}
+.fit-check__visual{
+  min-height:680px;
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  background:#d9cdea;
+  box-shadow:0 28px 70px rgba(42,31,61,.15);
+  color:white;
+  text-decoration:none;
+}
+.fit-check__visual::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 58%,rgba(26,18,39,.78) 100%);
+  pointer-events:none;
+}
+.fit-check__visual img{
+  width:100%;
+  height:100%;
+  position:absolute;
+  inset:0;
+  object-fit:cover;
+  object-position:center center;
+  transition:transform .6s cubic-bezier(.22,.61,.36,1);
+}
+.fit-check__visual:hover img{transform:scale(1.025)}
+.fit-check__visual>span{
+  position:absolute;
+  z-index:1;
+  left:26px;
+  bottom:24px;
+  padding:9px 14px;
+  border:1px solid rgba(255,255,255,.6);
+  border-radius:999px;
+  background:rgba(33,23,49,.42);
+  backdrop-filter:blur(10px);
+  color:white;
+  font-size:13px;
+  font-weight:750;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.fit-check__copy{
+  align-self:center;
+  max-width:790px;
+}
+.fit-check__copy .eyebrow{margin-bottom:16px;color:#765ba3}
+.fit-check__copy h2{
+  max-width:9ch;
+  margin:0;
+  font-size:clamp(56px,6.4vw,92px);
+  line-height:.88;
+}
+.fit-check__intro{
+  max-width:44ch;
+  margin:22px 0 26px;
+  color:var(--soft);
+  font-size:clamp(17px,1.35vw,21px);
+  line-height:1.5;
+}
+.fit-check__list{
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+  list-style:none;
+}
+.fit-check__list li{
+  min-height:86px;
+  padding:16px 17px 16px 43px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  border:1px solid rgba(45,37,65,.12);
+  border-radius:14px;
+  background:rgba(255,255,255,.62);
+  box-shadow:0 10px 28px rgba(45,37,65,.045);
+  color:#4f465d;
+  font-size:16px;
+  line-height:1.42;
+}
+.fit-check__list li::before{
+  content:'';
+  width:9px;
+  height:9px;
+  position:absolute;
+  left:18px;
+  top:24px;
+  border-radius:50%;
+  background:var(--honey);
+  box-shadow:0 0 0 5px rgba(255,204,82,.18);
+}
+.fit-check__list strong{color:var(--midnight);font-weight:760}
+.fit-check__cta{
+  width:fit-content;
+  min-height:54px;
+  margin-top:25px;
+  padding:15px 24px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  background:var(--midnight);
+  color:white;
+  font-size:14px;
+  font-weight:750;
+  text-align:center;
+  text-decoration:none;
+  transition:transform .2s,background .2s;
+}
+.fit-check__cta:hover{transform:translateY(-2px);background:#4a3a61}
+
+/* The review title now stands on its own without a competing side paragraph. */
+.films-head{grid-template-columns:1fr}
+.films-head>div{max-width:920px}
+
+@media(max-width:1000px){
+  .fit-check{grid-template-columns:minmax(280px,.75fr) minmax(0,1.25fr);gap:34px}
+  .fit-check__visual{min-height:650px}
+  .fit-check__list{grid-template-columns:1fr}
+  .fit-check__list li{min-height:68px}
+}
+
+@media(max-width:820px){
+  .fit-check{
+    padding:58px 20px;
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+  .fit-check--menopause .fit-check__visual,
+  .fit-check--menopause .fit-check__copy{order:initial}
+  .fit-check__visual{min-height:520px}
+  .fit-check__copy{max-width:none}
+  .fit-check__copy h2{font-size:clamp(54px,11vw,76px)}
+  .fit-check__list{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:520px){
+  .fit-check{padding:48px 16px;gap:24px}
+  .fit-check__visual{min-height:390px;border-radius:16px}
+  .fit-check__visual img{object-position:center 30%}
+  .fit-check__visual>span{left:16px;bottom:16px;font-size:11px}
+  .fit-check__copy h2{font-size:51px}
+  .fit-check__intro{margin:17px 0 21px;font-size:16px}
+  .fit-check__list{grid-template-columns:1fr;gap:8px}
+  .fit-check__list li{min-height:0;padding:13px 14px 13px 39px;font-size:15px}
+  .fit-check__list li::before{left:16px;top:19px;width:8px;height:8px}
+  .fit-check__cta{width:100%;margin-top:20px}
+}
+
+/* Keep the two formula cards simple, balanced and clear at every width. */
+.philosophy-image,
+.principle-list{min-width:0;width:100%}
+.principle-list li{
+  min-width:0;
+  min-height:210px;
+  overflow:hidden;
+}
+.principle-list li>div{min-width:0}
+.principle-list h3{
+  max-width:100%;
+  overflow-wrap:break-word;
+  text-wrap:balance;
+}
+.principle-list p{
+  max-width:31ch;
+  margin:16px 0 0;
+  display:block;
+  color:rgba(252,249,244,.76);
+  font-size:clamp(16px,1.35vw,19px);
+  line-height:1.5;
+  text-wrap:balance;
+}
+
+@media(max-width:1100px){
+  .philosophy-spread{grid-template-columns:1fr;gap:24px}
+  .philosophy-image{height:400px;max-width:none;aspect-ratio:auto}
+  .philosophy-image img{width:100%;height:100%;object-position:center 48%}
+  .principle-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .principle-list li{min-height:190px;padding:26px}
+}
+
+@media(max-width:520px){
+  .philosophy-image{height:320px}
+  .principle-list{grid-template-columns:1fr;gap:10px}
+  .principle-list li{min-height:145px;padding:20px}
+  .principle-list h3{font-size:34px}
+  .principle-list p{margin-top:12px;font-size:16px;line-height:1.45}
+}
+
+/* Compact the situation-led product sections and keep the products in focus. */
+.fit-check{
+  padding-block:clamp(44px,5vw,70px);
+  grid-template-columns:minmax(280px,.62fr) minmax(0,1.38fr);
+  gap:clamp(30px,4vw,58px);
+}
+.fit-check--menopause{grid-template-columns:minmax(0,1.38fr) minmax(280px,.62fr)}
+.fit-check__visual{min-height:480px;max-height:500px}
+.fit-check__visual img{object-position:38% 56%}
+.fit-check--menopause .fit-check__visual img{object-position:38% 55%}
+.fit-check__copy h2{font-size:clamp(50px,5.2vw,74px)}
+.fit-check__intro{margin:16px 0 20px;font-size:clamp(16px,1.15vw,19px)}
+.fit-check__list{gap:8px}
+.fit-check__list li{min-height:66px;padding:12px 14px 12px 40px;font-size:15px;line-height:1.35}
+.fit-check__list li::before{left:16px;top:20px}
+.fit-check__cta{min-height:49px;margin-top:18px;padding:12px 21px}
+
+/* Match the reference: each desktop formula message reads as one straight line. */
+@media(min-width:821px){
+  .principle-list p{
+    max-width:none;
+    white-space:nowrap;
+    font-size:clamp(14px,1.15vw,18px);
+  }
+}
+
+@media(max-width:820px){
+  .fit-check{padding:42px 20px;grid-template-columns:1fr;gap:22px}
+  .fit-check--menopause{grid-template-columns:1fr}
+  .fit-check__visual{min-height:300px;max-height:320px}
+  .fit-check__copy h2{font-size:clamp(48px,9vw,62px)}
+  .fit-check__intro{margin:14px 0 18px}
+  .fit-check__list{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .fit-check__list li{min-height:86px;padding:12px 12px 12px 36px;font-size:14px}
+  .fit-check__list li::before{left:14px;top:19px}
+}
+
+@media(max-width:520px){
+  .fit-check{padding:34px 16px;gap:18px}
+  .fit-check__visual{min-height:230px;max-height:250px}
+  .fit-check__visual img,
+  .fit-check--menopause .fit-check__visual img{object-position:35% 58%}
+  .fit-check__copy .eyebrow{margin-bottom:10px}
+  .fit-check__copy h2{font-size:44px}
+  .fit-check__intro{margin:12px 0 16px;font-size:15px}
+  .fit-check__list{grid-template-columns:1fr;gap:6px}
+  .fit-check__list li{min-height:0;padding:11px 12px 11px 36px;font-size:14px;line-height:1.32}
+  .fit-check__list li::before{top:17px}
+  .fit-check__cta{min-height:46px;margin-top:14px;padding:11px 16px;font-size:13px}
+  .principle-list p{white-space:normal}
+}
+
+/* Final homepage polish: clearer closing benefits and a truly aligned footer mark. */
+.footer-brand .brand-wordmark--footer img{
+  transform:translateX(-15px);
+}
+
+@media(min-width:821px){
+  .finale-actions .bf-product-benefits--cta ul{
+    column-gap:12px;
+  }
+  .finale-actions .bf-product-benefits--cta li{
+    font-size:12.5px;
+    line-height:1.3;
+    white-space:nowrap;
+  }
+}
+
+/* Mobile-only readability pass for hero, discovery and testimonial benefits. */
+@media(max-width:520px){
+  /* Lead with the product choices instead of repeating the hero explanation. */
+  .cover-copy>p:not(.eyebrow){display:none}
+
+  /* Keep each product's three hero outcomes large and evenly spaced in one row. */
+  .hero-product-actions .bf-product-benefits--cta ul{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:9px;
+    margin-top:6px;
+  }
+  .hero-product-actions .bf-product-benefits--cta li{
+    align-items:flex-start;
+    gap:5px;
+    font-size:12px;
+    font-weight:650;
+    line-height:1.25;
+  }
+  .hero-product-actions .bf-product-benefits--cta li svg{
+    width:16px;
+    height:16px;
+    flex-basis:16px;
+  }
+
+  /* Make the Daily Slim image labels clear against every part of the photos. */
+  .feature-story .feature-kicker,
+  .feature-night .feature-kicker{
+    max-width:calc(100% - 40px);
+    padding:7px 10px;
+    border:1px solid rgba(255,255,255,.34);
+    border-radius:999px;
+    background:rgba(30,22,44,.76);
+    box-shadow:0 7px 20px rgba(24,16,35,.2);
+    color:white;
+    font:700 12px/1.25 'Inter Tight',sans-serif;
+    letter-spacing:.08em;
+    text-shadow:0 1px 2px rgba(0,0,0,.42);
+    backdrop-filter:blur(7px);
+  }
+  .feature-story .feature-kicker{left:20px;top:20px}
+  .feature-night .feature-kicker{left:18px;top:18px}
+
+  /* Enlarge the Menopause Balance outcomes without covering the portrait. */
+  .feature-formula .feature-benefits{
+    width:64%;
+    max-width:240px;
+    gap:9px;
+    font-size:13px;
+    font-weight:650;
+    line-height:1.3;
+  }
+  .feature-formula .feature-benefits li{
+    padding:5px 7px;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:8px;
+    background:rgba(34,25,50,.28);
+    backdrop-filter:blur(4px);
+  }
+
+  /* Present testimonial outcomes as engaging horizontal benefit cards. */
+  .films .bf-product-cta-stack{
+    gap:12px;
+    padding:14px;
+    border:1px solid rgba(77,61,105,.13);
+    border-radius:16px;
+    background:rgba(255,255,255,.5);
+    box-shadow:0 12px 32px rgba(45,37,65,.07);
+  }
+  .films .bf-product-benefits--cta ul{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:8px;
+  }
+  .films .bf-product-benefits--cta li{
+    min-width:0;
+    min-height:84px;
+    padding:10px 7px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    gap:7px;
+    border:1px solid rgba(139,122,184,.18);
+    border-radius:11px;
+    background:linear-gradient(155deg,rgba(255,255,255,.78),rgba(235,226,244,.72));
+    color:var(--midnight);
+    font-size:12px;
+    font-weight:650;
+    line-height:1.25;
+    text-align:center;
+  }
+  .films .bf-product-benefits--cta li svg{
+    width:19px;
+    height:19px;
+    flex:0 0 19px;
+    padding:4px;
+    overflow:visible;
+    border-radius:50%;
+    background:rgba(139,122,184,.12);
+    stroke:#765ba3;
+  }
+}
+
+/* Mobile refinement: simple horizontal benefits and a tighter closing hero. */
+@media(max-width:520px){
+  .films .bf-product-cta-stack{
+    gap:10px;
+    padding:0;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+  }
+  .films .bf-product-benefits--cta ul{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;
+  }
+  .films .bf-product-benefits--cta li{
+    min-height:0;
+    padding:0;
+    flex-direction:row;
+    align-items:flex-start;
+    justify-content:flex-start;
+    gap:6px;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    color:var(--midnight);
+    font-size:12px;
+    font-weight:600;
+    line-height:1.3;
+    text-align:left;
+  }
+  .films .bf-product-benefits--cta li svg{
+    width:16px;
+    height:16px;
+    flex:0 0 16px;
+    padding:0;
+    border-radius:0;
+    background:transparent;
+    stroke:var(--lavender);
+  }
+
+  .finale{
+    height:clamp(520px,128vw,540px);
+    min-height:520px;
+  }
+}
+
 
