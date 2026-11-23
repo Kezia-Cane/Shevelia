@@ -52,6 +52,64 @@
 
   const initialize = () => {
     document.body.insertAdjacentHTML("beforeend", markup);
+
+    const setupAutoHideChrome = () => {
+      if (!document.body.hasAttribute("data-auto-hide-chrome")) return;
+
+      const header = document.querySelector(".site-header");
+      const announcement = document.querySelector(".bf-announcement");
+      if (!header || !announcement) return;
+
+      const menuToggle = header.querySelector(".menu-toggle");
+      const primaryNav = header.querySelector(".primary-nav");
+      let lastScrollY = Math.max(window.scrollY, 0);
+      let direction = 0;
+      let travelled = 0;
+      let frame = 0;
+
+      const showChrome = () => document.body.classList.remove("site-chrome-hidden");
+
+      const updateChrome = () => {
+        const currentScrollY = Math.max(window.scrollY, 0);
+        const delta = currentScrollY - lastScrollY;
+        const nextDirection = delta > 0 ? 1 : delta < 0 ? -1 : direction;
+        const menuIsOpen = menuToggle?.getAttribute("aria-expanded") === "true"
+          || primaryNav?.classList.contains("is-open");
+
+        if (nextDirection !== direction) {
+          direction = nextDirection;
+          travelled = 0;
+        }
+        travelled += Math.abs(delta);
+
+        if (currentScrollY <= 48 || menuIsOpen || header.contains(document.activeElement)) {
+          showChrome();
+        } else if (direction > 0 && travelled >= 16) {
+          document.body.classList.add("site-chrome-hidden");
+          travelled = 0;
+        } else if (direction < 0 && travelled >= 6) {
+          showChrome();
+          travelled = 0;
+        }
+
+        lastScrollY = currentScrollY;
+        frame = 0;
+      };
+
+      const requestChromeUpdate = () => {
+        if (!frame) frame = window.requestAnimationFrame(updateChrome);
+      };
+
+      window.addEventListener("scroll", requestChromeUpdate, { passive: true });
+      window.addEventListener("resize", showChrome);
+      window.addEventListener("pageshow", showChrome);
+      menuToggle?.addEventListener("click", showChrome);
+      document.addEventListener("focusin", (event) => {
+        if (header.contains(event.target) || announcement.contains(event.target)) showChrome();
+      });
+    };
+
+    setupAutoHideChrome();
     if (!document.querySelector(".site-reviews")) {
       const footer = document.querySelector("footer.site-footer");
       if (footer) footer.insertAdjacentHTML("beforebegin", reviewMarkup);
