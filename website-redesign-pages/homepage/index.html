@@ -42,6 +42,20 @@
   </header>
 
   <main id="main">
+    <svg class="fit-check-icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="fit-icon-jeans" viewBox="0 0 24 24"><path d="M7 3h10l1 18-5-3-1 3-1-3-5 3L7 3Z"/><path d="M9 3v6m6-6v6M7.5 9h9"/></symbol>
+      <symbol id="fit-icon-droplet" viewBox="0 0 24 24"><path d="M12 3c-2.8 4-6.5 7.5-6.5 11.5a6.5 6.5 0 0 0 13 0C18.5 10.5 14.8 7 12 3Z"/><path d="M9 15a3.5 3.5 0 0 0 3.5 3.5"/></symbol>
+      <symbol id="fit-icon-moon" viewBox="0 0 24 24"><path d="M19.5 15.5A8 8 0 0 1 8.5 4.5 8.5 8.5 0 1 0 19.5 15.5Z"/><path d="m17.5 4 .7 1.8L20 6.5l-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8Z"/></symbol>
+      <symbol id="fit-icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 1.5M9 2h6M19 4l1.5 1.5"/></symbol>
+      <symbol id="fit-icon-scale" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8l-1.4 3h-5.2L8 7Zm4 0v2"/><path d="M8 16h8"/></symbol>
+      <symbol id="fit-icon-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M7.5 3v4m9-4v4M4 9h16m-11 4h2m3 0h2m-7 4h2"/></symbol>
+      <symbol id="fit-icon-night-clock" viewBox="0 0 24 24"><path d="M16.5 13.5A6.5 6.5 0 0 1 8 5a7 7 0 1 0 8.5 8.5Z"/><circle cx="17.5" cy="16.5" r="4"/><path d="M17.5 14.5v2.2l1.3.8"/></symbol>
+      <symbol id="fit-icon-flame" viewBox="0 0 24 24"><path d="M13 3c1 4-3 5-2 8 1-1 2-2 2-3 3 2 5 4.5 5 7.5a6 6 0 0 1-12 0C6 11 11 8 13 3Z"/><path d="M12 14c1.5 1.3 2 2.2 2 3.4a2 2 0 0 1-4 0c0-1.3.7-2.3 2-3.4Z"/></symbol>
+      <symbol id="fit-icon-conversation" viewBox="0 0 24 24"><path d="M4 5.5h11a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H9l-4 3v-3.4a3 3 0 0 1-2-2.6v-5a3 3 0 0 1 1-3Z"/><path d="M8 10h6m-6 3h4m5-3h3a2 2 0 0 1 2 2v4l-2 2v-2h-2"/></symbol>
+      <symbol id="fit-icon-thought" viewBox="0 0 24 24"><path d="M8 18.5a4 4 0 0 1-1-7.9A5.5 5.5 0 0 1 17.5 9a4 4 0 0 1 .5 8h-2l-4 3-4-3h-1Z"/><path d="M9 11h.01M12 11h.01M15 11h.01M9 14h6"/></symbol>
+      <symbol id="fit-icon-self" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="9" r="2.5"/><path d="M7.5 18a4.5 4.5 0 0 1 9 0"/></symbol>
+      <symbol id="fit-icon-support" viewBox="0 0 24 24"><path d="M12 20s-8-4.7-8-10a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.3-8 10-8 10Z"/><path d="M8 12h2l1-2 2 4 1-2h2"/></symbol>
+    </svg>
     <section class="cover">
       <img decoding="async" class="cover-image" src="assets/shevelia-morning-optimized.jpg" alt="A woman enjoying a quiet morning in warm natural light" fetchpriority="high">
       <div class="cover-shade" aria-hidden="true"></div>
@@ -88,7 +102,7 @@
 
     <section class="fit-check fit-check--daily" aria-labelledby="daily-fit-title">
       <a class="fit-check__visual reveal" href="https://shevelia.co/products/daily-slim" aria-label="Explore Daily Slim for bloating, cravings and everyday energy">
-        <img decoding="async" src="assets/daily-flatlay.jpg" alt="Daily Slim with capsules and botanical ingredients" loading="lazy">
+        <img decoding="async" src="../products/assets/daily-slim-campaign-optimized.jpg" alt="Daily Slim on a violet campaign set" loading="lazy">
         <span>Daily Slim</span>
       </a>
       <div class="fit-check__copy reveal">
@@ -96,12 +110,12 @@
         <h2 id="daily-fit-title">Is this for you?</h2>
         <p class="fit-check__intro">If this sounds familiar, Daily Slim was made for you:</p>
         <ul class="fit-check__list">
-          <li><span>Same food, same walks, and your <strong>jeans fit differently</strong> than last year</span></li>
-          <li><span>Your rings, your waistband, even your face feel <strong>puffy by the end of the day</strong></span></li>
-          <li><span>A belly that looks <strong>fuller at night</strong> than it did at breakfast</span></li>
-          <li><span>The <strong>4 p.m. pull</strong> toward something sweet, most days</span></li>
-          <li><span>“Eat less, move more” <strong>stopped working</strong>, and you did try</span></li>
-          <li><span>You’ve been told it’s <strong>just your age</strong></span></li>
+          <li><svg class="fit-check__icon" aria-hidden="true"><use href="#fit-icon-jeans"/></svg><span>Same food, same walks, and your <strong>jeans fit differently</strong> than last year</span></li>
+          <li><svg class="fit-check__icon" aria-hidden="true"><use href="#fit-icon-droplet"/></svg><span>Your rings, your waistband, even your face feel <strong>puffy by the end of the day</strong></span></li>
+          <li><svg class="fit-check__icon" aria-hidden="true"><use href="#fit-icon-moon"/></svg><span>A belly that looks <strong>fuller at night</strong> than it did at breakfast</span></li>
+          <li><svg class="fit-check__icon" aria-hidden="true"><use href="#fit-icon-clock"/></svg><span>The <strong>4 p.m. pull</strong> toward something sweet, most days</span></li>
+          <li><svg class="fit-check__icon" aria-hidden="true"><use href="#fit-icon-scale"/></svg><span>“Eat less, move more” <strong>stopped working</strong>, and you did try</span></li>
+          <li><svg class="fit-check__icon" aria-hidden="true"><use href="#fit-icon-calendar"/></svg><span>You’ve been told it’s <strong>just your age</strong></span></li>
         </ul>
         <a class="fit-check__cta" href="https://shevelia.co/products/daily-slim">See how Daily Slim supports you</a>
       </div>
@@ -109,7 +123,7 @@
 
     <section class="fit-check fit-check--menopause" aria-labelledby="menopause-fit-title">
       <a class="fit-check__visual reveal" href="https://shevelia.co/products/shevelia-menopause-balance" aria-label="Explore Menopause Balance for restless nights, clarity and mood support">
-        <img decoding="async" src="assets/menopause-flatlay.jpg" alt="Menopause Balance with capsules and botanical ingredients" loading="lazy">
+        <img decoding="async" src="../products/assets/menopause-balance-campaign-optimized.jpg" alt="Menopause Balance on a violet campaign set" loading="lazy">
         <span>Menopause Balance</span>
       </a>
       <div class="fit-check__copy reveal">
@@ -117,12 +131,12 @@
         <h2 id="menopause-fit-title">Is this for you?</h2>
         <p class="fit-check__intro">If any of these sound familiar, this was made for you:</p>
         <ul class="fit-check__list">
-          <li><span>You’re <strong>awake at 3 a.m.</strong> and your mind won’t settle</span></li>
-          <li><span><strong>Occasional hot flashes or night sweats</strong> arrive without warning</span></li>
-          <li><span>You <strong>snap at the people you love</strong> over nothing, then lie awake feeling guilty about it</span></li>
-          <li><span>The word is right there, and <strong>it won’t come</strong></span></li>
-          <li><span>You still love your life, but you <strong>don’t feel quite like yourself</strong> lately</span></li>
-          <li><span>You’ve been told it’s <strong>just part of it</strong>, and to wait it out</span></li>
+          <li><svg class="fit-check__icon" aria-hidden="true"><use href="#fit-icon-night-clock"/></svg><span>You’re <strong>awake at 3 a.m.</strong> and your mind won’t settle</span></li>
+          <li><svg class="fit-check__icon" aria-hidden="true"><use href="#fit-icon-flame"/></svg><span><strong>Occasional hot flashes or night sweats</strong> arrive without warning</span></li>
+          <li><svg class="fit-check__icon" aria-hidden="true"><use href="#fit-icon-conversation"/></svg><span>You <strong>snap at the people you love</strong> over nothing, then lie awake feeling guilty about it</span></li>
+          <li><svg class="fit-check__icon" aria-hidden="true"><use href="#fit-icon-thought"/></svg><span>The word is right there, and <strong>it won’t come</strong></span></li>
+          <li><svg class="fit-check__icon" aria-hidden="true"><use href="#fit-icon-self"/></svg><span>You still love your life, but you <strong>don’t feel quite like yourself</strong> lately</span></li>
+          <li><svg class="fit-check__icon" aria-hidden="true"><use href="#fit-icon-support"/></svg><span>You’ve been told it’s <strong>just part of it</strong>, and to wait it out</span></li>
         </ul>
         <a class="fit-check__cta" href="https://shevelia.co/products/shevelia-menopause-balance">See how Menopause Balance supports you</a>
       </div>

@@ -1541,8 +1541,8 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 }
 .fit-check--menopause{grid-template-columns:minmax(0,1.38fr) minmax(280px,.62fr)}
 .fit-check__visual{min-height:480px;max-height:500px}
-.fit-check__visual img{object-position:38% 56%}
-.fit-check--menopause .fit-check__visual img{object-position:38% 55%}
+.fit-check__visual img{object-position:50% 50%}
+.fit-check--menopause .fit-check__visual img{object-position:50% 50%}
 .fit-check__copy h2{font-size:clamp(50px,5.2vw,74px)}
 .fit-check__intro{margin:16px 0 20px;font-size:clamp(16px,1.15vw,19px)}
 .fit-check__list{gap:8px}
@@ -1574,7 +1574,7 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
   .fit-check{padding:34px 16px;gap:18px}
   .fit-check__visual{min-height:230px;max-height:250px}
   .fit-check__visual img,
-  .fit-check--menopause .fit-check__visual img{object-position:35% 58%}
+  .fit-check--menopause .fit-check__visual img{object-position:50% 50%}
   .fit-check__copy .eyebrow{margin-bottom:10px}
   .fit-check__copy h2{font-size:44px}
   .fit-check__intro{margin:12px 0 16px;font-size:15px}
@@ -1746,6 +1746,34 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
     height:clamp(520px,128vw,540px);
     min-height:520px;
   }
+}
+
+/* Replace symptom-list dots with clear, branded line icons. */
+.fit-check-icon-library{position:absolute;width:0;height:0;overflow:hidden}
+.fit-check__list li{display:flex;align-items:center;gap:11px;padding-left:14px}
+.fit-check__list li::before{display:none}
+.fit-check__icon{
+  width:27px;
+  height:27px;
+  flex:0 0 27px;
+  padding:4px;
+  border-radius:9px;
+  background:rgba(146,122,190,.14);
+  color:#765ba3;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.65;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.fit-check--menopause .fit-check__icon{background:rgba(118,91,163,.14);color:#60477f}
+
+@media(max-width:820px){
+  .fit-check__list li{padding-left:12px}
+}
+@media(max-width:520px){
+  .fit-check__list li{padding-left:12px}
+  .fit-check__icon{width:25px;height:25px;flex-basis:25px;padding:3px}
 }
 
 
