@@ -1587,7 +1587,13 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 
 /* Final homepage polish: clearer closing benefits and a truly aligned footer mark. */
 .footer-brand .brand-wordmark--footer img{
-  transform:translateX(-15px);
+  transform:translateX(-23px);
+}
+
+@media(max-width:820px){
+  .footer-brand .brand-wordmark--footer img{
+    transform:translateX(-20px);
+  }
 }
 
 @media(min-width:821px){

@@ -16,6 +16,17 @@
   --section: clamp(64px, 6vw, 92px);
 }
 
+/* Visually align the footer wordmark with the support copy below it. */
+.footer-brand .brand-wordmark--footer img{
+  transform:translateX(-23px);
+}
+
+@media(max-width:820px){
+  .footer-brand .brand-wordmark--footer img{
+    transform:translateX(-20px);
+  }
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 92px; }
 body { margin: 0; background: var(--cream); color: var(--midnight); font-family: Inter, Arial, sans-serif; font-size: 16px; line-height: 1.6; }
