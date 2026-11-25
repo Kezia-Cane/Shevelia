@@ -1194,6 +1194,27 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
   flex-basis:16px;
 }
 
+/* Keep the two product cards on the same rhythm: matching headline space,
+   equal benefit rows, and a shared CTA baseline. */
+@media(min-width:821px){
+  .product-path-cards article{
+    height:100%;
+  }
+  .product-path-cards article h3{
+    min-height:clamp(70px,5.4vw,94px);
+  }
+  .product-path-cards article>ul{
+    min-height:126px;
+    display:grid;
+    grid-template-rows:repeat(3,minmax(0,1fr));
+    align-content:stretch;
+  }
+  .product-path-cards article>ul>li{
+    display:flex;
+    align-items:center;
+  }
+}
+
 @media(max-width:820px){
   .daily-spotlight{
     padding:56px 20px;
@@ -1217,6 +1238,10 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 }
 
 @media(max-width:520px){
+  /* Add breathing room between the stacked hero product buttons on narrow screens. */
+  .hero-product-actions.bf-product-cta-row{
+    row-gap:24px;
+  }
   .daily-spotlight{padding:48px 16px;gap:24px}
   .manifesto h2,.manifesto h2 em{max-width:100%;overflow-wrap:break-word}
   .manifesto h2 em{display:block}
@@ -1611,6 +1636,9 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 @media(max-width:520px){
   /* Lead with the product choices instead of repeating the hero explanation. */
   .cover-copy>p:not(.eyebrow){display:none}
+  .hero-product-actions{
+    margin-top:22px;
+  }
 
   /* Keep each product's three hero outcomes large and evenly spaced in one row. */
   .hero-product-actions .bf-product-benefits--cta ul{
