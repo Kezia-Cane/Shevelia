@@ -4,6 +4,21 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/about-us",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/products",
+      "destination": "/products/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
       "source": "/website-redesign-pages/homepage",
       "destination": "/",
       "permanent": true
@@ -51,16 +66,24 @@
   ],
   "rewrites": [
     {
-      "source": "/about-us",
-      "destination": "/website-redesign-pages/about-us"
+      "source": "/about-us/:path*",
+      "destination": "/website-redesign-pages/about-us/:path*"
     },
     {
-      "source": "/products",
-      "destination": "/website-redesign-pages/products"
+      "source": "/products/:path*",
+      "destination": "/website-redesign-pages/products/:path*"
     },
     {
-      "source": "/contact",
-      "destination": "/website-redesign-pages/contact"
+      "source": "/contact/:path*",
+      "destination": "/website-redesign-pages/contact/:path*"
+    },
+    {
+      "source": "/shared/:path*",
+      "destination": "/website-redesign-pages/shared/:path*"
+    },
+    {
+      "source": "/homepage/:path*",
+      "destination": "/website-redesign-pages/homepage/:path*"
     },
     {
       "source": "/shipping-policy",
