@@ -70,6 +70,13 @@
       const showChrome = () => document.body.classList.remove("site-chrome-hidden");
 
       const updateChrome = () => {
+        if (window.matchMedia("(max-width: 820px)").matches) {
+          showChrome();
+          lastScrollY = Math.max(window.scrollY, 0);
+          frame = 0;
+          return;
+        }
+
         const currentScrollY = Math.max(window.scrollY, 0);
         const delta = currentScrollY - lastScrollY;
         const nextDirection = delta > 0 ? 1 : delta < 0 ? -1 : direction;
