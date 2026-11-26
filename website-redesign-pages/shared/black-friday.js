@@ -51,6 +51,11 @@
     </section>`;
 
   const initialize = () => {
+    // Vercel serves the homepage from the repository root, whose body is missing
+    // the flag used by the shared banner timer and its refined responsive styles.
+    if (document.querySelector("body > .site-header--overlay")) {
+      document.body.setAttribute("data-auto-hide-chrome", "");
+    }
     document.body.insertAdjacentHTML("beforeend", markup);
 
     const setupAnnouncementCountdown = () => {
