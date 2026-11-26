@@ -66,16 +66,32 @@
   ],
   "rewrites": [
     {
+      "source": "/about-us/",
+      "destination": "/website-redesign-pages/about-us"
+    },
+    {
       "source": "/about-us/:path*",
       "destination": "/website-redesign-pages/about-us/:path*"
+    },
+    {
+      "source": "/products/",
+      "destination": "/website-redesign-pages/products"
     },
     {
       "source": "/products/:path*",
       "destination": "/website-redesign-pages/products/:path*"
     },
     {
+      "source": "/contact/",
+      "destination": "/website-redesign-pages/contact"
+    },
+    {
       "source": "/contact/:path*",
       "destination": "/website-redesign-pages/contact/:path*"
+    },
+    {
+      "source": "/homepage/",
+      "destination": "/website-redesign-pages/homepage"
     },
     {
       "source": "/shared/:path*",
@@ -86,20 +102,40 @@
       "destination": "/website-redesign-pages/homepage/:path*"
     },
     {
+      "source": "/shipping-policy/",
+      "destination": "/website-redesign-pages/shipping-policy"
+    },
+    {
       "source": "/shipping-policy/:path*",
       "destination": "/website-redesign-pages/shipping-policy/:path*"
+    },
+    {
+      "source": "/refund-policy/",
+      "destination": "/website-redesign-pages/refund-policy"
     },
     {
       "source": "/refund-policy/:path*",
       "destination": "/website-redesign-pages/refund-policy/:path*"
     },
     {
+      "source": "/privacy-policy/",
+      "destination": "/website-redesign-pages/privacy-policy"
+    },
+    {
       "source": "/privacy-policy/:path*",
       "destination": "/website-redesign-pages/privacy-policy/:path*"
     },
     {
+      "source": "/terms-of-service/",
+      "destination": "/website-redesign-pages/terms-of-service"
+    },
+    {
       "source": "/terms-of-service/:path*",
       "destination": "/website-redesign-pages/terms-of-service/:path*"
+    },
+    {
+      "source": "/intellectual-property-rights/",
+      "destination": "/website-redesign-pages/intellectual-property-rights"
     },
     {
       "source": "/intellectual-property-rights/:path*",
