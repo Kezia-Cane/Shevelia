@@ -245,11 +245,113 @@
   box-shadow: 0 4px 12px rgba(245, 201, 90, .24);
 }
 
+/* Shared local-page offer and visitor-local midnight countdown. */
+body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__message {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #fcf9f4;
+  font-size: 9px !important;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .04em !important;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__divider {
+  color: #c9badc;
+  font-weight: 700;
+}
+
+body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__countdown b {
+  color: #fcf9f4;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+@media (max-width: 820px) {
+  body[data-auto-hide-chrome] > .bf-announcement {
+    display: flex !important;
+    align-items: center;
+    justify-content: center !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    gap: 10px !important;
+    padding-inline: 12px !important;
+  }
+
+  body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__label {
+    padding: 4px 8px;
+    font-size: 9px !important;
+    letter-spacing: .1em !important;
+  }
+
+  body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__message {
+    min-width: 0;
+    gap: 5px;
+    font-size: 9px !important;
+    font-weight: 700;
+    letter-spacing: 0 !important;
+    text-transform: uppercase;
+  }
+
+  body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__message::before,
+  body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__message::after {
+    content: "•";
+    flex: 0 0 auto;
+    color: #f5c95a;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__divider {
+    color: #f5c95a;
+  }
+
+  body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__action {
+    min-height: 26px;
+    padding: 5px 10px !important;
+    font-size: 9px !important;
+  }
+}
+
 @media (max-width: 520px) {
   .bf-announcement .bf-announcement__action {
-    min-height: 22px;
-    padding: 4px 9px !important;
-    font-size: 8px !important;
+    min-height: 25px;
+    padding: 4px 8px !important;
+    font-size: 8.5px !important;
+  }
+
+  body[data-auto-hide-chrome] > .bf-announcement {
+    gap: 7px !important;
+    padding-inline: 9px !important;
+  }
+
+  body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__label {
+    padding: 4px 7px;
+    font-size: 8.5px !important;
+    letter-spacing: .08em !important;
+  }
+
+  body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__message {
+    gap: 4px;
+    font-size: 8.5px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  body[data-auto-hide-chrome] > .bf-announcement {
+    gap: 4px !important;
+    padding-inline: 6px !important;
+  }
+  body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__label,
+  body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__message,
+  body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__action {
+    font-size: 7.5px !important;
   }
 }
 
@@ -366,12 +468,12 @@ body[data-auto-hide-chrome] > .site-header.is-scrolled {
 @media (max-width: 820px) {
   body[data-auto-hide-chrome] > .site-header,
   body[data-auto-hide-chrome] > .site-header.is-scrolled {
-    top: 31px !important;
+    top: 38px !important;
   }
   body[data-auto-hide-chrome] > .site-header .primary-nav,
   body[data-auto-hide-chrome] > .site-header.is-scrolled .primary-nav {
-    top: 99px !important;
-    height: calc(100svh - 99px) !important;
+    top: 82px !important;
+    height: calc(100svh - 82px) !important;
   }
 }
 
@@ -384,13 +486,23 @@ body[data-auto-hide-chrome] > .site-header.is-scrolled {
 
 /* On mobile, keep the announcement and navigation together while scrolling. */
 @media (max-width: 820px) {
-  /* Reserve the banner's original space while pinning both header rows to the viewport. */
+  /* Keep the fixed announcement/header stack anchored during top-edge pullback. */
+  html,
+  body {
+    overscroll-behavior-y: none;
+  }
+
+  /* Reserve both pinned rows: 38px announcement + 44px navigation. */
   body:has(> .bf-announcement)::before {
     content: "";
     display: block;
-    height: 31px;
+    width: 100%;
+    height: 82px;
+    flex: 0 0 82px;
   }
 
+  body[data-auto-hide-chrome] > .bf-announcement,
+  body[data-auto-hide-chrome].site-chrome-hidden > .bf-announcement,
   body > .bf-announcement,
   body.site-chrome-hidden > .bf-announcement {
     position: fixed !important;
@@ -401,6 +513,7 @@ body[data-auto-hide-chrome] > .site-header.is-scrolled {
     transform: none !important;
     z-index: 70 !important;
     will-change: auto;
+    backface-visibility: hidden;
   }
 
   body > .bf-announcement + .site-header,
@@ -408,19 +521,40 @@ body[data-auto-hide-chrome] > .site-header.is-scrolled {
   body.site-chrome-hidden > .bf-announcement + .site-header,
   body.site-chrome-hidden > .bf-announcement + .site-header.is-scrolled {
     position: fixed !important;
-    top: 31px !important;
+    top: 38px !important;
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    box-sizing: border-box !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    align-items: center !important;
+    background: var(--cream) !important;
     transform: none !important;
     z-index: 69 !important;
     will-change: auto;
+    backface-visibility: hidden;
+  }
+
+  /* Match the Homepage overlay selector so its old 31px top value cannot win. */
+  html body[data-auto-hide-chrome] > .bf-announcement + .site-header,
+  html body[data-auto-hide-chrome] > .bf-announcement + .site-header.is-scrolled,
+  html body[data-auto-hide-chrome] > .bf-announcement + .site-header--overlay:not(.is-scrolled),
+  html body[data-auto-hide-chrome].site-chrome-hidden > .bf-announcement + .site-header {
+    position: fixed !important;
+    top: 38px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    transform: none !important;
   }
 
   body > .bf-announcement + .site-header .primary-nav,
   body > .bf-announcement + .site-header.is-scrolled .primary-nav {
-    top: 75px !important;
-    height: calc(100svh - 75px) !important;
+    top: 82px !important;
+    height: calc(100svh - 82px) !important;
   }
 }
 

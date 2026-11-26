@@ -53,6 +53,45 @@
   const initialize = () => {
     document.body.insertAdjacentHTML("beforeend", markup);
 
+    const setupAnnouncementCountdown = () => {
+      const messages = [...document.querySelectorAll(
+        "body[data-auto-hide-chrome] > .bf-announcement .bf-announcement__message"
+      )];
+      if (!messages.length) return;
+
+      messages.forEach((message) => {
+        message.innerHTML = `
+          <span class="bf-announcement__offer">Up to 75% off</span>
+          <span class="bf-announcement__divider" aria-hidden="true">·</span>
+          <span class="bf-announcement__countdown">Ends in <b data-bf-countdown>00:00:00</b></span>`;
+      });
+
+      let countdownTimer = 0;
+      const pad = (value) => String(value).padStart(2, "0");
+      const updateCountdown = () => {
+        const now = new Date();
+        const midnight = new Date(now);
+        midnight.setHours(24, 0, 0, 0);
+        const remaining = Math.max(0, midnight.getTime() - now.getTime());
+        const hours = Math.floor(remaining / 3600000);
+        const minutes = Math.floor((remaining % 3600000) / 60000);
+        const seconds = Math.floor((remaining % 60000) / 1000);
+        const value = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+
+        document.querySelectorAll("[data-bf-countdown]").forEach((clock) => {
+          clock.textContent = value;
+        });
+
+        window.clearTimeout(countdownTimer);
+        countdownTimer = window.setTimeout(updateCountdown, 1000 - (Date.now() % 1000) + 20);
+      };
+
+      updateCountdown();
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) updateCountdown();
+      });
+    };
+
     const setupAutoHideChrome = () => {
       if (!document.body.hasAttribute("data-auto-hide-chrome")) return;
 
@@ -116,7 +155,24 @@
       });
     };
 
+    const lockMobileTopBoundary = () => {
+      let touchStartY = 0;
+
+      document.addEventListener("touchstart", (event) => {
+        if (!window.matchMedia("(max-width: 820px)").matches || event.touches.length !== 1) return;
+        touchStartY = event.touches[0].clientY;
+      }, { passive: true });
+
+      document.addEventListener("touchmove", (event) => {
+        if (!window.matchMedia("(max-width: 820px)").matches || event.touches.length !== 1) return;
+        const pullingPastTop = window.scrollY <= 0 && event.touches[0].clientY > touchStartY;
+        if (pullingPastTop) event.preventDefault();
+      }, { passive: false });
+    };
+
+    setupAnnouncementCountdown();
     setupAutoHideChrome();
+    lockMobileTopBoundary();
     if (!document.querySelector(".site-reviews")) {
       const footer = document.querySelector("footer.site-footer");
       if (footer) footer.insertAdjacentHTML("beforebegin", reviewMarkup);

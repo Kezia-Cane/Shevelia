@@ -1597,9 +1597,17 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 
 @media(max-width:520px){
   .fit-check{padding:34px 16px;gap:18px}
-  .fit-check__visual{min-height:230px;max-height:250px}
+  .fit-check__visual{
+    width:100%;
+    min-height:0;
+    max-height:none;
+    aspect-ratio:4/3;
+  }
   .fit-check__visual img,
-  .fit-check--menopause .fit-check__visual img{object-position:50% 50%}
+  .fit-check--menopause .fit-check__visual img{
+    object-fit:cover;
+    object-position:50% 50%;
+  }
   .fit-check__copy .eyebrow{margin-bottom:10px}
   .fit-check__copy h2{font-size:44px}
   .fit-check__intro{margin:12px 0 16px;font-size:15px}
@@ -1608,6 +1616,80 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
   .fit-check__list li::before{top:17px}
   .fit-check__cta{min-height:46px;margin-top:14px;padding:11px 16px;font-size:13px}
   .principle-list p{white-space:normal}
+}
+
+/* Mobile Homepage: simplify testimonial actions and remove the comparison card. */
+@media(max-width:520px){
+  .films{padding-bottom:36px}
+  .films .site-reviews__actions.bf-product-cta-row{
+    width:100%;
+    margin:20px auto 0!important;
+    padding:0!important;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px!important;
+  }
+  .films .site-reviews__actions .bf-product-cta-stack{
+    width:100%;
+    gap:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+  }
+  .films .site-reviews__actions .bf-product-benefits--cta{
+    display:none!important;
+  }
+  .films .site-reviews__actions .bf-product-cta-stack>.button{
+    width:100%;
+    min-height:56px;
+    padding:12px 14px 12px 20px!important;
+    display:flex;
+    align-items:center;
+    justify-content:space-between!important;
+    border-radius:15px!important;
+    box-shadow:0 10px 24px rgba(45,37,65,.12)!important;
+    font-size:14px;
+    font-weight:750;
+    text-align:left;
+  }
+  .films .site-reviews__actions .button::after{
+    content:'→';
+    width:32px;
+    height:32px;
+    flex:0 0 32px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    font-size:16px;
+    line-height:1;
+  }
+  .films .site-reviews__actions .button-midnight{
+    border:1px solid #2d2541!important;
+    background:#2d2541!important;
+    color:#fff!important;
+  }
+  .films .site-reviews__actions .button-midnight::after{
+    background:#8b7ab8;
+    color:#fff;
+  }
+  .films .site-reviews__actions .button-midnight-outline{
+    border:1px solid #8b7ab8!important;
+    background:#f8f4fb!important;
+    color:#2d2541!important;
+  }
+  .films .site-reviews__actions .button-midnight-outline::after{
+    background:#e2d7ef;
+    color:#2d2541;
+  }
+
+  .discovery-grid{
+    grid-template-rows:540px auto minmax(370px,auto)!important;
+  }
+  .feature-question{
+    display:none!important;
+  }
 }
 
 /* Final homepage polish: clearer closing benefits and a truly aligned footer mark. */
@@ -1808,6 +1890,36 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 @media(max-width:520px){
   .fit-check__list li{padding-left:12px}
   .fit-check__icon{width:25px;height:25px;flex-basis:25px;padding:3px}
+}
+
+@media(max-width:520px){
+  .films .film-actions.bf-product-cta-row{
+    width:100%;margin:18px auto 0!important;padding:0!important;
+    display:grid!important;grid-template-columns:1fr!important;gap:10px!important
+  }
+  .films .film-actions .bf-product-cta-stack{
+    width:100%;gap:0!important;padding:0!important;border:0!important;
+    border-radius:0!important;background:transparent!important;box-shadow:none!important
+  }
+  .films .film-actions .bf-product-benefits--cta{display:none!important}
+  .films .film-actions .bf-product-cta-stack>.button{
+    width:100%;min-height:56px;padding:12px 14px 12px 20px!important;
+    display:flex;align-items:center;justify-content:space-between!important;
+    border-radius:15px!important;box-shadow:0 10px 24px rgba(45,37,65,.12)!important;
+    font-size:14px;font-weight:750;text-align:left
+  }
+  .films .film-actions .button::after{
+    content:'→';width:32px;height:32px;flex:0 0 32px;display:grid;place-items:center;
+    border-radius:50%;font-size:16px;line-height:1
+  }
+  .films .film-actions .button-midnight{
+    border:1px solid #2d2541!important;background:#2d2541!important;color:#fff!important
+  }
+  .films .film-actions .button-midnight::after{background:#8b7ab8;color:#fff}
+  .films .film-actions .button-midnight-outline{
+    border:1px solid #8b7ab8!important;background:#f8f4fb!important;color:#2d2541!important
+  }
+  .films .film-actions .button-midnight-outline::after{background:#e2d7ef;color:#2d2541}
 }
 
 
