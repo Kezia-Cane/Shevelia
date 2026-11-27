@@ -1,6 +1,22 @@
 (() => {
   const qs = (selector, root = document) => root.querySelector(selector);
   const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+  // Keep the desktop reassurance card while removing it from the compact mobile hero.
+  const heroCard = qs('.hero-collage .hero-card');
+  const heroCopy = qs('.hero-copy');
+  const heroCollage = qs('.hero-collage');
+  const placeHeroCard = () => {
+    if (!heroCard || !heroCopy || !heroCollage) return;
+    const mobile = window.matchMedia('(max-width: 520px)').matches;
+    if (mobile) {
+      heroCard.remove();
+    } else if (!mobile && heroCard.parentElement !== heroCollage) {
+      heroCollage.append(heroCard);
+    }
+  };
+  placeHeroCard();
+  window.matchMedia('(max-width: 520px)').addEventListener?.('change', placeHeroCard);
   const menuButton = qs('[data-menu-toggle]');
   const menu = qs('[data-menu]');
   const closeMenu = () => { menuButton?.setAttribute('aria-expanded','false'); menu?.classList.remove('is-open'); };

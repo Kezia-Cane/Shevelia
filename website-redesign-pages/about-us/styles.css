@@ -307,8 +307,8 @@ h3 { font-size:clamp(23px,2.2vw,32px); line-height:1.05; letter-spacing:-.025em;
 .chapter-note{margin-top:20px;color:var(--honey);font-weight:700}
 
 @media(max-width:520px){
-  .hero{min-height:760px;background:var(--midnight)}
-  .hero-copy{padding:34px 16px 192px;color:white}
+  .hero{min-height:0;background:var(--midnight)}
+  .hero-copy{padding:34px 16px 44px;color:white}
   .hero .eyebrow{color:var(--honey)}
   .hero h1{max-width:8.5ch;font-size:clamp(42px,12.8vw,55px);line-height:.91;text-shadow:0 2px 18px rgba(20,13,31,.28)}
   .hero .lead{max-width:31ch;margin:14px 0 18px;color:rgba(255,255,255,.92);font-size:15px;line-height:1.45;text-shadow:0 1px 12px rgba(20,13,31,.28)}
@@ -318,6 +318,8 @@ h3 { font-size:clamp(23px,2.2vw,32px); line-height:1.05; letter-spacing:-.025em;
       linear-gradient(180deg,rgba(29,22,44,.22) 0%,rgba(29,22,44,.05) 54%,rgba(29,22,44,.58) 100%);
   }
   .hero-image-main img{object-position:44% 24%;filter:saturate(1.02) contrast(1.06)}
+  .hero-card{position:relative;left:auto;right:auto;bottom:auto;min-height:0;margin-top:16px;padding:14px 16px}
+  .hero-card strong{margin:10px 0;font-size:24px;line-height:.95}
   .hero .button-outline{border-color:rgba(255,255,255,.55);background:rgba(252,249,244,.92);color:var(--midnight)}
 
   .chapter-statement{min-height:270px;padding:34px 16px;grid-template-columns:56% 44%;align-content:center;justify-items:center}
@@ -641,7 +643,7 @@ body .bf-product-benefits--cta li svg{
     color:#fff!important;
   }
   body .site-reviews .site-reviews__actions .bf-product-cta-stack:nth-child(2) .bf-product-benefits--cta li svg{stroke:var(--honey)!important}
-  body .site-reviews{padding-bottom:0!important}
+  body .site-reviews{padding-bottom:18px!important}
   body .site-reviews .site-reviews__actions{margin-bottom:0!important}
 }
 

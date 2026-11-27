@@ -78,10 +78,19 @@
   const reviewMarkup = `
     <section class="films site-reviews" id="films">
       <header class="films-head site-reviews__head"><div><p class="eyebrow">REAL CUSTOMER, REAL PHOTOS</p><h2>Support for the changes you feel.</h2></div><p>Daily Slim supports digestive comfort, appetite and metabolism. Menopause Balance supports restful sleep, mood and daily balance.</p></header>
-      <div class="film-grid site-reviews__grid">
+      <div class="film-grid site-reviews__grid" id="film-grid">
         <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("video-01-thumbnail.jpg")}" playsinline muted aria-label="Daily Slim customer story"><source data-src="${reviewVideo("ritual-story.mp4")}" type="video/mp4"></video><button type="button" data-review-play aria-label="Play Daily Slim customer story"><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>Digestive comfort, in her words</span></figcaption></figure>
         <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("video-02-thumbnail.jpg")}" playsinline muted aria-label="Menopause Balance customer story"><source data-src="${reviewVideo("night-story-01.mp4")}" type="video/mp4"></video><button type="button" data-review-play aria-label="Play Menopause Balance customer story"><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>Support for restful sleep</span></figcaption></figure>
         <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("video-03-thumbnail.jpg")}" playsinline muted aria-label="A closer look at Shevelia ingredients"><source data-src="${reviewVideo("formula-story.mp4")}" type="video/mp4"></video><button type="button" data-review-play aria-label="Play a closer look at Shevelia ingredients"><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>Know what’s in the formula</span></figcaption></figure>
+      </div>
+      <div class="mobile-carousel-controls" data-carousel-controls data-shared-carousel data-carousel-target="film-grid" aria-label="Video gallery controls">
+        <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Previous video"><span aria-hidden="true">←</span></button>
+        <div class="carousel-dots" aria-label="Choose a video">
+          <button type="button" data-carousel-dot="0" aria-label="Show video 1" aria-current="true"></button>
+          <button type="button" data-carousel-dot="1" aria-label="Show video 2"></button>
+          <button type="button" data-carousel-dot="2" aria-label="Show video 3"></button>
+        </div>
+        <button class="carousel-arrow" type="button" data-carousel-next aria-label="Next video"><span aria-hidden="true">→</span></button>
       </div>
     </section>`;
 
@@ -217,6 +226,59 @@
       const footer = document.querySelector("footer.site-footer");
       if (footer) footer.insertAdjacentHTML("beforebegin", reviewMarkup);
     }
+    // Add the same swipe and arrow navigation used by the homepage to shared
+    // review sections. Homepage markup already includes its own controls.
+    document.querySelectorAll('.site-reviews').forEach((section, sectionIndex) => {
+      const rail = section.querySelector('.site-reviews__grid');
+      if (!rail || section.querySelector('[data-carousel-controls]')) return;
+      const id = rail.id || `site-review-grid-${sectionIndex + 1}`;
+      rail.id = id;
+      const controls = document.createElement('div');
+      controls.className = 'mobile-carousel-controls';
+      controls.dataset.carouselControls = '';
+      controls.dataset.sharedCarousel = '';
+      controls.dataset.carouselTarget = id;
+      controls.setAttribute('aria-label', 'Video gallery controls');
+      controls.innerHTML = '<button class="carousel-arrow" type="button" data-carousel-prev aria-label="Previous video"><span aria-hidden="true">←</span></button><div class="carousel-dots" aria-label="Choose a video"><button type="button" data-carousel-dot="0" aria-label="Show video 1" aria-current="true"></button><button type="button" data-carousel-dot="1" aria-label="Show video 2"></button><button type="button" data-carousel-dot="2" aria-label="Show video 3"></button></div><button class="carousel-arrow" type="button" data-carousel-next aria-label="Next video"><span aria-hidden="true">→</span></button>';
+      rail.after(controls);
+    });
+    document.querySelectorAll('[data-shared-carousel]').forEach((controls) => {
+      if (controls.dataset.carouselReady) return;
+      const rail = document.getElementById(controls.dataset.carouselTarget);
+      if (!rail) return;
+      controls.dataset.carouselReady = 'true';
+      const items = [...rail.children];
+      const dots = [...controls.querySelectorAll('[data-carousel-dot]')];
+      const previous = controls.querySelector('[data-carousel-prev]');
+      const next = controls.querySelector('[data-carousel-next]');
+      let active = 0;
+      let frame = 0;
+      const setActive = (index) => {
+        active = Math.max(0, Math.min(index, items.length - 1));
+        dots.forEach((dot, i) => i === active ? dot.setAttribute('aria-current', 'true') : dot.removeAttribute('aria-current'));
+        if (previous) previous.disabled = active === 0;
+        if (next) next.disabled = active === items.length - 1;
+      };
+      const goTo = (index) => {
+        const target = Math.max(0, Math.min(index, items.length - 1));
+        rail.scrollTo({ left: items[target].offsetLeft - rail.offsetLeft, behavior: 'smooth' });
+        setActive(target);
+      };
+      previous?.addEventListener('click', () => goTo(active - 1));
+      next?.addEventListener('click', () => goTo(active + 1));
+      dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+      rail.addEventListener('scroll', () => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          const nearest = items.reduce((best, item, i) => {
+            const distance = Math.abs((item.offsetLeft - rail.offsetLeft) - rail.scrollLeft);
+            return distance < best.distance ? { index: i, distance } : best;
+          }, { index: 0, distance: Infinity });
+          setActive(nearest.index);
+        });
+      }, { passive: true });
+      setActive(0);
+    });
     const reviewVideos = [...document.querySelectorAll(".site-reviews .film-frame video")];
     document.querySelectorAll(".site-reviews [data-review-play]").forEach((button) => {
       const frame = button.closest(".film-frame");

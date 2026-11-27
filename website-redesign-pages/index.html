@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2d2541">
+  <title>Shevelia page previews</title>
+  <style>
+    :root { color-scheme: light; font-family: Arial, sans-serif; color: #2d2541; background: #fcf9f4; }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; padding: clamp(28px, 7vw, 84px); display: grid; align-content: center; }
+    main { width: min(100%, 1000px); margin: 0 auto; }
+    .eyebrow { margin: 0 0 14px; color: #8774b5; font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    h1 { max-width: 12ch; margin: 0; font-size: clamp(42px, 8vw, 76px); line-height: .98; letter-spacing: -.06em; }
+    .intro { max-width: 52ch; margin: 20px 0 34px; color: #625a70; font-size: 17px; line-height: 1.6; }
+    nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    nav a { display: flex; min-height: 108px; align-items: center; justify-content: space-between; padding: 22px 24px; border: 1px solid #ddd3eb; border-radius: 16px; background: #fffdfb; color: inherit; font-size: 20px; font-weight: 700; text-decoration: none; transition: transform .18s ease, border-color .18s ease, background .18s ease; }
+    nav a:hover, nav a:focus-visible { transform: translateY(-2px); border-color: #8975b8; background: #f0eafa; outline: none; }
+    nav a span { color: #8975b8; font-size: 24px; }
+    @media (max-width: 560px) { nav { grid-template-columns: 1fr; } nav a { min-height: 76px; } .intro { font-size: 16px; } }
+    @media (prefers-reduced-motion: reduce) { nav a { transition: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Local website preview</p>
+    <h1>Choose a page to preview.</h1>
+    <p class="intro">Open a page below to view its local index. The links work directly from this folder.</p>
+    <nav aria-label="Page previews">
+      <a href="homepage/index.html">Homepage <span aria-hidden="true">↗</span></a>
+      <a href="about-us/index.html">About us <span aria-hidden="true">↗</span></a>
+      <a href="contact/index.html">Contact <span aria-hidden="true">↗</span></a>
+      <a href="products/index.html">Products <span aria-hidden="true">↗</span></a>
+    </nav>
+  </main>
+</body>
+</html>
