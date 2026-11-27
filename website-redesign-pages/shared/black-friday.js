@@ -6,6 +6,42 @@
   const storageKey = "shevelia-black-friday-dismissed";
   let lastFocused = null;
 
+  const initializeAnnouncementCountdown = () => {
+    const clock = document.querySelector("[data-bf-countdown]");
+    const banner = clock?.closest(".bf-announcement");
+    if (!clock || !banner) return;
+
+    const daily = banner.dataset.bfMode === "daily";
+    const start = new Date(banner.dataset.bfStart || 0).getTime();
+    const end = new Date(banner.dataset.bfEnd || 0).getTime();
+    const preview = banner.dataset.bfPreview === "true";
+    const pad = (value) => (value < 10 ? `0${value}` : `${value}`);
+
+    const tick = () => {
+      const now = Date.now();
+      const active = now <= end && (now >= start || preview);
+      banner.hidden = !active;
+      if (!active) return;
+
+      let target = end;
+      if (daily) {
+        const midnight = new Date();
+        midnight.setHours(24, 0, 0, 0);
+        target = midnight.getTime();
+      }
+
+      const remaining = Math.max(0, target - now);
+      const days = Math.floor(remaining / 86400000);
+      const hours = Math.floor((remaining % 86400000) / 3600000);
+      const minutes = Math.floor((remaining % 3600000) / 60000);
+      const seconds = Math.floor((remaining % 60000) / 1000);
+      clock.textContent = `${days > 0 ? `${days}d ` : ""}${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+      window.setTimeout(tick, 1000);
+    };
+
+    tick();
+  };
+
   const markup = `
     <div class="bf-modal" data-bf-modal hidden>
       <button class="bf-modal__scrim" type="button" aria-label="Close Black Friday promotion" data-bf-close></button>
@@ -47,7 +83,6 @@
         <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("video-02-thumbnail.jpg")}" playsinline muted aria-label="Menopause Balance customer story"><source data-src="${reviewVideo("night-story-01.mp4")}" type="video/mp4"></video><button type="button" data-review-play aria-label="Play Menopause Balance customer story"><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>Support for restful sleep</span></figcaption></figure>
         <figure class="film"><div class="film-frame"><video preload="none" loading="lazy" poster="${reviewPoster("video-03-thumbnail.jpg")}" playsinline muted aria-label="A closer look at Shevelia ingredients"><source data-src="${reviewVideo("formula-story.mp4")}" type="video/mp4"></video><button type="button" data-review-play aria-label="Play a closer look at Shevelia ingredients"><span aria-hidden="true">▶</span><b>Play</b></button></div><figcaption><span>Know what’s in the formula</span></figcaption></figure>
       </div>
-      <div class="film-actions site-reviews__actions"><a class="button button-midnight" href="https://shevelia.co/products/daily-slim">Explore Daily Slim</a><a class="button button-midnight-outline" href="https://shevelia.co/products/shevelia-menopause-balance">Explore Menopause Balance</a></div>
     </section>`;
 
   const initialize = () => {

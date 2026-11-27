@@ -657,6 +657,24 @@ body .bf-product-benefits--cta li svg{
   mask-image:linear-gradient(to bottom,transparent 0,#000 24%,#000 100%);
 }
 
+/* Give the About page one obvious next step in each CTA area. */
+.hero .hero-cta{margin-top:24px;gap:0}
+.hero .hero-cta .button,
+.collection-copy .collection-cta .button{
+  min-height:54px;
+  justify-content:space-between;
+  gap:24px;
+}
+.hero .hero-cta .button{min-width:230px}
+.collection-copy .collection-cta{margin-top:28px;gap:0}
+.collection-copy .collection-cta .button{min-width:250px}
+
+@media(max-width:520px){
+  .hero .hero-cta{grid-template-columns:minmax(0,1fr)}
+  .hero .hero-cta .button,
+  .collection-copy .collection-cta .button{width:100%;min-width:0}
+}
+
 /* Review CTAs should be balanced, equal, and no wider than their labels need. */
 @media(min-width:821px){
   body .site-reviews .site-reviews__actions.bf-product-cta-row{

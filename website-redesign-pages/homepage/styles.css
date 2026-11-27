@@ -1367,7 +1367,10 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 .fit-check--menopause .fit-check__visual{order:2}
 .fit-check--menopause .fit-check__copy{order:1}
 .fit-check__visual{
-  min-height:680px;
+  width:100%;
+  aspect-ratio:4 / 3;
+  min-height:0;
+  align-self:center;
   position:relative;
   overflow:hidden;
   border-radius:22px;
@@ -1392,7 +1395,7 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
   object-position:center center;
   transition:transform .6s cubic-bezier(.22,.61,.36,1);
 }
-.fit-check__visual:hover img{transform:scale(1.025)}
+.fit-check__visual:hover img{transform:scale(1.01)}
 .fit-check__visual>span{
   position:absolute;
   z-index:1;
@@ -1486,7 +1489,7 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 
 @media(max-width:1000px){
   .fit-check{grid-template-columns:minmax(280px,.75fr) minmax(0,1.25fr);gap:34px}
-  .fit-check__visual{min-height:650px}
+  .fit-check__visual{min-height:0}
   .fit-check__list{grid-template-columns:1fr}
   .fit-check__list li{min-height:68px}
 }
@@ -1499,7 +1502,7 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
   }
   .fit-check--menopause .fit-check__visual,
   .fit-check--menopause .fit-check__copy{order:initial}
-  .fit-check__visual{min-height:520px}
+  .fit-check__visual{min-height:0}
   .fit-check__copy{max-width:none}
   .fit-check__copy h2{font-size:clamp(54px,11vw,76px)}
   .fit-check__list{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -1507,8 +1510,8 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 
 @media(max-width:520px){
   .fit-check{padding:48px 16px;gap:24px}
-  .fit-check__visual{min-height:390px;border-radius:16px}
-  .fit-check__visual img{object-position:center 30%}
+  .fit-check__visual{min-height:0;aspect-ratio:4 / 5;border-radius:16px}
+  .fit-check__visual img{object-fit:cover;object-position:center center}
   .fit-check__visual>span{left:16px;bottom:16px;font-size:11px}
   .fit-check__copy h2{font-size:51px}
   .fit-check__intro{margin:17px 0 21px;font-size:16px}
@@ -1923,3 +1926,92 @@ h3{font-size:clamp(24px,2.4vw,36px);line-height:1.03;letter-spacing:-.03em}
 }
 
 
+
+/* Keep one clear action in the homepage finale. */
+.finale-copy{width:min(760px,calc(100vw - 48px))}
+.finale-copy h2{max-width:11ch}
+.finale-copy>p:not(.eyebrow){max-width:38ch;margin:16px 0 22px;line-height:1.5}
+.finale-actions{margin-top:0}
+@media(max-width:820px){
+  .finale-copy{width:auto}
+}
+
+/* Restore the secondary About link beside the main hero action. */
+.hero-product-actions{width:auto;display:flex;flex-direction:row;align-items:center;gap:18px}
+.hero-product-actions>.button{width:auto;min-height:54px;justify-content:space-between;padding-inline:24px}
+@media(max-width:820px){
+  .hero-product-actions{width:100%;flex-direction:column;align-items:stretch;gap:9px}
+  .hero-product-actions>.button{width:100%;min-height:50px}
+  .hero-product-actions>.cover-link{align-self:flex-start;margin-top:3px}
+}
+
+/* Keep the comparison tile on desktop; it duplicates product choices on mobile. */
+@media(max-width:820px){
+  .discovery-grid .feature-question{display:none}
+  .discovery-grid .feature-night{grid-column:1 / -1}
+}
+@media(max-width:520px){
+  .discovery-grid{grid-template-rows:540px 500px 370px}
+}
+
+/* Keep the Menopause Balance bottle clear of its description and link. */
+@media(min-width:821px){
+  .manifesto{
+    grid-template-columns:minmax(0,1.35fr) minmax(230px,.7fr) minmax(190px,.48fr);
+    gap:clamp(24px,3vw,48px);
+    align-items:center;
+  }
+  .manifesto h2{grid-column:1}
+  .manifesto-notes{grid-column:2;align-self:center;max-width:34ch;padding:0}
+  .manifesto-product{
+    position:relative;grid-column:3;grid-row:1;justify-self:center;align-self:center;
+    width:100%;height:clamp(290px,30vw,390px);max-width:100%;object-fit:contain;
+    right:auto;top:auto;bottom:auto;transform:none;opacity:1;
+    filter:drop-shadow(0 16px 24px rgba(45,37,65,.16));
+  }
+}
+@media(max-width:820px){
+  .manifesto{grid-template-columns:minmax(0,1fr);gap:20px;overflow:hidden}
+  .manifesto h2,.manifesto-notes,.manifesto-product{grid-column:1}
+  .manifesto-notes{display:block;max-width:34ch;align-self:auto;padding:0}
+  .manifesto-notes p{margin-bottom:18px}
+  .manifesto-product{
+    position:relative;grid-row:auto;justify-self:end;align-self:center;
+    width:min(240px,62vw);height:260px;max-width:100%;object-fit:contain;
+    right:auto;top:auto;bottom:auto;transform:none;margin:-4px 8px -18px 0;opacity:1;
+    filter:drop-shadow(0 12px 20px rgba(45,37,65,.14));
+  }
+}
+@media(max-width:520px){
+  .manifesto-product{width:min(220px,62vw);height:238px;margin:-4px 2px -16px 0}
+}
+
+/* Match the product layout above and keep Daily Slim copy unobstructed. */
+@media(min-width:821px){
+  .daily-spotlight{
+    grid-template-columns:minmax(0,1.35fr) minmax(230px,.7fr) minmax(190px,.48fr);
+    gap:clamp(24px,3vw,48px);
+    align-items:center;
+  }
+  .daily-spotlight>h2{grid-column:1}
+  .daily-spotlight__notes{grid-column:2;align-self:center;max-width:34ch;padding:0}
+  .daily-spotlight__product{
+    position:relative;grid-column:3;grid-row:1;justify-self:center;align-self:center;
+    display:block;width:100%;height:clamp(290px,30vw,390px);max-width:100%;object-fit:contain;
+    filter:drop-shadow(0 16px 24px rgba(12,8,24,.3));
+  }
+}
+@media(max-width:820px){
+  .daily-spotlight{grid-template-columns:minmax(0,1fr);gap:20px;overflow:hidden}
+  .daily-spotlight>h2,.daily-spotlight__notes,.daily-spotlight__product{grid-column:1}
+  .daily-spotlight__notes{display:block;max-width:34ch;align-self:auto;padding:0}
+  .daily-spotlight__notes p{margin:0 0 18px}
+  .daily-spotlight__product{
+    position:relative;grid-row:auto;justify-self:end;align-self:center;display:block;
+    width:min(240px,62vw);height:260px;max-width:100%;object-fit:contain;
+    margin:-4px 8px -18px 0;filter:drop-shadow(0 12px 20px rgba(12,8,24,.28));
+  }
+}
+@media(max-width:520px){
+  .daily-spotlight__product{width:min(220px,62vw);height:238px;margin:-4px 2px -16px 0}
+}

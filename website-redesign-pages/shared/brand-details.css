@@ -19,6 +19,67 @@
   overflow: hidden;
 }
 
+/* Shevelia art direction: restrained photographic texture and edge motifs. */
+.manifesto{
+  background:linear-gradient(90deg,rgba(252,249,244,.94),rgba(252,249,244,.76)),url("brand-art/contour-wave.jpg") center/cover no-repeat;
+}
+.questions{
+  background: url("brand-art/capsules-sprig.png") right -130px bottom -110px/240px auto no-repeat, var(--cream);
+}
+.philosophy::after{
+  content:"";position:absolute;right:-100px;top:5%;width:min(38vw,500px);height:360px;
+  background:url("brand-art/oval-wave.png") center/contain no-repeat;opacity:.17;pointer-events:none;
+}
+.approach-section{
+  background:linear-gradient(90deg,rgba(224,214,236,.97),rgba(224,214,236,.86) 48%,rgba(224,214,236,.66)),url("brand-art/lavender-sculptures.jpg") center/cover no-repeat;
+}
+.chapter-statement{
+  background:linear-gradient(90deg,rgba(45,37,65,.83),rgba(45,37,65,.52)),url("brand-art/sunlit-sanctuary.jpg") center 48%/cover no-repeat;
+}
+.collection-section{
+  background:url("brand-art/sculptural-curves.png") left -110px bottom -80px/420px auto no-repeat,var(--paper);
+}
+.contact-section{
+  background:linear-gradient(90deg,rgba(238,230,243,.93),rgba(238,230,243,.78)),url("brand-art/lavender-botanicals.jpg") center/cover no-repeat;
+}
+.routes{
+  background: url("brand-art/delicate-sprig.png") right -100px top 15px/270px auto no-repeat;
+}
+body .products-page{
+  position:relative;isolation:isolate;
+  background:linear-gradient(180deg,rgba(252,249,244,.83) 0%,rgba(252,249,244,.94) 560px,var(--cream) 900px),url("brand-art/lavender-ribbons.jpg") center top/100% auto no-repeat,var(--cream);
+}
+.products-page::before{
+  content:"";position:absolute;z-index:0;right:0;top:28px;width:min(29vw,390px);height:220px;
+  background:url("brand-art/silk-ribbon.png") center/contain no-repeat;opacity:.38;pointer-events:none;
+}
+.products-page>.products-intro,.products-page>.product-choices,.products-page>.products-note{position:relative;z-index:1}
+.policy-page .policy-hero{
+  background:linear-gradient(90deg,rgba(224,214,236,.92),rgba(224,214,236,.78)),url("brand-art/contour-wave.jpg") center/cover no-repeat;
+}
+@media(max-width:820px){
+  .manifesto{background-position:60% center}
+  .approach-section{background-position:62% center}
+  .chapter-statement{background-position:65% center}
+  .contact-section{background-position:60% center}
+  .questions{background-size:180px auto;background-position:right -125px bottom -75px}
+  .philosophy::after{width:280px;height:240px;right:-120px;top:0;opacity:.1}
+  .collection-section{background-size:260px auto;background-position:left -110px bottom -40px}
+  .routes{background-size:170px auto;background-position:right -85px top 30px}
+  body .products-page{background-size:auto,auto 380px;background-position:center,center top}
+  .products-page::before{width:190px;height:140px;right:-50px;top:0;opacity:.2}
+}
+@media(max-width:520px){
+  .manifesto{background:linear-gradient(rgba(252,249,244,.9),rgba(252,249,244,.9)),url("brand-art/contour-wave.jpg") center/cover no-repeat}
+  .approach-section{background:linear-gradient(rgba(224,214,236,.93),rgba(224,214,236,.93)),url("brand-art/lavender-sculptures.jpg") center/cover no-repeat}
+  .chapter-statement{background:linear-gradient(rgba(45,37,65,.76),rgba(45,37,65,.76)),url("brand-art/sunlit-sanctuary.jpg") center/cover no-repeat}
+  .contact-section{background:linear-gradient(rgba(238,230,243,.92),rgba(238,230,243,.92)),url("brand-art/lavender-botanicals.jpg") center/cover no-repeat}
+  .questions{background-image:none}
+  .philosophy::after{display:none}
+  .routes{background-size:110px auto;background-position:right -50px top 5px}
+  .products-page::before{display:none}
+}
+
 :where(
   .manifesto,
   .discovery,
@@ -556,5 +617,125 @@ body[data-auto-hide-chrome] > .site-header.is-scrolled {
     top: 82px !important;
     height: calc(100svh - 82px) !important;
   }
+}
+
+/* Carry the art through the open sections, with clear space around copy and cards. */
+.manifesto{background-image:linear-gradient(90deg,rgba(252,249,244,.83),rgba(252,249,244,.60)),url("brand-art/contour-wave.jpg")}
+.discovery{
+  background:linear-gradient(90deg,rgba(252,249,244,.82),rgba(252,249,244,.66)),url("brand-art/lavender-ribbons.jpg") center/cover no-repeat;
+}
+.visual-world{
+  background:url("brand-art/oval-wave.png") right -100px top 25px/330px auto no-repeat,
+    linear-gradient(90deg,rgba(252,249,244,.88),rgba(252,249,244,.74)),url("brand-art/contour-wave.jpg") center/cover no-repeat;
+}
+.films{
+  background:linear-gradient(90deg,rgba(224,214,236,.90),rgba(224,214,236,.67)),url("brand-art/lavender-sculptures.jpg") center/cover no-repeat;
+}
+.questions{
+  background:url("brand-art/capsules-sprig.png") right -75px bottom -60px/300px auto no-repeat,
+    linear-gradient(90deg,rgba(252,249,244,.92),rgba(252,249,244,.75)),url("brand-art/lavender-botanicals.jpg") center/cover no-repeat;
+}
+.story{
+  background:url("brand-art/delicate-sprig.png") left -110px bottom -40px/280px auto no-repeat,
+    linear-gradient(90deg,rgba(252,249,244,.88),rgba(252,249,244,.70)),url("brand-art/contour-wave.jpg") center/cover no-repeat;
+}
+.principles{
+  background:url("brand-art/oval-wave.png") right -115px top 15px/340px auto no-repeat,
+    linear-gradient(90deg,rgba(252,249,244,.9),rgba(252,249,244,.76)),url("brand-art/lavender-ribbons.jpg") center/cover no-repeat;
+}
+.approach-section{
+  background-image:linear-gradient(90deg,rgba(224,214,236,.87),rgba(224,214,236,.70) 50%,rgba(224,214,236,.46)),url("brand-art/lavender-sculptures.jpg");
+}
+.collection-section{
+  background:url("brand-art/sculptural-curves.png") left -60px bottom -30px/470px auto no-repeat,
+    linear-gradient(90deg,rgba(252,249,244,.89),rgba(252,249,244,.68)),url("brand-art/contour-wave.jpg") center/cover no-repeat;
+}
+.routes{
+  background:url("brand-art/delicate-sprig.png") right -65px top 10px/270px auto no-repeat,
+    linear-gradient(90deg,rgba(252,249,244,.9),rgba(252,249,244,.76)),url("brand-art/lavender-ribbons.jpg") center/cover no-repeat;
+}
+.contact-section{background-image:linear-gradient(90deg,rgba(238,230,243,.86),rgba(238,230,243,.65)),url("brand-art/lavender-botanicals.jpg")}
+.quick-answers{
+  background:url("brand-art/silk-ribbon.png") right -85px bottom -45px/310px auto no-repeat,
+    linear-gradient(90deg,rgba(252,249,244,.88),rgba(252,249,244,.74)),url("brand-art/contour-wave.jpg") center/cover no-repeat;
+}
+.closing{
+  background:url("brand-art/sculptural-curves.png") left -80px top -65px/350px auto no-repeat,
+    linear-gradient(90deg,rgba(252,249,244,.88),rgba(252,249,244,.73)),url("brand-art/lavender-ribbons.jpg") center/cover no-repeat;
+}
+body .products-page{
+  background-image:linear-gradient(180deg,rgba(252,249,244,.68),rgba(252,249,244,.87) 580px,var(--cream) 950px),url("brand-art/lavender-ribbons.jpg");
+}
+body .products-page::before{width:min(30vw,420px);opacity:.53}
+.policy-page .policy-main{
+  background:linear-gradient(180deg,rgba(252,249,244,.87),rgba(252,249,244,.95)),url("brand-art/lavender-ribbons.jpg") center top/cover no-repeat;
+}
+.policy-page .policy-hero{background-image:linear-gradient(90deg,rgba(224,214,236,.84),rgba(224,214,236,.63)),url("brand-art/contour-wave.jpg")}
+@media(max-width:820px){
+  .visual-world{background-size:180px auto,auto,cover;background-position:right -80px top 5px,center,center}
+  .story{background-size:180px auto,auto,cover;background-position:left -110px bottom -25px,center,center}
+  .principles{background-size:200px auto,auto,cover;background-position:right -110px top 10px,center,center}
+  .collection-section{background-size:250px auto,auto,cover;background-position:left -105px bottom -20px,center,center}
+  .routes{background-size:150px auto,auto,cover;background-position:right -90px top 5px,center,center}
+  .quick-answers{background-size:190px auto,auto,cover;background-position:right -110px bottom -30px,center,center}
+  .closing{background-size:210px auto,auto,cover;background-position:left -115px top -20px,center,center}
+}
+@media(max-width:520px){
+  .manifesto,.discovery,.films,.approach-section,.contact-section,.policy-page .policy-main{
+    background-image:linear-gradient(rgba(252,249,244,.86),rgba(252,249,244,.86)),url("brand-art/contour-wave.jpg");
+  }
+  .films,.approach-section{background-image:linear-gradient(rgba(224,214,236,.88),rgba(224,214,236,.88)),url("brand-art/lavender-sculptures.jpg")}
+  .contact-section{background-image:linear-gradient(rgba(238,230,243,.88),rgba(238,230,243,.88)),url("brand-art/lavender-botanicals.jpg")}
+  .questions{background:linear-gradient(rgba(252,249,244,.88),rgba(252,249,244,.88)),url("brand-art/lavender-botanicals.jpg") center/cover no-repeat}
+  .visual-world,.story,.principles,.routes,.quick-answers,.closing{background-size:140px auto,auto,cover}
+  .visual-world{background-position:right -90px top 0,center,center}
+  .story{background-position:left -100px bottom 0,center,center}
+  .principles{background-position:right -100px top 0,center,center}
+  .routes{background-position:right -90px top 0,center,center}
+  .quick-answers{background-position:right -105px bottom 0,center,center}
+  .closing{background-position:left -110px top 0,center,center}
+  .policy-page .policy-hero{background-image:linear-gradient(rgba(224,214,236,.80),rgba(224,214,236,.80)),url("brand-art/contour-wave.jpg")}
+}
+
+/* The About story and principles artwork spans the viewport; content stays on the site grid. */
+.story,.principles{
+  width:100%;
+  margin-inline:0;
+  padding-inline:max(24px,calc((100vw - 1400px)/2));
+}
+@media(max-width:1050px){
+  .story,.principles{padding-inline:20px}
+}
+@media(max-width:520px){
+  .story,.principles{padding-inline:16px}
+}
+
+/* A shared photographic footer with a plum veil for readable links and legal text. */
+body .site-footer,body.policy-page .site-footer{
+  background-color:var(--midnight);
+  background-image:linear-gradient(90deg,rgba(36,27,53,.89),rgba(36,27,53,.78)),url("brand-art/sunlit-sanctuary.jpg");
+  background-position:center,center 52%;
+  background-size:cover;
+  background-repeat:no-repeat;
+  color:var(--cream);
+}
+@media(max-width:700px){
+  body .site-footer,body.policy-page .site-footer{
+    background-image:linear-gradient(rgba(36,27,53,.88),rgba(36,27,53,.88)),url("brand-art/sunlit-sanctuary.jpg");
+    background-position:center,64% center;
+  }
+}
+
+/* Contact artwork reaches both edges while its text and cards retain the page gutter. */
+.routes,.quick-answers{
+  width:100%;
+  margin-inline:0;
+  padding-inline:max(24px,calc((100vw - 1400px)/2));
+}
+@media(max-width:1050px){
+  .routes,.quick-answers{padding-inline:20px}
+}
+@media(max-width:520px){
+  .routes,.quick-answers{padding-inline:16px}
 }
 

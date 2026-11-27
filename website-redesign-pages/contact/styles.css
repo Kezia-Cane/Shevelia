@@ -120,9 +120,6 @@ h3 { font-size: clamp(24px, 2.4vw, 36px); line-height: 1.03; letter-spacing: -.0
 .contact-intro { align-self: start; position: sticky; top: 120px; }
 .contact-intro h2 { max-width: 10ch; }
 .contact-intro > p:not(.eyebrow) { max-width: 43ch; margin: 24px 0 0; color: var(--ink-soft); }
-.privacy-note { max-width: 470px; margin-top: 33px; padding: 17px 0; display: flex; gap: 13px; border-top: 1px solid rgba(45,37,65,.18); border-bottom: 1px solid rgba(45,37,65,.18); }
-.privacy-note span { color: var(--lavender); }
-.privacy-note p { margin: 0; color: var(--ink-soft); font-size: 11px; line-height: 1.5; }
 .contact-form { padding: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; border-radius: var(--radius); background: var(--cream); }
 .field { min-width: 0; }
 .field-full { grid-column: 1 / -1; }
