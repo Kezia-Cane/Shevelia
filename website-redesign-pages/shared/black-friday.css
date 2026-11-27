@@ -98,6 +98,7 @@
   text-transform: uppercase;
   isolation: isolate;
 }
+.bf-announcement[hidden] { display: none !important; }
 
 .bf-announcement::before,
 .bf-announcement::after {
@@ -115,28 +116,39 @@
 
 .bf-announcement__label,
 .bf-announcement__message,
+.bf-announcement__countdown,
 .bf-announcement__action {
   position: relative;
   z-index: 1;
 }
 
 .bf-announcement__label {
-  padding: 3px 8px;
-  border: 1px solid rgba(245, 201, 90, .58);
-  border-radius: 100px;
-  color: #f5c95a;
-  font-size: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: #fcf9f4;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: .16em;
+  letter-spacing: .12em;
   line-height: 1;
 }
 
 .bf-announcement__message {
   color: #fcf9f4;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: .16em;
 }
+
+.bf-announcement__countdown {
+  color: #fcf9f4;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .02em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.bf-announcement__countdown b { font-weight: 700; }
 
 .bf-announcement__action {
   padding: 0 0 2px;
@@ -373,16 +385,17 @@ body.bf-modal-open { overflow: hidden; }
 
 @media (max-width: 1280px) {
   .bf-announcement { padding-inline: 16px; gap: 12px; }
-  .bf-announcement__message { display: none; }
   .bf-announcement__label,
-  .bf-announcement__action { font-size: 8px !important; letter-spacing: .1em; }
+  .bf-announcement__message,
+  .bf-announcement__countdown { font-size: 11px; letter-spacing: .08em; }
 }
 
 @media (max-width: 760px) {
-  .bf-announcement { height: 31px; min-height: 31px; padding-inline: 10px; gap: 8px; justify-content: space-between; flex-wrap: nowrap; white-space: nowrap; }
-  .bf-announcement__message { display: none; }
-  .bf-announcement__label { font-size: 7px; }
-  .bf-announcement__action { font-size: 7px; }
+  .bf-announcement { height: auto; min-height: 52px; padding: 7px 10px; gap: 6px 12px; justify-content: center; flex-wrap: wrap; white-space: nowrap; }
+  .bf-announcement__label,
+  .bf-announcement__message,
+  .bf-announcement__countdown { font-size: 11px; letter-spacing: .06em; }
+  .bf-announcement__action { font-size: 9px; }
 
   .bf-modal { padding: 14px; }
   .bf-modal__dialog {
@@ -443,7 +456,7 @@ body .site-reviews .site-reviews__actions .bf-product-cta-stack > .button {
 @media (max-width: 820px) {
   body > .bf-announcement + .site-header {
     position: sticky !important;
-    top: 31px !important;
+    top: 52px !important;
     z-index: 69 !important;
     height: 44px !important;
     min-height: 44px !important;
@@ -452,8 +465,9 @@ body .site-reviews .site-reviews__actions .bf-product-cta-stack > .button {
     margin: 0 !important;
     background: var(--cream) !important;
   }
+  body > .bf-announcement[hidden] + .site-header { top: 0 !important; }
   body > .bf-announcement + .site-header--overlay:not(.is-scrolled) {
-    top: 31px !important;
+    top: 52px !important;
   }
   /* Keep both chrome rows fixed in their stacked positions while scrolling. */
   body[data-auto-hide-chrome] > .bf-announcement,
@@ -467,12 +481,12 @@ body .site-reviews .site-reviews__actions .bf-product-cta-stack > .button {
   body[data-auto-hide-chrome].site-chrome-hidden > .site-header,
   body[data-auto-hide-chrome].site-chrome-hidden > .site-header.is-scrolled {
     position: sticky !important;
-    top: 31px !important;
+    top: 52px !important;
     transform: none !important;
   }
   body > .bf-announcement + .site-header .primary-nav {
-    top: 75px !important;
-    height: calc(100svh - 75px) !important;
+    top: 96px !important;
+    height: calc(100svh - 96px) !important;
   }
   body > .bf-announcement + .site-header.is-scrolled .primary-nav {
     top: 44px !important;
